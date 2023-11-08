@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport">
+    <title>Welcome to STEAM Education</title>
+    <!-- Favicon Icon -->
+    <link href="resources/images/icon-sq.png" rel="icon" type="image/png">
+    <!-- Bootstrap CSS File-->
+    <link href="resources/bootstrap-5.2.3/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Jquery Js File -->
+    <script src="resources/Jquery/jquery.min.js"></script>
+    <!-- Boostrap Js File -->
+    <script src="resources/bootstrap-5.2.3/js/bootstrap.bundle.js"></script>
+    <!-- Fontawesome Js Plug-in -->
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/07941f149f.js"></script>
+    <!--Custom CSS-->
+    <link href="resources/css/customHomePage.css" rel="stylesheet">
+
+</head>
+<body class="min-vh-100 d-flex align-items-center justify-content-center" id="bodyCanvas">
+
+<div class="container-fluid p-5 text-center" id="mainDiv">
+    <h1 class="text-uppercase fw-bolder display-3">Welcome to</h1>
+    <img class="mt-3" src="resources/images/logo-sq.png" width="150px">
+
+    <div class="w-50 p-5 mx-auto">
+        <div class="row px-0 px-lg-5">
+            <div class="col-lg-6 col-12 px-0 px-lg-5">
+                <a class="text-decoration-none text-black" href="/STEAM-CRM">
+                    <div class="card border-0" id="crmCard">
+                        <div class="card-body pb-1">
+                            <h5 class="card-title text-uppercase fw-bold">Login to CRM</h5>
+                        </div>
+                    </div>
+                </a>
+                <p class="text-uppercase fw-bold mt-1 small">inquiry management</p>
+            </div>
+            <div class="col-lg-6 col-12 px-0 px-lg-5 mt-lg-0 mt-3">
+
+                <a class="text-decoration-none text-black" href="/STEAM-RMS">
+                    <div class="card border-0" id="rmsCard">
+                        <div class="card-body pb-1">
+                            <h5 class="card-title text-uppercase fw-bold">Login to RMS</h5>
+                        </div>
+                    </div>
+                </a>
+                <p class="text-uppercase fw-bold mt-1 small">new registrations</p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+
+<script>
+    VANTA.WAVES({
+
+        el: "#bodyCanvas",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        color: 0x989090,
+        shininess: 5.00
+
+
+    })
+    window.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('mainDiv').classList.add('slideInDown');
+    })
+</script>
+</body>
+</html>
