@@ -20,4 +20,11 @@ public class SystemApplication {
 		return homeView;
 	}
 
+	@RequestMapping(value = "/STEAM-CRM")
+	public ModelAndView crmUI(){
+		ModelAndView crmView = new ModelAndView();
+		crmView.setViewName("STEAM-CRM/index.html");
+		return crmView;
+	}
+
 }
