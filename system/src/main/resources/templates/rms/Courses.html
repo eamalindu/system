@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport">
+    <title>Courses | Steam RMS</title>
+    <!-- Favicon Icon -->
+    <link href="resources/images/icon-sq.png" rel="icon" type="image/png">
+    <!-- Custom CSS File-->
+    <link href="resources/css/custom.css" rel="stylesheet">
+    <!-- Bootstrap CSS File-->
+    <link href="resources/bootstrap-5.2.3/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Jquery Js File -->
+    <script src="resources/Jquery/jquery.min.js"></script>
+    <!-- Boostrap Js File -->
+    <script src="resources/bootstrap-5.2.3/js/bootstrap.bundle.js"></script>
+    <!-- Fontawesome Js Plug-in -->
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/07941f149f.js"></script>
+
+</head>
+<body>
+<!--Navbar start-->
+<nav class="navbar navbar-expand-lg bg-steam-green p-1">
+    <div class="container-fluid">
+        <a class="navbar-brand text-white" href="Dashboard.html"><strong>RMS</strong> : : Steam</a>
+        <button aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarText" data-bs-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon" style="filter: invert(100%)"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <!-- Navbar left side (Default)-->
+            <ul class="navbar-nav me-auto mb-lg-0">
+                <li class="nav-item">
+                    <a aria-current="page" class="nav-link text-white custom-width-max-content" href="New-Registration.html"><i class="fa-solid fa-user-plus"></i> New Registration</a>
+                </li>
+            </ul>
+            <!-- Navbar right side-->
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a aria-current="page" class="nav-link text-white custom-width-max-content" href="Registrations.html">Registrations</a>
+                </li>
+                <li class="nav-item">
+                    <a aria-current="page" class="nav-link text-white custom-active custom-width-max-content" href="Courses.html">Courses</a>
+                </li>
+                <li class="nav-item">
+                    <a aria-current="page" class="nav-link text-white custom-width-max-content" href="#">Batches</a>
+                </li>
+
+                <li class="nav-item">
+                    <a aria-current="page" class="nav-link text-white custom-width-max-content" href="#">Administration</a>
+                </li>
+                <li class="nav-item dropdown-center custom-width-max-content p-0">
+                    <button aria-expanded="false" class="nav-link btn bg-steam-green text-white dropdown-toggle custom-width-max-content border-0" data-bs-toggle="dropdown">Profile</button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a aria-current="page" class="nav-link text-white custom-width-max-content" href="#"><i class="fa-solid fa-bell"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--Navbar end-->
+
+<!-- Display Current Page -->
+<div class="container-fluid bg-custom-white custom-banner">
+    <h5>Courses</h5>
+</div>
+
+<div class="container-fluid pt-2">
+    <div class="card">
+        <!-- Search start -->
+        <div class="card-body pb-0">
+            <div class="row p-2">
+                <div class="col-lg-9 col-12">
+                    <div class="input-group mb-3">
+                        <label class="input-group-text ms-2" for="select-course-status">Status</label>
+                        <select class="form-select custom-select bg-white" id="select-course-status">
+                            <option selected>All</option>
+                            <option value="1">Active</option>
+                            <option value="2">Discontinued</option>
+                            <option value="3">ETC</option>
+                        </select>
+
+                        <span class="input-group-text ms-2 " id="basic-addon1">Code</span>
+                        <input aria-describedby="basic-addon1" aria-label="Username" class="form-control" id="input-course-code"
+                               placeholder="Course Code" style="box-shadow: none!important;" type="text">
+
+                        <span class="input-group-text ms-2 mt-lg-0 mt-2" id="basic-addon2">Name</span>
+                        <input aria-describedby="basic-addon2" aria-label="Username" class="form-control mt-lg-0 mt-2" id="input-course-name"
+                               placeholder="Course Name" style="box-shadow: none!important;" type="text">
+
+                        <label class="input-group-text ms-2 mt-lg-0 mt-2" for="select-department">Department</label>
+                        <select class="form-select custom-select bg-white mt-lg-0 mt-2" id="select-department">
+                            <option selected>All</option>
+                            <option value="1">Dept. IT</option>
+                            <option value="2">Dept. English</option>
+                        </select>
+
+                    </div>
+                </div>
+                <div class="col-lg-3 col-12">
+                    <button class="btn btn-primary rounded-end bg-steam-green" id="btn-course-search" style="border-color: #55C052" type="button"><i class="fa-solid fa-magnifying-glass"></i> Search
+                    </button>
+                    <button class="btn btn-danger ms-2 rounded-2" id="btn-course-reset" type="button"><i class="fa-solid fa-xmark"></i> Reset</button>
+                    <button class="btn btn-primary float-end rounded-2" id="btn-course-add" type="button"><i class="fa-solid fa-plus"></i> Add</button>
+                </div>
+            </div>
+        </div>
+        <!-- Search end-->
+    </div>
+</div>
+</body>
+</html>

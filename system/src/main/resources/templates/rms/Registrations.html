@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport">
+    <title>Registrations | Steam RMS</title>
+    <!-- Favicon Icon -->
+    <link href="resources/images/icon-sq.png" rel="icon" type="image/png">
+    <!-- Custom CSS File-->
+    <link href="resources/css/custom.css" rel="stylesheet">
+    <!-- Bootstrap CSS File-->
+    <link href="resources/bootstrap-5.2.3/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Jquery Js File -->
+    <script src="resources/Jquery/jquery.min.js"></script>
+    <!-- Boostrap Js File -->
+    <script src="resources/bootstrap-5.2.3/js/bootstrap.bundle.js"></script>
+    <!-- Fontawesome Js Plug-in -->
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/07941f149f.js"></script>
+
+</head>
+<body>
+<!--Navbar start-->
+<nav class="navbar navbar-expand-lg bg-steam-green p-1">
+    <div class="container-fluid">
+        <a class="navbar-brand text-white" href="Dashboard.html"><strong>RMS</strong> : : Steam</a>
+        <button aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarText" data-bs-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon" style="filter: invert(100%)"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <!-- Navbar left side (Default)-->
+            <ul class="navbar-nav me-auto mb-lg-0">
+                <li class="nav-item">
+                    <a aria-current="page" class="nav-link text-white custom-width-max-content" href="New-Registration.html"><i class="fa-solid fa-user-plus"></i> New Registration</a>
+                </li>
+            </ul>
+            <!-- Navbar right side-->
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a aria-current="page" class="nav-link text-white custom-active custom-width-max-content" href="Registrations.html">Registrations</a>
+                </li>
+                <li class="nav-item">
+                    <a aria-current="page" class="nav-link text-white custom-width-max-content" href="Courses.html">Courses</a>
+                </li>
+                <li class="nav-item">
+                    <a aria-current="page" class="nav-link text-white custom-width-max-content" href="#">Batches</a>
+                </li>
+
+                <li class="nav-item">
+                    <a aria-current="page" class="nav-link text-white custom-width-max-content" href="#">Administration</a>
+                </li>
+                <li class="nav-item dropdown-center custom-width-max-content p-0">
+                    <button aria-expanded="false" class="nav-link btn bg-steam-green text-white dropdown-toggle custom-width-max-content border-0" data-bs-toggle="dropdown">Profile</button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a aria-current="page" class="nav-link text-white custom-width-max-content" href="#"><i class="fa-solid fa-bell"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--Navbar end-->
+
+<!-- Display Current Page -->
+<div class="container-fluid bg-custom-white custom-banner">
+    <h5>Registrations</h5>
+</div>
+
+<div class="container-fluid pt-2">
+    <div class="card rounded-0">
+        <!-- Search start -->
+        <div class="card-body pb-0">
+            <div class="row p-2">
+                <div class="col-lg-6 col-12">
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="select-date"><i class="fa-regular fa-calendar-days"></i></label>
+                        <select class="form-select custom-select" id="select-date">
+                            <option disabled selected>Y-M-D - Y-M-D</option>
+                            <option value="1">Today</option>
+                            <option value="2">With In This Week</option>
+                            <option value="3">With In This Month</option>
+                            <option value="3">With In This Year</option>
+                        </select>
+
+                        <label class="input-group-text ms-2" for="select-payment"><i class="fa-solid fa-coins"></i></label>
+                        <select class="form-select custom-select" id="select-payment">
+                            <option disabled selected>Payment Status</option>
+                            <option value="1">Completed</option>
+                            <option value="2">Pending</option>
+                            <option value="3">Paid</option>
+                            <option value="4">Overdue</option>
+                        </select>
+
+                        <label class="input-group-text ms-2" for="select-user"><i class="fa-solid fa-user-tie"></i></label>
+                        <select class="form-select custom-select" id="select-user">
+                            <option disabled selected>Registered By</option>
+                            <option value="1">User 1</option>
+                            <option value="2">User 2</option>
+                            <option value="3">User 3</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-user-graduate"></i></span>
+                        <input aria-describedby="basic-addon1" aria-label="Username" class="form-control" id="input-search"
+                               placeholder="Search by Reg Number, NIC Number or Mobile Number" style="box-shadow: none!important;" type="text">
+                        <button class="btn btn-primary rounded-end bg-steam-green" id="btn-search" style="border-color: #55C052" type="button"><i class="fa-solid fa-magnifying-glass"></i> Search
+                        </button>
+                        <button class="btn btn-danger ms-2 rounded-2" id="btn-reset" type="button"><i class="fa-solid fa-xmark"></i> Reset</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Search end-->
+        <div class="card-footer pt-4 pb-4 overflow-auto" id="table-data">
+            <table class="custom-table">
+                <thead>
+                <tr>
+                    <th rowspan="2">Student</th>
+                    <th class="text-center" colspan="2">Status</th>
+                    <th rowspan="2">Course <small class="text-white">/ Reg Number</small></th>
+                    <th class="text-nowrap" rowspan="2">Date Created</th>
+                    <th class="text-nowrap" rowspan="2">Creator</th>
+                    <th rowspan="2">Action</th>
+                </tr>
+                <tr>
+                    <th class="text-center">Registration</th>
+                    <th class="text-center">Payment</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td rowspan="1">
+                        E.A.M Prabodhitha
+                    </td>
+                    <td class="text-center"><span class="badge bg-success p-2 fw-light">Active</span></td>
+                    <td class="text-center"><span class="badge bg-danger p-2 fw-light">Overdue</span></td>
+                    <td>
+                        Dip IT
+                        <br>
+                        <small class="text-muted">
+                            00012346<br>
+                        </small>
+                    </td>
+                    <td class="text-center">
+                        2023-09-03
+                        <br>
+                        <small class="text-muted">
+                            11:20 AM
+                        </small>
+                    </td>
+                    <td class="text-left">
+                        User 1
+                    </td>
+                    <td class="fw-bold text-steam-green">View</td>
+                </tr>
+                <tr>
+                    <td rowspan="1">
+                        E.A.S Malhiru
+                    </td>
+                    <td class="text-center"><span class="badge bg-success p-2 fw-light">Active</span></td>
+                    <td class="text-center"><span class="badge bg-warning p-2 fw-light">Due</span></td>
+                    <td>
+                        Dip Eng
+                        <br>
+                        <small class="text-muted">
+                            00012345<br>
+                        </small>
+                    </td>
+                    <td class="text-center">
+                        2023-09-03
+                        <br>
+                        <small class="text-muted">
+                            11:20 AM
+                        </small>
+                    </td>
+                    <td class="text-left">
+                        User 1
+                    </td>
+                    <td class="fw-bold text-steam-green">View</td>
+                </tr>
+                <tr>
+                    <td rowspan="1">
+                        E.A.S Malhiru
+                    </td>
+                    <td class="text-center"><span class="badge bg-success p-2 fw-light">Active</span></td>
+                    <td class="text-center"><span class="badge bg-warning p-2 fw-light">Due</span></td>
+                    <td>
+                        Dip Eng
+                        <br>
+                        <small class="text-muted">
+                            00012345<br>
+                        </small>
+                    </td>
+                    <td class="text-center">
+                        2023-09-03
+                        <br>
+                        <small class="text-muted">
+                            11:20 AM
+                        </small>
+                    </td>
+                    <td class="text-left">
+                        User 1
+                    </td>
+                    <td class="fw-bold text-steam-green">View</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="card-footer show pt-4 pb-4" id="table-placeholder">
+            <h4 class="text-center fw-bold" style="font-family: Arial,serif;text-transform: uppercase;font-size: medium">Search Registration Info / <small class="text-muted">No records</small></h4>
+        </div>
+    </div>
+</div>
+
+<script src="Registrations.js"></script>
+</body>
+</html>

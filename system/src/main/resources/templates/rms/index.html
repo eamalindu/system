@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>User Login | Steam RMS</title>
+    <!-- Favicon Icon -->
+    <link href="resources/images/icon-sq.png" rel="icon" type="image/png">
+    <link href="resources/css/custom.css" rel="stylesheet">
+    <!-- Bootstrap CSS file-->
+    <link href="resources/bootstrap-5.2.3/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Jquery Js File -->
+    <script src="resources/Jquery/jquery.min.js"></script>
+    <!-- Boostrap Js File -->
+    <script src="resources/bootstrap-5.2.3/js/bootstrap.bundle.js"></script>
+    <!-- Fontawesome Js Plug-in -->
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/07941f149f.js"></script>
+
+</head>
+<body>
+<div class="container-fluid vh-100 d-flex justify-content-center align-items-center">
+    <div class="custom-login-form-container">
+        <div class="container-fluid text-center p-2">
+            <a href="/"><img class="w-25 mb-2" src="resources/images/logo-sq.png" alt="logo"></a>
+            <h3 class="text-dark fw-bold">STUDENT REGISTRATION</h3>
+        </div>
+        <div class="custom-login-form mt-2 p-2 rounded-3">
+            <div class="login-card p-2">
+                <form method="post">
+                    <label class="text-dark" for="email">Enter Your Email</label>
+                    <input class="custom-input-fields mt-2" id="email" name="email" placeholder="&#xf0e0; example@domain.com" required type="text">
+                    <label class="text-dark mt-2" for="password">Enter Your Password</label>
+                    <input class="custom-input-fields mt-2" id="password" name="password" placeholder="&#xf084;  Your Password" required type="password">
+                    <p class="text-dark mt-3 btn text-start p-0 border-0" id="togglePassword"><i class="fa-regular fa-eye"></i> Show Password</p>
+                    <br/>
+                    <input class="custom-input-fields mt-0 bg-primary w-25 text-white" name="btnLogin" type="submit" value="Login" id="btnLogin">
+                    <p class="mt-2 text-end mb-0"><a class="text-dark" href="Forget-Password.html">Forget Password ?</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="resources/js/app.js"></script>
+</body>
+</html>
