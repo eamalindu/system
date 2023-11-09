@@ -53,9 +53,13 @@ public class inquiry {
     @NotNull
     private LocalDateTime timeStamp;
 
+    @ManyToOne
+    @JoinColumn(name = "source_id",referencedColumnName = "id")
+    private source sourceid;
+
+
     //add foreign keys
 
-    //source_id
     //course_id
     //inquirystatus_id
 }
