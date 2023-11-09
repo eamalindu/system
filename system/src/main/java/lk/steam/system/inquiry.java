@@ -1,6 +1,7 @@
 package lk.steam.system;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import java.time.LocalDateTime;
 
@@ -14,8 +15,12 @@ public class inquiry {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(name = "firstname",length = 20)
+    @NotNull
     private String firstName;
 
+    @Column(name = "lastname",length = 30)
+    @NotNull
     private String lastName;
 
     private Integer primaryMobileNumber;
