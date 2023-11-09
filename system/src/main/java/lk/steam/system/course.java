@@ -19,6 +19,7 @@ public class course {
     private String name; //100
 
 
+
     private String code; //5 unique
 
     private String minimumRequirment; //45
