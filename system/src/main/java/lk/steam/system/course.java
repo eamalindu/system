@@ -30,9 +30,12 @@ public class course {
     @NotNull
     private Integer duration;
 
-
+    @Column(name = "fee")
+    @NotNull
     private Integer fee;
 
+    @Column(name = "lecturehours")
+    @NotNull
     private Integer lectureHours;
 
 }
