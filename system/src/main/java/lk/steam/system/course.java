@@ -12,4 +12,6 @@ public class course {
     @Column(name = "id",unique = true)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+
 }
