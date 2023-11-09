@@ -6,6 +6,7 @@ import lombok.Data;
 @Entity
 @Table(name = "course")
 @Data
+
 public class course {
     @Id
     @Column(name = "id",unique = true)
