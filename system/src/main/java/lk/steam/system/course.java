@@ -21,4 +21,8 @@ public class course {
 
     private Integer duration;
 
+    private Integer fee;
+
+    private Integer lectureHours;
+
 }
