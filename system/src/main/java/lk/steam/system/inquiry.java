@@ -23,7 +23,10 @@ public class inquiry {
     @NotNull
     private String lastName;
 
+    @Column(name = "primarymobilenumber")
+    @NotNull
     private Integer primaryMobileNumber;
+
 
     private Integer secondaryMobileNumber;
 
