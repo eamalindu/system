@@ -1,6 +1,7 @@
 package lk.steam.system;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 @Entity
@@ -13,7 +14,10 @@ public class course {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(name = "name",length = 100)
+    @NotNull
     private String name; //100
+
 
     private String code; //5 unique
 
