@@ -63,5 +63,4 @@ public class inquiry {
 
     //add foreign keys
     //course_id
-    //inquirystatus_id
 }
