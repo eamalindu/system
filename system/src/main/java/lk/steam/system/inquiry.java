@@ -1,10 +1,17 @@
 package lk.steam.system;
 
-import java.time.LocalDate;
+import jakarta.persistence.*;
+import lombok.Data;
 import java.time.LocalDateTime;
 
+@Entity
+@Table(name = "inquiry")
+@Data
 public class inquiry {
 
+    @Id
+    @Column(name = "id",unique = true)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String firstName;
