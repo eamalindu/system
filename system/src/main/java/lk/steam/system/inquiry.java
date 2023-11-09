@@ -33,16 +33,29 @@ public class inquiry {
     @Column(name = "email")
     private String email;
 
+    @Column(name = "idtype",length = 6)
+    @NotNull
     private String idType;
 
+    @Column(name = "idvalue",length = 15)
+    @NotNull
     private String idValue;
 
+    @Column(name = "description")
+    @NotNull
     private String description;
 
+    @Column(name = "addedby",length = 30)
+    @NotNull
     private String addedBy;
 
+    @Column(name = "timestamp")
+    @NotNull
     private LocalDateTime timeStamp;
 
-    //add foreign keys now
+    //add foreign keys
 
+    //source_id
+    //course_id
+    //inquirystatus_id
 }
