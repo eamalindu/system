@@ -27,9 +27,10 @@ public class inquiry {
     @NotNull
     private Integer primaryMobileNumber;
 
-
+    @Column(name = "secondarymobilenumber")
     private Integer secondaryMobileNumber;
 
+    @Column(name = "email")
     private String email;
 
     private String idType;
