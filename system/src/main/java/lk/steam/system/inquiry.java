@@ -61,6 +61,8 @@ public class inquiry {
     @JoinColumn(name = "inquirystatus_id",referencedColumnName = "id")
     private inquiryStatus inquiryStatusid;
 
-    //add foreign keys
-    //course_id
+    @ManyToOne
+    @JoinColumn(name = "course_id",referencedColumnName = "id")
+    private course courseId;
+
 }
