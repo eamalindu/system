@@ -18,8 +18,8 @@ public class course {
     @NotNull
     private String name; //100
 
-
-
+    @Column(name = "code",length = 5,unique = true)
+    @NotNull
     private String code; //5 unique
 
     private String minimumRequirment; //45
