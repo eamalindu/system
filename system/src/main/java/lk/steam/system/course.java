@@ -26,7 +26,10 @@ public class course {
     @NotNull
     private String minimumRequirment; //45
 
+    @Column(name = "duration")
+    @NotNull
     private Integer duration;
+
 
     private Integer fee;
 
