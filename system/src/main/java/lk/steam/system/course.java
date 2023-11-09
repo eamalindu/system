@@ -22,6 +22,8 @@ public class course {
     @NotNull
     private String code; //5 unique
 
+    @Column(name ="minimumrequirements",length = 45)
+    @NotNull
     private String minimumRequirment; //45
 
     private Integer duration;
