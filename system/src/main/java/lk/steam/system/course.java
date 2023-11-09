@@ -13,5 +13,12 @@ public class course {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    private String name; //100
+
+    private String code; //5 unique
+
+    private String minimumRequirment; //45
+
+    private Integer duration;
 
 }
