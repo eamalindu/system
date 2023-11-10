@@ -9,7 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/inquiry")
+@RequestMapping(value = "/STEAM-CRM/inquiry")
 public class inquiryController {
 
     @Autowired
