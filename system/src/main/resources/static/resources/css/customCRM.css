@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.custom-login-form-container {
+    width: 30%;
+}
+
+.custom-login-form {
+    width: 100%;
+    background-color: #f2f2f2;
+    margin: 0 auto;
+}
+
+.login-card {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+.custom-input-fields {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background: #fcfcfc;
+    font-size: 1rem;
+    color: black;
+    font-family: 'Poppins', FontAwesome, sans-serif;
+
+}
+
+input[name="btnLogin"]:hover {
+    background-color: #0a58ca !important;
+}
+
+.bg-purple {
+    background-color: rebeccapurple!important;
+}
+
+.custom-active {
+    background-color: #75449d;
+}
+
+.bg-custom-white {
+    background: #f2f2f2;
+    border-bottom: 1px solid #ddd;
+}
+
+.custom-banner {
+    height: 35px;
+    padding: 2px;
+}
+
+.custom-banner h5 {
+    margin: 7px;
+    padding-left: 10px;
+    text-transform: uppercase;
+    font-size: medium;
+    font-weight: bold;
+    font-family: Arial, serif;
+}
+
+.custom-width-max-content {
+    width: max-content;
+    padding: 0.5em;
+}
+
+.custom-width-max-content:hover {
+    background-color: #6c449d;
+    cursor: pointer;
+}
+
+.custom-active:hover {
+    background-color: #6c449d;
+}
+
+/*custom Alert css*/
+.custom-alert {
+    z-index: 1090 !important;
+    position: fixed!important;
+    top: 5px;
+    right: 10px;
+    border-color: transparent!important;
+}
+
+label.required::after {
+    content: "\002a";
+    color: red;
+    margin-left: 3px;
+    bottom: 2px;
+    position: relative;
+}
+.form-control:focus {
+    border-color: rebeccapurple!important;
+}
+
+input,.form-control {
+    box-shadow: none!important;
+}
+
+.table td{
+    padding: 10px!important;
+    color: #444;
+    border-color: rgba(0,0,0,0.05)!important;
+}
+.text-purple{
+    color: rebeccapurple!important;
+}
+.table-group-divider{
+    border-top:2px solid rgba(0,0,0,0.05)!important;
+}
+.btn-close-red{
+    background: red!important;
+    border-color: red!important;
+}
+
+
+.chosen-container-single .chosen-single {
+    padding: 6px 0 0 10px!important;
+    height: 38px!important;
+    border-radius: 0!important;
+    background: #eee;
+    background-clip: padding-box!important;
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+}
+.chosen-container-single .chosen-single div b {
+    position: relative;
+    top: 7px!important;
+}
+
+/*Custom validator for select*/
+select:invalid {
+    height: 0px !important;
+    opacity: 0 !important;
+    position: absolute !important;
+    display: flex !important;
+}
+
+select:invalid[multiple] {
+    margin-top: 15px !important;
+}
+
+/* Custom css for table*/
+.custom-table th {
+    background-color: rebeccapurple;
+    padding: 5px;
+    color: white;
+    border: 1px solid white;
+    text-align: center;
+    font-family: Arial, serif !important;
+    text-transform: uppercase;
+    font-size: medium;
+
+}
+
+.custom-table td {
+    background-color: white;
+    padding: 10px;
+    color: black;
+    border: 1px solid lightgrey;
+    text-align: center;
+}
+
+.custom-table {
+    width: 100%;
+}
+.custom-table tr:hover td{
+    background: rgba(111, 66, 193, 0.31)!important;
+    border: 1px solid white;
+    color: white;
+}
+
+
+/*Validated chosen select*/
+.select-validated{
+    background: rgba(0,255,0,0.2)!important;
+    border: 1px solid green!important;
+}
+
+/*Custom css for daterangepicker*/
+.daterangepicker .ranges li:hover, .daterangepicker .ranges li.active {
+    background-color: #593196;
+    color: white;
+}
+.applyBtn{
+    background: rebeccapurple;
+    border-color: rebeccapurple;
+}
+.applyBtn:hover{
+    background: #6c449d;
+    border-color: rebeccapurple;
+}
+.daterangepicker td.active, .daterangepicker td.active:hover {
+    background-color: rebeccapurple;
+}
+
+/*Medium devices responsive*/
+@media (max-width: 870px) {
+    .custom-login-form-container {
+        width: 65%;
+    }
+
+}
+
+/*Small devices responsive*/
+@media (max-width: 600px) {
+    .custom-login-form-container {
+        width: 95%;
+    }
+}
