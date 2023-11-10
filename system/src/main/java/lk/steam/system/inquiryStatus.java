@@ -1,11 +1,16 @@
 package lk.steam.system;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "inquirystatus")
+
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class inquiryStatus {
 
     @Id
