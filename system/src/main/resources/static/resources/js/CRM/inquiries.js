@@ -39,3 +39,21 @@ $(document).ready(function () {
 
 });
 
+
+window.addEventListener('load', () => {
+
+    refreshTable();
+
+
+});
+
+const refreshTable = () => {
+
+    inquiriesWithFollowUps = [];
+
+    displayPropertyList = [];
+
+    fillDataIntoTable();
+
+}
+
