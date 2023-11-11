@@ -18,4 +18,15 @@ public class followUp {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    private String type;
+    private String feeling;
+    private String confirmed;
+    private String content;
+    private String contactTime;
+    private String addedBy;
+    private String followUpTime;
+
+    //foreign key
+
+
 }
