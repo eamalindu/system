@@ -15,12 +15,7 @@ public class inquiryController {
     @Autowired
     private inquiryDAO inquiryDAO;
 
-    @GetMapping
-    public ModelAndView inquiryUI(){
-        ModelAndView inquiryView = new ModelAndView();
-        inquiryView.setViewName("crm/Inquiries.html");
-        return inquiryView;
-    }
+
 
     //data returnType => 'produces ="application/JSON"'
     //it can be either JSON,Text and XML
