@@ -65,7 +65,7 @@ const fillDataIntoTable = (tabledID, dataList, displayPropertyList,editFunction,
 
         //setting attribute to btnEdit so that it will trigger the offcanvas
         btnEdit.setAttribute('data-bs-target','#offcanvasInquirySheet');
-        btnEdit.setAttribute('data-bs-toggle','#offcanvas');
+        btnEdit.setAttribute('data-bs-toggle','offcanvas');
 
        // btnDelete.classList.add('btn', 'custom-btn', 'bg-danger', 'ms-2');
         //btnView.classList.add('btn', 'custom-btn', 'bg-success', 'ms-2');

@@ -110,6 +110,7 @@ const getInquiryStatus =(ob) =>{
 
 const rowEdit = (ob,rowIndex)=>{
 
+
 }
 const rowPrint = (ob,rowIndex)=>{
 
