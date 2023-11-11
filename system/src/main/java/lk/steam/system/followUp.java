@@ -24,11 +24,17 @@ public class followUp {
     @Column(name = "type")
     @NotNull
     private String type;
+
     private String feeling;
+
     private String confirmed;
+
     private String content;
+
     private LocalDateTime contactTime;
+
     private String addedBy;
+
     private LocalDateTime followUpTime;
 
     //foreign key
