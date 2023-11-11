@@ -14,7 +14,7 @@ public class followUpController {
     private followUpDAO followUpDAO;
 
     @GetMapping(value = "/findall",produces = "application/json")
-    public List<inquiry> findAll(){
-        return inquiryDAO.findAll();
+    public List<followUp> findAll(){
+        return followUpDAO.findAll();
     }
 }
