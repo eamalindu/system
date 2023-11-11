@@ -110,6 +110,7 @@ const getInquiryStatus =(ob) =>{
 
 const rowEdit = (ob,rowIndex)=>{
 
+    document.querySelector('#inquirySheetCourse').value = ob.inquiryId.courseId.code;
 
 }
 const rowPrint = (ob,rowIndex)=>{
