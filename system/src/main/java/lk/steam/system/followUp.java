@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name = "followup")
 
@@ -22,9 +24,9 @@ public class followUp {
     private String feeling;
     private String confirmed;
     private String content;
-    private String contactTime;
+    private LocalDateTime contactTime;
     private String addedBy;
-    private String followUpTime;
+    private LocalDateTime followUpTime;
 
     //foreign key
 
