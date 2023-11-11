@@ -56,31 +56,37 @@ const fillDataIntoTable = (tabledID, dataList, displayPropertyList,editFunction,
 
         //there are 3 buttons, so create them as well
         const btnEdit = document.createElement('button');
-        const btnDelete = document.createElement('button');
-        const btnView = document.createElement('button');
+
+        //const btnDelete = document.createElement('button');
+        //const btnView = document.createElement('button');
 
         //add relevant classes for the created buttons
-        btnEdit.classList.add('btn', 'custom-btn', 'bg-warning');
-        btnDelete.classList.add('btn', 'custom-btn', 'bg-danger', 'ms-2');
-        btnView.classList.add('btn', 'custom-btn', 'bg-success', 'ms-2');
+        btnEdit.classList.add('btn','p-0', 'fw-bold', 'text-purple');
+
+       // btnDelete.classList.add('btn', 'custom-btn', 'bg-danger', 'ms-2');
+        //btnView.classList.add('btn', 'custom-btn', 'bg-success', 'ms-2');
         //Alternative Method
         //btnEdit.ClassName = 'btn custom-btn bg-warning';
 
         //add text,icons using innerHTML for each button
-        btnEdit.innerHTML = '<i class="fa-solid fa-pen-to-square"></i>';
-        btnDelete.innerHTML = '<i class="fa-solid fa-trash"></i>';
-        btnView.innerHTML = '<i class="fa-solid fa-eye"></i>';
+        btnEdit.innerHTML = 'View';
+
+        //btnDelete.innerHTML = '<i class="fa-solid fa-trash"></i>';
+        //btnView.innerHTML = '<i class="fa-solid fa-eye"></i>';
 
         //onlick function for buttons
         btnEdit.onclick = ()=>{
             editFunction(element,index);
         }
+        /*
         btnView.onclick = () =>{
            printFunction(element,index);
         }
         btnDelete.onclick = ()=>{
             deleteFunction(element,index);
         }
+
+         */
 
         //template -> element.columnName
         /*
@@ -96,8 +102,8 @@ const fillDataIntoTable = (tabledID, dataList, displayPropertyList,editFunction,
 
         //append buttons to the td that's dedicated for the buttons
         tdModify.appendChild(btnEdit);
-        tdModify.appendChild(btnDelete);
-        tdModify.appendChild(btnView);
+        //tdModify.appendChild(btnDelete);
+        //tdModify.appendChild(btnView);
 
 
         /* tr.appendChild(tdFullName);

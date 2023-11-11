@@ -47,13 +47,73 @@ window.addEventListener('load', () => {
 
 });
 
+
 const refreshTable = () => {
 
+    //get data with ajax and database
     inquiriesWithFollowUps = [];
+    $.ajax("/STEAM-CRM/followup/findall", {
+        async: false,
+        type: "Get",
+        contentType: "json",
+        success: function (data) {
+            console.log(data);
+            inquiriesWithFollowUps = data;
+        },
+        error: function (resOb) {
+            alert("error" + resOb);
+        }
 
-    displayPropertyList = [];
+    });
 
-    fillDataIntoTable();
+    displayPropertyList = [
+        {property: getSource,dataType: 'function'},
+        {property: getCourse,dataType: 'function'},
+        {property: getFirstName,dataType: 'function'},
+        {property: getMobileNumber,dataType: 'function'},
+        {property: 'feeling',dataType: 'text'},
+        {property: 'confirmed',dataType: 'text'},
+        {property: 'addedBy',dataType: 'text'},
+        {property: 'contactTime',dataType: 'text'},
+        {property: getInquiryStatus,dataType: 'function'}
+
+    ];
+
+    fillDataIntoTable(tblInquiry,inquiriesWithFollowUps,displayPropertyList,rowEdit,rowPrint,rowDelete);
 
 }
 
+const getInquiryId = (ob) =>{
+    return ob.inquiryId.id;
+
+}
+const getSource = (ob) => {
+    return ob.inquiryId.sourceid.name;
+};
+
+const getCourse = (ob) =>{
+    return ob.inquiryId.courseId.code;
+}
+
+const getFirstName = (ob) =>{
+    return ob.inquiryId.firstName;
+}
+
+const getMobileNumber = (ob) =>{
+    return ob.inquiryId.primaryMobileNumber;
+}
+
+const getInquiryStatus =(ob) =>{
+
+    return ob.inquiryId.inquiryStatusid.name;
+}
+
+const rowEdit = (ob,rowIndex)=>{
+
+}
+const rowPrint = (ob,rowIndex)=>{
+
+}
+const rowDelete = (ob,rowIndex)=>{
+
+}
