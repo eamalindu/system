@@ -110,7 +110,17 @@ const getInquiryStatus =(ob) =>{
 
 const rowEdit = (ob,rowIndex)=>{
 
-    document.querySelector('#inquirySheetCourse').value = ob.inquiryId.courseId.code;
+    document.querySelector('#inquirySheetCourse').value = ob.inquiryId.courseId.name;
+    document.querySelector('#inquirySheetSource').value = ob.inquiryId.sourceid.name;
+
+    document.querySelector('#inquirySheetFirstName').value = ob.inquiryId.firstName;
+    document.querySelector('#inquirySheetLastName').value = ob.inquiryId.lastName;
+    document.querySelector('#inquirySheetPrimaryMobile').value = ob.inquiryId.primaryMobileNumber;
+
+    document.querySelector('#inquirySheetEmail').value = ob.inquiryId.email;
+
+
+
 
 }
 const rowPrint = (ob,rowIndex)=>{
