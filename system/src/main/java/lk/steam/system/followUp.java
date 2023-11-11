@@ -29,6 +29,9 @@ public class followUp {
     private LocalDateTime followUpTime;
 
     //foreign key
+    @ManyToOne
+    @JoinColumn(name = "inquiry_id",referencedColumnName = "id")
+    private inquiry inquiryId;
 
 
 }
