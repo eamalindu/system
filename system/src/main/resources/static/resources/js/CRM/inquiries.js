@@ -36,4 +36,6 @@ $(document).ready(function () {
     $("#inquiryCourse").chosen().change(function() {
         $("#inquiryCourse_chosen .chosen-single").addClass('select-validated');
     });
+
 });
+
