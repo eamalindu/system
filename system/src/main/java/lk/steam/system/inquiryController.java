@@ -16,7 +16,6 @@ public class inquiryController {
     private inquiryDAO inquiryDAO;
 
 
-
     //data returnType => 'produces ="application/JSON"'
     //it can be either JSON,Text and XML
 
