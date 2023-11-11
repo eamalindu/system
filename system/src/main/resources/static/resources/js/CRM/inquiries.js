@@ -110,6 +110,8 @@ const getInquiryStatus =(ob) =>{
 
 const rowEdit = (ob,rowIndex)=>{
 
+    document.querySelector('#inquirySheetId').innerText = getInquiryId(ob);
+
     document.querySelector('#inquirySheetCourse').value = ob.inquiryId.courseId.name;
     document.querySelector('#inquirySheetSource').value = ob.inquiryId.sourceid.name;
 
