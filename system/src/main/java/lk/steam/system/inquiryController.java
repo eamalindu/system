@@ -48,6 +48,8 @@ public class inquiryController {
         return inquiryDAO.findDroppedInquiry();
     }
 
+
+
     @GetMapping(value = "/test",produces = "application/json")
     public List<inquiry> test(){
         return inquiryDAO.test();
