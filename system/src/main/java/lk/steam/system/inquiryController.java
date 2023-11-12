@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/STEAM-CRM/inquiry")
+@RequestMapping(value = "/STEAM-CRM/Inquiry")
 public class inquiryController {
 
     @Autowired
@@ -48,5 +48,9 @@ public class inquiryController {
         return inquiryDAO.findDroppedInquiry();
     }
 
+    @GetMapping(value = "/test",produces = "application/json")
+    public List<inquiry> test(){
+        return inquiryDAO.test();
+    }
 
 }
