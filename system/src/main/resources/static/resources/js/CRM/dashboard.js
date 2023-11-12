@@ -40,3 +40,11 @@ $(document).ready(function () {
         $("#inquiryFollowUpType_chosen .chosen-single").addClass('select-validated');
     });
 });
+
+window.addEventListener('load', () => {
+
+    refreshTable();
+
+
+});
+

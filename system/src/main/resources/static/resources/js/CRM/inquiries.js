@@ -74,7 +74,7 @@ const refreshTable = () => {
         {property: 'feeling',dataType: 'text'},
         {property: 'confirmed',dataType: 'text'},
         {property: 'addedBy',dataType: 'text'},
-        {property: 'contactTime',dataType: 'text'},
+        {property: 'nextFollowup',dataType: 'text'},
         {property: getInquiryStatus,dataType: 'function'}
 
     ];

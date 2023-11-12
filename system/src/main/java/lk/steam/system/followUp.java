@@ -37,9 +37,9 @@ public class followUp {
     @NotNull
     private String content;
 
-    @Column(name = "contacttime")
+    @Column(name = "nextfollowup")
     @NotNull
-    private LocalDateTime contactTime;
+    private LocalDateTime nextFollowup;
 
     @Column(name = "addedby")
     @NotNull
