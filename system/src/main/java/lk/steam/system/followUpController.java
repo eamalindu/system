@@ -14,12 +14,6 @@ public class followUpController {
     @Autowired
     private followUpDAO followUpDAO;
 
-    @GetMapping
-    public ModelAndView inquiryUI(){
-        ModelAndView inquiryView = new ModelAndView();
-        inquiryView.setViewName("crm/Inquiries.html");
-        return inquiryView;
-    }
 
     @GetMapping(value = "/findall",produces = "application/json")
     public List<followUp> findAll(){
