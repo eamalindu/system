@@ -124,6 +124,8 @@ const rowEdit = (ob,rowIndex)=>{
 
     if(ob.inquiryId.email!==null){
         document.querySelector('#inquirySheetEmail').value = ob.inquiryId.email;
+        document.querySelector('#inquirySheetEmail').classList.remove('text-muted');
+
     }
     else
     {
@@ -133,6 +135,8 @@ const rowEdit = (ob,rowIndex)=>{
 
     if(ob.inquiryId.secondaryMobileNumber !== null){
         document.querySelector('#inquirySheetSecondaryMobile').value =ob.inquiryId.secondaryMobileNumber ;
+        document.querySelector('#inquirySheetSecondaryMobile').classList.remove('text-muted');
+
     }else{
         document.querySelector('#inquirySheetSecondaryMobile').value = '-- Not Provided --';
         document.querySelector('#inquirySheetSecondaryMobile').classList.add('text-muted');
