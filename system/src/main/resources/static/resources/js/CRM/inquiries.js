@@ -120,6 +120,10 @@ const rowEdit = (ob,rowIndex)=>{
     document.querySelector('#inquirySheetPrimaryMobile').value = ob.inquiryId.primaryMobileNumber;
 
     document.querySelector('#inquirySheetEmail').value = ob.inquiryId.email;
+    document.querySelector('#inquirySheetIdValue').value = ob.inquiryId.Value;
+    document.querySelector('#inquirySheetNextFollowUp').value = ob.followUpTime;
+    document.querySelector('#inquirySheetDescription').value = ob.inquiryId.description;
+
 
 
 
