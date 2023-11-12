@@ -119,8 +119,18 @@ const rowEdit = (ob,rowIndex)=>{
     document.querySelector('#inquirySheetLastName').value = ob.inquiryId.lastName;
     document.querySelector('#inquirySheetPrimaryMobile').value = ob.inquiryId.primaryMobileNumber;
 
-    document.querySelector('#inquirySheetEmail').value = ob.inquiryId.email;
-    document.querySelector('#inquirySheetIdValue').value = ob.inquiryId.Value;
+    //email is an optional value therefore it might contain null as the value
+    //instead of displaying nothing, we can use if condition to set a value
+
+    if(ob.inquiryId.email!==null){
+        document.querySelector('#inquirySheetEmail').value = ob.inquiryId.email;
+    }
+    else
+    {
+        document.querySelector('#inquirySheetEmail').value = '- No Value -';
+    }
+
+    document.querySelector('#inquirySheetIdValue').value = ob.inquiryId.idValue;
     document.querySelector('#inquirySheetNextFollowUp').value = ob.followUpTime;
     document.querySelector('#inquirySheetDescription').value = ob.inquiryId.description;
 
