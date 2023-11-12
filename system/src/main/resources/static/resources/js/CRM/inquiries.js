@@ -139,7 +139,7 @@ const rowEdit = (ob,rowIndex)=>{
     document.querySelector('#inquirySheetIdValue').value = ob.inquiryId.idValue;
 
     //showing date and time with iSO Standarad
-    document.querySelector('#inquirySheetNextFollowUp').value = (ob.followUpTime).replace('T', ' ');
+    document.querySelector('#inquirySheetNextFollowUp').value = (ob.inquiryId.contactTime).replace('T', ' ');
     document.querySelector('#inquirySheetDescription').value = ob.inquiryId.description;
 
 

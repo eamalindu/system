@@ -29,12 +29,12 @@ public class inquiry {
     @NotNull
     private String lastName;
 
-    @Column(name = "primarymobilenumber")
+    @Column(name = "primarymobilenumber",length = 10)
     @NotNull
-    private Integer primaryMobileNumber;
+    private String primaryMobileNumber;
 
-    @Column(name = "secondarymobilenumber")
-    private Integer secondaryMobileNumber;
+    @Column(name = "secondarymobilenumber",length = 10)
+    private String secondaryMobileNumber;
 
     @Column(name = "email")
     private String email;
