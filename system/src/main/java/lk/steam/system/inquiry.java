@@ -47,6 +47,10 @@ public class inquiry {
     @NotNull
     private String idValue;
 
+    @Column(name = "contacttime")
+    @NotNull
+    private LocalDateTime contactTime;
+
     @Column(name = "description")
     @NotNull
     private String description;
