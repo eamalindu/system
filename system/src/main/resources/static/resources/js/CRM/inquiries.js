@@ -112,7 +112,7 @@ const rowEdit = (ob,rowIndex)=>{
 
     document.querySelector('#inquirySheetId').innerText = getInquiryId(ob);
 
-    document.querySelector('#inquirySheetCourse').value = ob.inquiryId.courseId.name;
+    document.querySelector('#inquirySheetCourse').value = ob.inquiryId.courseId.code;
     document.querySelector('#inquirySheetSource').value = ob.inquiryId.sourceid.name;
 
     document.querySelector('#inquirySheetFirstName').value = ob.inquiryId.firstName;
@@ -127,11 +127,19 @@ const rowEdit = (ob,rowIndex)=>{
     }
     else
     {
-        document.querySelector('#inquirySheetEmail').value = '- No Value -';
+        document.querySelector('#inquirySheetEmail').value = '-- Not Provided --';
+    }
+
+    if(ob.inquiryId.secondaryMobileNumber !== null){
+        document.querySelector('#inquirySheetSecondaryMobile').value =ob.inquiryId.secondaryMobileNumber ;
+    }else{
+        document.querySelector('#inquirySheetSecondaryMobile').value = '-- Not Provided --';
     }
 
     document.querySelector('#inquirySheetIdValue').value = ob.inquiryId.idValue;
-    document.querySelector('#inquirySheetNextFollowUp').value = ob.followUpTime;
+
+    //showing date and time with iSO Standarad
+    document.querySelector('#inquirySheetNextFollowUp').value = new Date(ob.followUpTime);
     document.querySelector('#inquirySheetDescription').value = ob.inquiryId.description;
 
 
