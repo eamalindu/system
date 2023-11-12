@@ -128,12 +128,14 @@ const rowEdit = (ob,rowIndex)=>{
     else
     {
         document.querySelector('#inquirySheetEmail').value = '-- Not Provided --';
+        document.querySelector('#inquirySheetEmail').classList.add('fw-bold','text-muted');
     }
 
     if(ob.inquiryId.secondaryMobileNumber !== null){
         document.querySelector('#inquirySheetSecondaryMobile').value =ob.inquiryId.secondaryMobileNumber ;
     }else{
         document.querySelector('#inquirySheetSecondaryMobile').value = '-- Not Provided --';
+        document.querySelector('#inquirySheetSecondaryMobile').classList.add('fw-bold','text-muted');
     }
 
     document.querySelector('#inquirySheetIdValue').value = ob.inquiryId.idValue;
