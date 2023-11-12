@@ -52,7 +52,7 @@ const refreshTable = () => {
 
     //get data with ajax and database
     inquiriesWithFollowUps = [];
-    $.ajax("/STEAM-CRM/followup/findall", {
+    $.ajax("/STEAM-CRM/Followup/findall", {
         async: false,
         type: "Get",
         contentType: "json",

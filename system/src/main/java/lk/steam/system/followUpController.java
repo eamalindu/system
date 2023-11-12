@@ -9,7 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/STEAM-CRM/followup")
+@RequestMapping(value = "/STEAM-CRM/Followup")
 public class followUpController {
     @Autowired
     private followUpDAO followUpDAO;
@@ -19,4 +19,6 @@ public class followUpController {
     public List<followUp> findAll(){
         return followUpDAO.findAll();
     }
+
+
 }
