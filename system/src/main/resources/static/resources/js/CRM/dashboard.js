@@ -48,3 +48,37 @@ window.addEventListener('load', () => {
 
 });
 
+const refreshTable=() =>{
+
+    //get data from the database with ajax
+    newInquiries=[];
+    $.ajax("/STEAM-CRM/Inquiry/newInquiry", {
+        async: false,
+        type: "Get",
+        contentType: "json",
+        success: function (data) {
+            console.log(data);
+            newInquiries = data;
+        },
+        error: function (resOb) {
+            alert("error" + resOb);
+        }
+
+    });
+
+    //inquiry id
+    //course code
+    //source
+    //Name
+    //action
+    displayPropertyList = [
+        {property:'id',dataType:'text'},
+        {property:getCourse,dataType:'function'},
+        {property:getCourse,dataType:'function'},
+        {property:getSource,dataType:'function'},
+        {property:'firstName',dataType:'text'}
+    ];
+
+    fillDataIntoTable(tblInquiryPool,newInquiries,displayPropertyList,rowEdit,rowPrint,rowDelete);
+
+}
