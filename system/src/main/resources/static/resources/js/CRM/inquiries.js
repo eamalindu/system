@@ -67,6 +67,7 @@ const refreshTable = () => {
     });
 
     displayPropertyList = [
+        {property: getInquiryId,dataType: 'function'},
         {property: getSource,dataType: 'function'},
         {property: getCourse,dataType: 'function'},
         {property: getFirstName,dataType: 'function'},
