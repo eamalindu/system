@@ -70,7 +70,7 @@ const refreshTable = () => {
         {property: 'id', dataType: 'text'},
         {property: getCourse, dataType: 'function'},
         {property: getSource, dataType: 'function'},
-        {property: getFullName, dataType: 'text'}
+        {property: getFullName, dataType: 'function'}
     ];
 
     fillDataIntoTable(tblInquiryPool, newInquiries, displayPropertyList, rowEdit, rowPrint, rowDelete);
@@ -82,11 +82,44 @@ const getCourse = (ob) => {
 }
 
 const getSource = (ob) => {
-    return ob.sourceid.name;
+    switch (ob.sourceid.name) {
+        case "Cold Calling":
+            console.log("You are using cold calling");
+            break;
+        case "Facebook":
+            console.log("You are using Facebook");
+            break;
+        case "Leaflets":
+            console.log("You are using leaflets");
+            break;
+        case "Letter Campaign":
+            console.log("You are using a letter campaign");
+            break;
+        case "Personal Contact":
+            console.log("You are using personal contact");
+            break;
+        case "Phone Call":
+            console.log("You are using phone calls");
+            break;
+        case "Seminar":
+            console.log("You are using seminars");
+            break;
+        case "SMS Campaign":
+            console.log("You are using an SMS campaign");
+            break;
+        case "Walk In":
+            console.log("You are using walk-ins");
+            break;
+        case "WhatsApp":
+            console.log("You are using WhatsApp");
+            break;
+        default:
+            console.log("Invalid marketing method");
+    }
 
 }
 
-const getFullName = ()=>{
+const getFullName = (ob)=>{
     firstName = ob.firstName;
     lastName = ob.lastName;
 
