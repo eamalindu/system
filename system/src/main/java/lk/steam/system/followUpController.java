@@ -20,5 +20,9 @@ public class followUpController {
         return followUpDAO.findAll();
     }
 
+    @GetMapping(value = "/latestFollowup",produces = "application/json")
+    public List<followUp> latestFollowupForEachInquiry(){
+        return followUpDAO.latestFollowupForEachInquiry();
+    }
 
 }
