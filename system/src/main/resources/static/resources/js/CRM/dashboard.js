@@ -66,6 +66,31 @@ const refreshTable = () => {
 
     });
 
+    /*
+    scheduledInquiries = [];
+    $.ajax("/STEAM-CRM/Inquiry/test2", {
+        async: false,
+        type: "Get",
+        contentType: "json",
+        success: function (data) {
+            console.log(data);
+            scheduledInquiries = data;
+        },
+        error: function (resOb) {
+            alert("error" + resOb);
+        }
+
+    });
+
+     displayPropertyList2=[
+        {property:'inquiry_id',dataType:'text'},
+        {property:'course_id',dataType:'text'},
+        {property:'source_id',dataType:'text'},
+        {property:'firstname',dataType:'text'},
+    ];
+    fillDataIntoTable(tblScheduledPool, scheduledInquiries, displayPropertyList2, rowEdit, rowPrint, rowDelete);
+     */
+
     displayPropertyList = [
         {property: 'id', dataType: 'text'},
         {property: getCourse, dataType: 'function'},
@@ -73,7 +98,10 @@ const refreshTable = () => {
         {property: getFullName, dataType: 'function'}
     ];
 
+
+
     fillDataIntoTable(tblInquiryPool, newInquiries, displayPropertyList, rowEdit, rowPrint, rowDelete);
+
 
 }
 
