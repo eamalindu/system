@@ -70,7 +70,7 @@ const refreshTable = () => {
         {property: 'id', dataType: 'text'},
         {property: getCourse, dataType: 'function'},
         {property: getSource, dataType: 'function'},
-        {property: 'firstName', dataType: 'text'}
+        {property: getFullName, dataType: 'text'}
     ];
 
     fillDataIntoTable(tblInquiryPool, newInquiries, displayPropertyList, rowEdit, rowPrint, rowDelete);
@@ -86,6 +86,13 @@ const getSource = (ob) => {
 
 }
 
+const getFullName = ()=>{
+    firstName = ob.firstName;
+    lastName = ob.lastName;
+
+    return firstName+" "+lastName;
+
+}
 const rowEdit = (ob,Index) =>{
 
 }
