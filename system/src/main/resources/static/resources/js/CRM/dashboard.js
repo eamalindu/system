@@ -28,15 +28,15 @@ $(document).ready(function () {
     });
 
     //validation chosen select (for new inquiry)
-    $("#inquirySource").chosen().change(function() {
+    $("#inquirySource").chosen().change(function () {
         $("#inquirySource_chosen .chosen-single").addClass('select-validated');
     });
-    $("#inquiryCourse").chosen().change(function() {
+    $("#inquiryCourse").chosen().change(function () {
         $("#inquiryCourse_chosen .chosen-single").addClass('select-validated');
     });
 
     //validation for chosen select (for inquiry follow-up)
-    $("#inquiryFollowUpType").chosen().change(function() {
+    $("#inquiryFollowUpType").chosen().change(function () {
         $("#inquiryFollowUpType_chosen .chosen-single").addClass('select-validated');
     });
 });
@@ -48,10 +48,10 @@ window.addEventListener('load', () => {
 
 });
 
-const refreshTable=() =>{
+const refreshTable = () => {
 
     //get data from the database with ajax
-    newInquiries=[];
+    newInquiries = [];
     $.ajax("/STEAM-CRM/Inquiry/newInquiry", {
         async: false,
         type: "Get",
@@ -67,17 +67,21 @@ const refreshTable=() =>{
     });
 
     displayPropertyList = [
-        {property:'id',dataType:'text'},
-        {property:getCourse,dataType:'function'},
-        {property:getCourse,dataType:'function'},
-        {property:getSource,dataType:'function'},
-        {property:'firstName',dataType:'text'}
+        {property: 'id', dataType: 'text'},
+        {property: getCourse, dataType: 'function'},
+        {property: getSource, dataType: 'function'},
+        {property: 'firstName', dataType: 'text'}
     ];
 
-    fillDataIntoTable(tblInquiryPool,newInquiries,displayPropertyList,rowEdit,rowPrint,rowDelete);
+    fillDataIntoTable(tblInquiryPool, newInquiries, displayPropertyList, rowEdit, rowPrint, rowDelete);
 
 }
 
-const getCourse = (ob)=>{
+const getCourse = (ob) => {
     return courseId.code;
+}
+
+const getSource = (ob) => {
+    return sourceid.name;
+
 }
