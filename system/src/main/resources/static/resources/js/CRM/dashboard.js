@@ -78,11 +78,11 @@ const refreshTable = () => {
 }
 
 const getCourse = (ob) => {
-    return courseId.code;
+    return ob.courseId.code;
 }
 
 const getSource = (ob) => {
-    return sourceid.name;
+    return ob.sourceid.name;
 
 }
 
