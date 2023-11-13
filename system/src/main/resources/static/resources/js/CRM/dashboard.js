@@ -66,11 +66,6 @@ const refreshTable=() =>{
 
     });
 
-    //inquiry id
-    //course code
-    //source
-    //Name
-    //action
     displayPropertyList = [
         {property:'id',dataType:'text'},
         {property:getCourse,dataType:'function'},
@@ -81,4 +76,8 @@ const refreshTable=() =>{
 
     fillDataIntoTable(tblInquiryPool,newInquiries,displayPropertyList,rowEdit,rowPrint,rowDelete);
 
+}
+
+const getCourse = (ob)=>{
+    return courseId.code;
 }
