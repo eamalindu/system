@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping(value = "/STEAM-CRM/Inquiry")
@@ -55,7 +56,7 @@ public class inquiryController {
 
 
     @GetMapping(value = "/test",produces = "application/json")
-    public List<inquiry> test(){
+    public List<Map<String,Object>> test(){
         return inquiryDAO.test();
     }
 
