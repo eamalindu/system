@@ -84,54 +84,64 @@ const getCourse = (ob) => {
 const getSource = (ob) => {
     switch (ob.sourceid.name) {
         case "Cold Calling":
-            console.log("You are using cold calling");
+            return "<i class=\"fa-solid fa-table\"></i>";
             break;
+
         case "Facebook":
-            console.log("You are using Facebook");
+            return "<i class=\"fa-brands fa-facebook-f\"></i>";
             break;
+
         case "Leaflets":
-            console.log("You are using leaflets");
+            return;
             break;
+
         case "Letter Campaign":
-            console.log("You are using a letter campaign");
+            return;
             break;
+
         case "Personal Contact":
-            console.log("You are using personal contact");
+            return;
             break;
+
         case "Phone Call":
-            console.log("You are using phone calls");
+            return;
             break;
+
         case "Seminar":
-            console.log("You are using seminars");
+            return;
             break;
+
         case "SMS Campaign":
-            console.log("You are using an SMS campaign");
+            return;
             break;
+
         case "Walk In":
-            console.log("You are using walk-ins");
+            return;
             break;
+
         case "WhatsApp":
-            console.log("You are using WhatsApp");
+            return;
             break;
+
         default:
             console.log("Invalid marketing method");
     }
 
 }
 
-const getFullName = (ob)=>{
+const getFullName = (ob) => {
     firstName = ob.firstName;
     lastName = ob.lastName;
 
-    return firstName+" "+lastName;
+    return firstName + " " + lastName;
 
 }
-const rowEdit = (ob,Index) =>{
+const rowEdit = (ob, Index) => {
 
 }
-const rowPrint = (ob,Index) =>{
+const rowPrint = (ob, Index) => {
 
 }
-const rowDelete =(ob,Index)=>{
+const rowDelete = (ob, Index) => {
 
 }
