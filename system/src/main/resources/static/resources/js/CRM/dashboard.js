@@ -85,3 +85,13 @@ const getSource = (ob) => {
     return sourceid.name;
 
 }
+
+const rowEdit = (ob,Index) =>{
+
+}
+const rowPrint = (ob,Index) =>{
+
+}
+const rowDelete =(ob,Index)=>{
+
+}
