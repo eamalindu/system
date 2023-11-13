@@ -92,39 +92,36 @@ const getSource = (ob) => {
             break;
 
         case "Leaflets":
-            return;
+            return "<i class=\"fa-solid fa-note-sticky\"></i>";
             break;
 
         case "Letter Campaign":
-            return;
+            return "<i class=\"fa-solid fa-envelope\"></i>";
             break;
 
         case "Personal Contact":
-            return;
+            return "<i class=\"fa-solid fa-person\"></i>";
             break;
 
         case "Phone Call":
-            return;
+            return "<i class=\"fa-solid fa-phone\"></i>";
             break;
 
         case "Seminar":
-            return;
+            return "<i class=\"fa-solid fa-person-chalkboard\"></i>";
             break;
 
         case "SMS Campaign":
-            return;
+            return "<i class=\"fa-solid fa-comment-sms\"></i>";
             break;
 
         case "Walk In":
-            return;
+            return "<i class=\"fa-solid fa-person-walking\"></i>";
             break;
 
         case "WhatsApp":
-            return;
+            return "<i class=\"fa-brands fa-whatsapp\"></i>";
             break;
-
-        default:
-            console.log("Invalid marketing method");
     }
 
 }
