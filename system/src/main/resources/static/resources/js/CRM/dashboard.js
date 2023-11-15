@@ -57,7 +57,7 @@ window.addEventListener('load', () => {
         $("#inquiryFollowUpType_chosen .chosen-single").addClass('select-validated');
     });
 
-
+    //external libraries initialization end
 });
 
 
@@ -65,20 +65,7 @@ window.addEventListener('load', () => {
 const refreshInquiryPoolTable = () => {
 
     //get data from the database with ajax
-    newInquiries = [];
-    $.ajax("/inquiry/newInquiry", {
-        async: false,
-        type: "Get",
-        contentType: "json",
-        success: function (data) {
-            console.log(data);
-            newInquiries = data;
-        },
-        error: function (resOb) {
-            alert("error" + resOb);
-        }
-
-    });
+    newInquiries = ajaxGetRequest("/inquiry/findall");
 
     /*
     scheduledInquiries = [];
@@ -105,14 +92,14 @@ const refreshInquiryPoolTable = () => {
     fillDataIntoTable(tblScheduledPool, scheduledInquiries, displayPropertyList2, rowEdit, rowPrint, rowDelete);
      */
 
-    displayPropertyList = [
+    displayPropertyListForInquiryPool = [
         {property: 'inquiryNumber', dataType: 'text'},
         {property: getCourse, dataType: 'function'},
         {property: getSource, dataType: 'function'},
         {property: getFullName, dataType: 'function'}
     ];
 
-    fillDataIntoTable(tblInquiryPool, newInquiries, displayPropertyList, rowEdit, rowPrint, rowDelete);
+    fillDataIntoTable(tblInquiryPool, newInquiries, displayPropertyListForInquiryPool, rowEdit, rowPrint, rowDelete);
 
 
 }
