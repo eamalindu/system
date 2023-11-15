@@ -92,7 +92,7 @@ const refreshTable = () => {
      */
 
     displayPropertyList = [
-        {property: 'id', dataType: 'text'},
+        {property: 'inquiryNumber', dataType: 'text'},
         {property: getCourse, dataType: 'function'},
         {property: getSource, dataType: 'function'},
         {property: getFullName, dataType: 'function'}
