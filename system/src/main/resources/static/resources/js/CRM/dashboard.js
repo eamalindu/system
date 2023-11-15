@@ -43,12 +43,14 @@ $(document).ready(function () {
 
 window.addEventListener('load', () => {
 
-    refreshTable();
+    refreshInquiryPoolTable();
 
 
 });
 
-const refreshTable = () => {
+
+//refresh inquiryPool table start
+const refreshInquiryPoolTable = () => {
 
     //get data from the database with ajax
     newInquiries = [];
@@ -97,8 +99,6 @@ const refreshTable = () => {
         {property: getSource, dataType: 'function'},
         {property: getFullName, dataType: 'function'}
     ];
-
-
 
     fillDataIntoTable(tblInquiryPool, newInquiries, displayPropertyList, rowEdit, rowPrint, rowDelete);
 
@@ -170,3 +170,5 @@ const rowPrint = (ob, Index) => {
 const rowDelete = (ob, Index) => {
 
 }
+
+//refresh inquiryPool table end
