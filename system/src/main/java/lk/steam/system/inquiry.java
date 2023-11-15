@@ -21,6 +21,10 @@ public class inquiry {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(name = "inquirynumber",unique = true)
+    @NotNull
+    private String inquiryNumber;
+
     @Column(name = "firstname",length = 20)
     @NotNull
     private String firstName;
