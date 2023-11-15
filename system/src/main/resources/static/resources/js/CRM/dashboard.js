@@ -43,7 +43,13 @@ $(document).ready(function () {
 
 window.addEventListener('load', () => {
 
+    //calling refreshInquiryPoolTable function
     refreshInquiryPoolTable();
+
+    //dynamic select start
+
+
+    //dynamic select end
 
 
 });
