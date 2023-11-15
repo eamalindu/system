@@ -1,4 +1,4 @@
-package lk.steam.system;
+package lk.steam.system.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class inquiry {
+public class Inquiry {
 
     @Id
     @Column(name = "id",unique = true)
@@ -69,14 +69,14 @@ public class inquiry {
 
     @ManyToOne
     @JoinColumn(name = "source_id",referencedColumnName = "id")
-    private source sourceId;
+    private Source sourceId;
 
     @ManyToOne
     @JoinColumn(name = "inquirystatus_id",referencedColumnName = "id")
-    private inquiryStatus inquiryStatusId;
+    private InquiryStatus inquiryStatusId;
 
     @ManyToOne
     @JoinColumn(name = "course_id",referencedColumnName = "id")
-    private course courseId;
+    private Course courseId;
 
 }

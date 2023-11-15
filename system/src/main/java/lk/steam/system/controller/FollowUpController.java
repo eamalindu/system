@@ -1,27 +1,28 @@
-package lk.steam.system;
+package lk.steam.system.controller;
 
+import lk.steam.system.dao.FollowUpDAO;
+import lk.steam.system.entity.FollowUp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
 @RestController
 @RequestMapping(value = "/STEAM-CRM/Followup")
-public class followUpController {
+public class FollowUpController {
     @Autowired
-    private followUpDAO followUpDAO;
+    private FollowUpDAO followUpDAO;
 
 
     @GetMapping(value = "/findall",produces = "application/json")
-    public List<followUp> findAll(){
+    public List<FollowUp> findAll(){
         return followUpDAO.findAll();
     }
 
     @GetMapping(value = "/latestFollowup",produces = "application/json")
-    public List<followUp> latestFollowupForEachInquiry(){
+    public List<FollowUp> latestFollowupForEachInquiry(){
         return followUpDAO.latestFollowupForEachInquiry();
     }
 

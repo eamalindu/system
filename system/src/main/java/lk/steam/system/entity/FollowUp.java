@@ -1,4 +1,4 @@
-package lk.steam.system;
+package lk.steam.system.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class followUp {
+public class FollowUp {
 
     @Id
     @Column(name = "id")
@@ -52,7 +52,7 @@ public class followUp {
     //foreign key
     @ManyToOne
     @JoinColumn(name = "inquiry_id",referencedColumnName = "id")
-    private inquiry inquiryId;
+    private Inquiry inquiryId;
 
 
 }

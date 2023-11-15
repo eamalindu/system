@@ -1,7 +1,8 @@
-package lk.steam.system;
+package lk.steam.system.controller;
 
+import lk.steam.system.dao.InquiryDAO;
+import lk.steam.system.entity.Inquiry;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,10 +13,10 @@ import java.util.Map;
 
 @RestController
 @RequestMapping(value = "/STEAM-CRM/Inquiry")
-public class inquiryController {
+public class InquiryController {
 
     @Autowired
-    private inquiryDAO inquiryDAO;
+    private InquiryDAO inquiryDAO;
 
     @GetMapping
     public ModelAndView inquiryUI(){
@@ -30,27 +31,27 @@ public class inquiryController {
     //value = 'employee/findall' (<= how the browser will display it)
     // employee is added from the class level mapping
     @GetMapping(value = "/findall",produces = "application/json")
-    public List<inquiry> findAll(){
+    public List<Inquiry> findAll(){
         return inquiryDAO.findAll();
     }
 
     @GetMapping(value = "/active",produces = "application/json")
-    public List<inquiry> findActiveInquiry(){
+    public List<Inquiry> findActiveInquiry(){
          return inquiryDAO.findActiveInquiry();
     }
 
     @GetMapping(value = "/registered",produces = "application/json")
-    public List<inquiry> findRegisteredInquiry(){
+    public List<Inquiry> findRegisteredInquiry(){
         return inquiryDAO.findRegisteredInquiry();
     }
 
     @GetMapping(value = "/dropped",produces = "application/json")
-    public List<inquiry> findDroppedInquiry(){
+    public List<Inquiry> findDroppedInquiry(){
         return inquiryDAO.findDroppedInquiry();
     }
 
     @GetMapping(value = "/newInquiry",produces = "application/json")
-    public List<inquiry> findNewInquiry(){
+    public List<Inquiry> findNewInquiry(){
         return inquiryDAO.findNewInquiry();
     }
 

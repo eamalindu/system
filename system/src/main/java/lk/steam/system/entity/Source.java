@@ -1,4 +1,4 @@
-package lk.steam.system;
+package lk.steam.system.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class source {
+public class Source {
 
     @Id
     @Column(name = "id")

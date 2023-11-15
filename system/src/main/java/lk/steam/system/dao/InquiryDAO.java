@@ -1,5 +1,6 @@
-package lk.steam.system;
+package lk.steam.system.dao;
 
+import lk.steam.system.entity.Inquiry;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -8,27 +9,27 @@ import java.util.List;
 import java.util.Map;
 
 @Repository
-public interface inquiryDAO extends JpaRepository<inquiry,Integer> {
+public interface InquiryDAO extends JpaRepository<Inquiry,Integer> {
 
     //display all the active inquiries (New and Processing)
     //without any follow-ups
     @Query(value = "SELECT * FROM inquiry WHERE inquirystatus_id =1 OR inquirystatus_id=2",nativeQuery = true)
-    List<inquiry> findActiveInquiry();
+    List<Inquiry> findActiveInquiry();
 
     //display all the Registered Inquiries
     //This data will be shown in crm-> Reports-> Registered
     @Query(value = "SELECT * FROM inquiry WHERE inquiryStatus_id=3",nativeQuery = true)
-    List<inquiry> findRegisteredInquiry();
+    List<Inquiry> findRegisteredInquiry();
 
     //display all the Dropped Inquiries
     //This data will be shown in crm-> Reports-> Dropped
     @Query(value = "SELECT * FROM inquiry WHERE inquiryStatus_id=4",nativeQuery = true)
-    List<inquiry> findDroppedInquiry();
+    List<Inquiry> findDroppedInquiry();
 
     //display all the New Inquiries
     //This data will be shown in crm-> Dashboard-> inquiry pool
     @Query(value = "SELECT * FROM inquiry WHERE inquiry.inquirystatus_id =1;",nativeQuery = true)
-    List<inquiry> findNewInquiry();
+    List<Inquiry> findNewInquiry();
 
     //Display all the inquiries with the latest follow-up information
     //This data will be shown in crm-> Inquiries

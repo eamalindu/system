@@ -1,4 +1,4 @@
-package lk.steam.system;
+package lk.steam.system.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class inquiryStatus {
+public class InquiryStatus {
 
     @Id
     @Column(name = "id",unique = true)
