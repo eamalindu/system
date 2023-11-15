@@ -19,6 +19,7 @@ window.addEventListener('load', () => {
 
     //external libraries initialization
     $(".chosen-inquiry").chosen({width: '100%'});
+    $(".chosen-inquiry-ID").chosen({width: '50%'});
     $('#inquiryTime').daterangepicker({
         "minDate": new Date(),
         "singleDatePicker": true,
@@ -52,6 +53,9 @@ window.addEventListener('load', () => {
     });
     $("#inquiryCourse").chosen().change(function () {
         $("#inquiryCourse_chosen .chosen-single").addClass('select-validated');
+    });
+    $("#inquiryIdOption").chosen().change(function () {
+        $("#inquiryIdOption_chosen .chosen-single").addClass('select-validated');
     });
 
     //validation for chosen select (for inquiry follow-up)

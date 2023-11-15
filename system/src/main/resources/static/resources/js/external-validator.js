@@ -62,14 +62,14 @@ const selectStaticValueValidator = (elementID,pattern,object,property) => {
    if(elementID.value !== ''){
         elementID.style.border = '1px solid green';
        elementID.style.background = 'rgba(0,255,0,0.2)';
-       elementID.setAttribute('style', 'background:rgba(0,255,0,0.2) !important;border:1px solid green');
+      // elementID.setAttribute('style', 'background:rgba(0,255,0,0.2) !important;border:1px solid green');
        window[object][property] = elementID.value;
 
    }
    else{
        elementID.style.border = '1px solid red';
        elementID.style.background = 'rgba(255,0,0,0.2)';
-       elementID.setAttribute('style', 'background:rgba(255,0,0,0.2) !important;border:1px solid red');
+      // elementID.setAttribute('style', 'background:rgba(255,0,0,0.2) !important;border:1px solid red');
        window[object][property] = null;
    }
 }

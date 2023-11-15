@@ -52,7 +52,7 @@
             </ul>
             <!-- Navbar Right side -->
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item"><a class="nav-link text-white custom-width-max-content" href="Inquiry">Inquiries</a></li>
+                <li class="nav-item"><a class="nav-link text-white custom-width-max-content" href="Inquiries">Inquiries</a></li>
                 <li class="nav-item"><a class="nav-link text-white custom-width-max-content" href="Schedules.html">Schedules</a></li>
                 <li class="nav-item dropdown-center custom-width-max-content p-0">
                     <button aria-expanded="false" class="nav-link btn bg-steam-green text-white dropdown-toggle custom-width-max-content border-0" data-bs-toggle="dropdown">Reports</button>
@@ -298,8 +298,8 @@
                             <label class="fw-semibold required small" for="inquiryIdOption">NIC / Postal ID</label>
                         </div>
                         <div class="input-group">
-                            <select class="form-select bg-light rounded-0 custom-width-max-content" id="inquiryIdOption" onchange="selectStaticValueValidator(this,'','newInquiry','idType')" required>
-                                <option value="" selected disabled>Please Select</option>
+                            <select class="form-select rounded-0 chosen-inquiry-ID" id="inquiryIdOption" data-placeholder="Please Select" required onchange="selectStaticValueValidator(this,'','newInquiry','idType')">
+                                <option value=""></option>
                                 <option value="NIC">NIC</option>
                                 <option value="POSTAL">Postal</option>
                             </select>

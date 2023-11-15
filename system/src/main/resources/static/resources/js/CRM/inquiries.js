@@ -1,4 +1,9 @@
-$(document).ready(function () {
+window.addEventListener('load', () => {
+
+    refreshTable();
+    newInquiry ={};
+
+
     $(".chosen-inquiry").chosen({width: '100%'});
     $(".chosen-inquiry-search").chosen({width: '145px'});
     $('#inquiryTime').daterangepicker({
@@ -36,15 +41,6 @@ $(document).ready(function () {
     $("#inquiryCourse").chosen().change(function() {
         $("#inquiryCourse_chosen .chosen-single").addClass('select-validated');
     });
-
-});
-
-
-window.addEventListener('load', () => {
-
-    refreshTable();
-
-
 });
 
 
@@ -52,7 +48,7 @@ const refreshTable = () => {
 
     //get data with ajax and database
     inquiriesWithFollowUps = [];
-    $.ajax("/STEAM-CRM/Followup/latestFollowup", {
+    $.ajax("/followup/findall", {
         async: false,
         type: "Get",
         contentType: "json",
