@@ -37,10 +37,16 @@ public class SystemApplication {
 	}
 
 	@RequestMapping(value = "/STEAM-CRM/Dashboard")
-	public ModelAndView rmsDashboard(){
+	public ModelAndView crmDashboard(){
 		ModelAndView rmsView = new ModelAndView();
 		rmsView.setViewName("crm/dashboard.html");
 		return rmsView;
 	}
 
+	@RequestMapping(value = "/STEAM-CRM/Inquiries")
+	public ModelAndView crmInquiries(){
+		ModelAndView crmInquiriesView = new ModelAndView();
+		crmInquiriesView.setViewName("crm/Inquiries.html");
+		return crmInquiriesView;
+	}
 }
