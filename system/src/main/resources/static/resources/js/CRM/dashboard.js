@@ -110,7 +110,7 @@ const getCourse = (ob) => {
 }
 
 const getSource = (ob) => {
-    switch (ob.sourceid.name) {
+    switch (ob.sourceId.name) {
         case "Cold Calling":
             return "<i class=\"fa-solid fa-table\"></i>";
             break;
