@@ -21,13 +21,13 @@ const inputTextValidator = (element, pattern,object,property) => {
             element.style.border = '1px solid green';
             element.style.background = 'rgba(0,255,0,0.2)';
 
-           // window[object][property] = element.value;
+           window[object][property] = element.value;
 
         }
         //if the regex pattern is not satisfying by the input value, by the element value display a red border or add boostrap validation class 'is-invalid'
         else {
 
-           // window[object][property] = null;
+            window[object][property] = null;
             element.style.border = '1px solid red';
             element.style.background = 'rgba(255,0,0,0.2)';
         }
@@ -35,7 +35,7 @@ const inputTextValidator = (element, pattern,object,property) => {
     //if the element is null, check if its required or not
     else {
 
-       // window[object][property] = null;
+       window[object][property] = null;
 
         //if element is required, display error / warning (use border color or boostrap validation)
         if (element.required) {
@@ -62,13 +62,13 @@ const selectStaticValueValidator = (elementID,pattern,object,property) => {
    if(elementID.value !== ''){
         elementID.style.border = '1px solid green';
        elementID.style.background = 'rgba(0,255,0,0.2)';
-       //window[object][property] = elementID.value;
+       window[object][property] = elementID.value;
 
    }
    else{
        elementID.style.border = '1px solid red';
        elementID.style.background = 'rgba(255,0,0,0.2)';
-       //window[object][property] = null;
+       window[object][property] = null;
    }
 }
 
