@@ -1,4 +1,21 @@
-$(document).ready(function () {
+window.addEventListener('load', () => {
+
+    //calling refreshInquiryPoolTable function
+    refreshInquiryPoolTable();
+
+    //dynamic select start
+
+    //dynamic select for courses
+    courses = ajaxGetRequest("/course/findall");
+    fillSelectOptions(inquiryCourse,'',courses)
+
+    //dynamic select for sources
+    sources = ajaxGetRequest("/source/findall")
+    fillSelectOptions(inquirySource,'',sources)
+
+    //dynamic select end
+
+    //external libraries initialization
     $(".chosen-inquiry").chosen({width: '100%'});
     $('#inquiryTime').daterangepicker({
         "minDate": new Date(),
@@ -39,24 +56,6 @@ $(document).ready(function () {
     $("#inquiryFollowUpType").chosen().change(function () {
         $("#inquiryFollowUpType_chosen .chosen-single").addClass('select-validated');
     });
-});
-
-window.addEventListener('load', () => {
-
-    //calling refreshInquiryPoolTable function
-    refreshInquiryPoolTable();
-
-    //dynamic select start
-
-    //dynamic select for courses
-    courses = ajaxGetRequest("/course/findall");
-    fillSelectOptions(inquiryCourse,'',courses)
-
-    //dynamic select for sources
-    sources = ajaxGetRequest("/source/findall")
-    fillSelectOptions(inquirySource,'',sources)
-
-    //dynamic select end
 
 
 });
