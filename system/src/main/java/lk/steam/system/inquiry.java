@@ -65,11 +65,11 @@ public class inquiry {
 
     @ManyToOne
     @JoinColumn(name = "source_id",referencedColumnName = "id")
-    private source sourceid;
+    private source sourceId;
 
     @ManyToOne
     @JoinColumn(name = "inquirystatus_id",referencedColumnName = "id")
-    private inquiryStatus inquiryStatusid;
+    private inquiryStatus inquiryStatusId;
 
     @ManyToOne
     @JoinColumn(name = "course_id",referencedColumnName = "id")
