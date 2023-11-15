@@ -298,9 +298,10 @@
                             <label class="fw-semibold required small" for="inquiryIdOption">NIC / Postal ID</label>
                         </div>
                         <div class="input-group">
-                            <select class="form-select bg-light rounded-0 custom-width-max-content" id="inquiryIdOption">
-                                <option value="1">NIC</option>
-                                <option value="2">Postal</option>
+                            <select class="form-select bg-light rounded-0 custom-width-max-content" id="inquiryIdOption" onchange="selectStaticValueValidator(this,'','newInquiry','idType')">
+                                <option value="" selected disabled>Please Select</option>
+                                <option value="NIC">NIC</option>
+                                <option value="POSTAL">Postal</option>
                             </select>
                             <input class="form-control rounded-0" id="inquiryID" onkeyup="inputTextValidator(this,'^(?:[6-9][0-9]{8}([V]|[X]|[v]|[x]){1})|(?:[19|20][0-9]{10})$','newInquiry','idValue')" required>
                         </div>
