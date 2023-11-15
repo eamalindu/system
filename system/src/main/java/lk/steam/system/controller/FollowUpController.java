@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/STEAM-CRM/Followup")
+@RequestMapping(value = "/followup")
 public class FollowUpController {
     @Autowired
     private FollowUpDAO followUpDAO;
