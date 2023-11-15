@@ -17,6 +17,7 @@ const fillSelectOptions = (elementID, message, dataList) => {
     if (message !== '') {
         const optionDefault = document.createElement('option');
         optionDefault.innerText = message;
+        optionDefault.value = '';
         optionDefault.selected = true;
         optionDefault.disabled = true;
         selectElement.appendChild(optionDefault);
