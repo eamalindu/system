@@ -12,18 +12,11 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping(value = "/STEAM-CRM/Inquiry")
+@RequestMapping(value = "/Inquiry")
 public class InquiryController {
 
     @Autowired
     private InquiryDAO inquiryDAO;
-
-    @GetMapping
-    public ModelAndView inquiryUI(){
-        ModelAndView inquiryView = new ModelAndView();
-        inquiryView.setViewName("crm/Inquiries.html");
-        return inquiryView;
-    }
 
     //data returnType => 'produces ="application/JSON"'
     //it can be either JSON,Text and XML
