@@ -3,6 +3,8 @@ window.addEventListener('load', () => {
     //calling refreshInquiryPoolTable function
     refreshInquiryPoolTable();
 
+    newInquiry = {};
+
     //dynamic select start
 
     //dynamic select for courses
@@ -169,5 +171,10 @@ const rowPrint = (ob, Index) => {
 const rowDelete = (ob, Index) => {
 
 }
-
 //refresh inquiryPool table end
+
+//new inquiry submit start
+
+const newInquirySubmit = ()=>{
+    console.log('Add EMP', newInquiry)
+}
