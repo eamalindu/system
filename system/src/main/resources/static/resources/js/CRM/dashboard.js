@@ -49,11 +49,11 @@ window.addEventListener('load', () => {
     //dynamic select start
 
     //dynamic select for courses
-    courses = ajaxGetRequest("");
+    courses = ajaxGetRequest("/course/findall");
     fillSelectOptions(inquiryCourse,'',courses)
 
     //dynamic select for sources
-    sources = ajaxGetRequest("")
+    sources = ajaxGetRequest("/source/findall")
     fillSelectOptions(inquirySource,'',sources)
 
     //dynamic select end
@@ -67,7 +67,7 @@ const refreshInquiryPoolTable = () => {
 
     //get data from the database with ajax
     newInquiries = [];
-    $.ajax("/STEAM-CRM/Inquiry/newInquiry", {
+    $.ajax("/inquiry/newInquiry", {
         async: false,
         type: "Get",
         contentType: "json",
