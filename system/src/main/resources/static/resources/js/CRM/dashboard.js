@@ -48,6 +48,13 @@ window.addEventListener('load', () => {
 
     //dynamic select start
 
+    //dynamic select for courses
+    courses = ajaxGetRequest("");
+    fillSelectOptions(inquiryCourse,'',courses)
+
+    //dynamic select for sources
+    sources = ajaxGetRequest("")
+    fillSelectOptions(inquirySource,'',sources)
 
     //dynamic select end
 
