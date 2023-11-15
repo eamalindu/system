@@ -223,7 +223,7 @@
                             <label class="fw-bold required small" for="inquirySource">Source</label>
                         </div>
                         <div class="input-group">
-                            <select class="form-select rounded-0 chosen-inquiry" data-placeholder="Please Select a Source" id="inquirySource" required>
+                            <select class="form-select rounded-0 chosen-inquiry" data-placeholder="Please Select a Source" id="inquirySource" required onchange="selectDynamicValueValidator(this,'','newInquiry','sourceId')">
                                 <option value=""></option>
                                 <option value="Cold Calling">Cold Calling</option>
                                 <option value="Facebook">Facebook</option>
@@ -243,7 +243,7 @@
                             <label class="fw-bold required small" for="inquiryCourse">Course</label>
                         </div>
                         <div class="input-group">
-                            <select class="form-select rounded-0 chosen-inquiry" data-placeholder="Please Select a Course" id="inquiryCourse" required>
+                            <select class="form-select rounded-0 chosen-inquiry" data-placeholder="Please Select a Course" id="inquiryCourse" required onchange="selectDynamicValueValidator(this,'','newInquiry','courseId')">
                                 <option value=""></option>
                                 <option>Diploma in IT</option>
                                 <option>Diploma in English</option>
@@ -256,31 +256,31 @@
                         <div class="form-label small">
                             <label class="fw-bold required" for="inquiryFirstName">First Name</label>
                         </div>
-                        <input class="form-control rounded-0" id="inquiryFirstName" onkeyup="inputTextValidator(this,'^[A-Z][a-z]{2,19}$')" required type="text">
+                        <input class="form-control rounded-0" id="inquiryFirstName" onkeyup="inputTextValidator(this,'^[A-Z][a-z]{2,19}$','newInquiry','firstName')" required type="text">
                     </div>
                     <div class="mb-2">
                         <div class="form-label small">
                             <label class="fw-bold required" for="inquiryLastName">Last Name</label>
                         </div>
-                        <input class="form-control rounded-0" id="inquiryLastName" onkeyup="inputTextValidator(this,'^[A-Z][a-z]{2,29}$')" required type="text">
+                        <input class="form-control rounded-0" id="inquiryLastName" onkeyup="inputTextValidator(this,'^[A-Z][a-z]{2,29}$','newInquiry','lastName')" required type="text">
                     </div>
                     <div class="mb-2">
                         <div class="form-label small">
                             <label class="fw-bold required" for="inquiryMobileNumber">Mobile Number</label>
                         </div>
-                        <input class="form-control rounded-0" id="inquiryMobileNumber" onkeyup="inputTextValidator(this,'^[0][7][01245678][0-9]{7}$')" required type="text">
+                        <input class="form-control rounded-0" id="inquiryMobileNumber" onkeyup="inputTextValidator(this,'^[0][7][01245678][0-9]{7}$','newInquiry','primaryMobileNumber')" required type="text">
                     </div>
                     <div class="mb-2">
                         <div class="form-label small">
                             <label class="fw-bold" for="inquiryAdditionalMobileNumber">Additional Mobile Number</label>
                         </div>
-                        <input class="form-control rounded-0" id="inquiryAdditionalMobileNumber" onkeyup="inputTextValidator(this,'^[0][7][01245678][0-9]{7}$')" placeholder="Optional" type="text">
+                        <input class="form-control rounded-0" id="inquiryAdditionalMobileNumber" onkeyup="inputTextValidator(this,'^[0][7][01245678][0-9]{7}$','newInquiry','secondaryMobileNumber')" placeholder="Optional" type="text">
                     </div>
                     <div class="mb-2">
                         <div class="form-label small">
                             <label class="fw-bold" for="inquiryEmail">Email</label>
                         </div>
-                        <input class="form-control rounded-0" id="inquiryEmail" onkeyup="inputTextValidator(this,'^[a-z|A-Z]{2,19}[@][a-z|A-Z]{2,8}[.][a-z|A-Z]{2,3}$')" placeholder="Optional"
+                        <input class="form-control rounded-0" id="inquiryEmail" onkeyup="inputTextValidator(this,'^[a-z|A-Z]{2,19}[@][a-z|A-Z]{2,8}[.][a-z|A-Z]{2,3}$','newInquiry','email')" placeholder="Optional"
                                type="text">
                     </div>
                     <div class="mb-2">
@@ -288,11 +288,12 @@
                             <label class="fw-semibold required small" for="inquiryIdOption">NIC / Postal ID</label>
                         </div>
                         <div class="input-group">
-                            <select class="form-select bg-light rounded-0 custom-width-max-content" id="inquiryIdOption">
-                                <option value="1">NIC</option>
-                                <option value="2">Postal</option>
+                            <select class="form-select rounded-0 chosen-inquiry-ID" id="inquiryIdOption" data-placeholder="Please Select" required onchange="selectStaticValueValidator(this,'','newInquiry','idType')">
+                                <option value=""></option>
+                                <option value="NIC">NIC</option>
+                                <option value="POSTAL">Postal</option>
                             </select>
-                            <input class="form-control rounded-0" id="inquiryID" onkeyup="inputTextValidator(this,'^(?:[6-9][0-9]{8}([V]|[X]|[v]|[x]){1})|(?:[19|20][0-9]{10})$')" required>
+                            <input class="form-control rounded-0" id="inquiryID" onkeyup="inputTextValidator(this,'^(?:[6-9][0-9]{8}([V]|[X]|[v]|[x]){1})|(?:[19|20][0-9]{10})$','newInquiry','idValue')" required>
                         </div>
                     </div>
                     <div class="mb-2">
@@ -305,13 +306,12 @@
                         <div class="form-label">
                             <label class="fw-bold required small" for="inquiryDescription">Description</label>
                         </div>
-                        <textarea class="rounded-0 form-control" cols="80" id="inquiryDescription" required rows="4"></textarea>
+                        <textarea class="rounded-0 form-control" cols="80" id="inquiryDescription" required rows="4" onkeyup="inputTextValidator(this,'^[a-zA-Z0-9\\s/]{20,}$','newInquiry','description')"></textarea>
                         <div class="text-muted small"><small> a short description which will be useful for the counsellor who will be handling this inquiry</small></div>
                     </div>
                     <div class="mb-2">
-                        <button class="btn bg-purple text-white rounded-0 btn-block w-100" id="inquiryConfirm" type="submit">Confirm</button>
+                        <button class="btn bg-purple text-white rounded-0 btn-block w-100" id="inquiryConfirm" onclick="newInquirySubmit()" type="submit">Confirm</button>
                     </div>
-
                 </form>
             </div>
         </div>
