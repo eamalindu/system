@@ -80,10 +80,10 @@ const newInquirySubmit = ()=>{
         //passing the data to backend
         //if the data is successfully passed to the database it will set the value of the postServerResponse to "OK"
         let postServerResponse;
-        alert('before calling ajax');
+
         $.ajax("/inquiry", {
             type: "POST",
-            async: false,
+            async: false, // set the async option to false to wait for the response
             contentType: "application/json",
             data: JSON.stringify(newInquiry),
             success: function (data) {

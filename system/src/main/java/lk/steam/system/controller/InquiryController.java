@@ -2,6 +2,7 @@ package lk.steam.system.controller;
 
 import lk.steam.system.dao.InquiryDAO;
 import lk.steam.system.entity.Inquiry;
+import lk.steam.system.entity.InquiryStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -66,7 +67,9 @@ public class InquiryController {
             inquiry.setAddedBy("User1");
             inquiry.setTimeStamp(LocalDateTime.now());
             inquiry.setInquiryNumber("000002");
+            inquiry.setInquiryStatusId(new InquiryStatus(1,"New Inquiry"));
 
+            inquiryDAO.save(inquiry);
             return "OK";
         }
         catch (Exception ex){
