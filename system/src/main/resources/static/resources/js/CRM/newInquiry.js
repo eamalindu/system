@@ -88,34 +88,34 @@ const checkFormErrors = () =>{
     let errors = '' ;
 
     if(newInquiry.sourceId==null){
-        errors = errors+'Source is Required, ';
+        errors = errors+'Source is Required<br>';
     }
     if(newInquiry.courseId==null){
-        errors = errors+'Course is Required, ';
+        errors = errors+'Course is Required<br>';
     }
     if(newInquiry.firstName==null){
-        errors = errors+'First Name is Required, ';
+        errors = errors+'First Name is Required<br>';
     }
     if(newInquiry.lastName==null){
-        errors = errors+'Last Name is Required, ';
+        errors = errors+'Last Name is Required<br>';
     }
     if(newInquiry.primaryMobileNumber==null){
-        errors = errors+'Mobile Number is Required, ';
+        errors = errors+'Mobile Number is Required<br>';
 
     }
     if(newInquiry.idType==null){
-        errors = errors+'ID Type is Required, ';
+        errors = errors+'ID Type is Required<br>';
 
     }
     if(newInquiry.idValue==null){
-        errors = errors+'ID Value is Required, ';
+        errors = errors+'ID Value is Required<br>';
 
     }
     if(newInquiry.contactTime==null){
-        errors = errors+'Contact Time is Required, ';
+        errors = errors+'Contact Time is Required<br>';
     }
     if(newInquiry.description==null){
-        errors = errors+'Description is Required, ';
+        errors = errors+'Description is Required<br>';
     }
 
     return errors;
