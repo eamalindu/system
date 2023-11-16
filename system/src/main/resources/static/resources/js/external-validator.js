@@ -61,6 +61,16 @@ const inputDateTimeValidator = (element, pattern,object,property) => {
             element.style.border = '1px solid green';
             element.style.background = 'rgba(0,255,0,0.2)';
 
+            //This is a temp fix
+            //when user add the date and time it saves as string ex: (2023-11-16 19:30)
+            //this format is not accepted in java
+            //need to change it to iso standard
+            //after converting to iso format the time is saved 5h 30min less than the original time ex:(2023-11-16T14:00:00)
+            //research 3+hrs couldn't find any answers (with vanilla js) can be done using moments, Luxon js libraries
+            //manually added 5h and 30 minutes so that when it converts to iso shows the right time
+            //possible fix ->use moment js
+            //if there are no solutions, this can be used
+            //but update the validator to only accept values in between 8am and 5pm
             const dateStr = element.value;
             const date = new Date(dateStr);
 
