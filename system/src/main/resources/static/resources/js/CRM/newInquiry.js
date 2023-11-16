@@ -27,7 +27,7 @@ window.addEventListener('load', () => {
         "showCustomRangeLabel": false,
         "drops": "up",
         "locale": {
-            "format": "YYYY-MM-DD [at] HH:mm"
+            "format": "YYYY-MM-DD HH:mm"
         }
     });
     $('#inquiryFollowUpTime').daterangepicker({
@@ -40,7 +40,7 @@ window.addEventListener('load', () => {
         "showCustomRangeLabel": false,
         "drops": "up",
         "locale": {
-            "format": "YYYY-MM-DD [at] HH:mm"
+            "format": "YYYY-MM-DD HH:mm"
         }
     });
 
