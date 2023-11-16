@@ -66,7 +66,22 @@ window.addEventListener('load', () => {
 //new inquiry submit start
 
 const newInquirySubmit = ()=>{
-    console.log('New Inquiry Added', newInquiry)
+    console.log('New Inquiry Added', newInquiry);
+
+    //check for form errors
+    //calling checkFormErrors()
+    const errors = checkFormErrors();
+
+    if(errors===''){
+
+        //this means there are no any errors
+
+    }
+    else {
+        //there are errors
+        //display them to the user using external-ModalFunction()
+
+    }
 }
 
 const checkFormErrors = () =>{
