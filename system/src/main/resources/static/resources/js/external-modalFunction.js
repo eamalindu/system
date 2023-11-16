@@ -54,18 +54,18 @@ function showCustomModal(msg,type) {
 
     //adding different gifs accordingly
     if(type ==="warning"){
-        modalBodyGif.src='resources/images/warning.gif';
+        modalBodyGif.src='/resources/images/warning.gif';
     }
     else if (type==="error"){
-        modalBodyGif.src='resources/images/error.gif';
+        modalBodyGif.src='/resources/images/error.gif';
         modalBodyGif.classList.add('ps-2');
     }
     else if(type ==="success"){
-        modalBodyGif.src='resources/images/success.gif';
+        modalBodyGif.src='/resources/images/success.gif';
 
     }
     else{
-        modalBodyGif.src='resources/images/info.gif';
+        modalBodyGif.src='/resources/images/info.gif';
     }
 
     modalBodyGif.style.width = '150px';
@@ -79,7 +79,7 @@ function showCustomModal(msg,type) {
 
     //add secondary text to modalBody
     const modalBodySecondaryText = document.createElement('h5');
-    modalBodySecondaryText.classList.add('text-center','fs-4','text-capitalize','mb-4','mt-3');
+    modalBodySecondaryText.classList.add('text-center','fs-5','text-capitalize','mb-4','mt-3');
     modalBodySecondaryText.innerText = msg;
 
     modalBody.appendChild(modalBodySecondaryText);
