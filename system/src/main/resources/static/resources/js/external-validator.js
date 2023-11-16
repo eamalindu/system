@@ -51,6 +51,56 @@ const inputTextValidator = (element, pattern,object,property) => {
 
 }
 
+const inputDateTimeValidator = (element, pattern,object,property) => {
+    //checking for element value (value cant be null)
+    if (element.value !== '') {
+
+        //if the regex pattern is satisfying by the element value, display a green border or add boostrap validation class 'is-valid'
+        if (new RegExp(pattern).test(element.value)) {
+
+            element.style.border = '1px solid green';
+            element.style.background = 'rgba(0,255,0,0.2)';
+
+            const dateStr = element.value;
+            const date = new Date(dateStr);
+
+            const hoursToAdd = 5;
+            const minutesToAdd = 30;
+
+            date.setHours(date.getHours() + hoursToAdd);
+            date.setMinutes(date.getMinutes() + minutesToAdd);
+
+            const formattedDate = date.toISOString();
+
+            window[object][property] = formattedDate;
+
+        }
+        //if the regex pattern is not satisfying by the input value, by the element value display a red border or add boostrap validation class 'is-invalid'
+        else {
+
+            window[object][property] = null;
+            element.style.border = '1px solid red';
+            element.style.background = 'rgba(255,0,0,0.2)';
+        }
+    }
+    //if the element is null, check if its required or not
+    else {
+
+        window[object][property] = null;
+
+        //if element is required, display error / warning (use border color or boostrap validation)
+        if (element.required) {
+            element.style.border = '1px solid red';
+            element.style.background = 'rgba(255,0,0,0.2)';
+        }
+        //if the element is not required, display the default colors (remove boostrap validation)
+        else {
+            element.style.border = '1px solid #ced4da';
+            element.style.background = 'white';
+        }
+    }
+}
+
 //This function have four arguments
 // 1) elementID -> use 'id' without quotation or 'this' keyword
 // 2) no pattern
