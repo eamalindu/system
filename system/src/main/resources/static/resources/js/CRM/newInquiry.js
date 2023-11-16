@@ -68,3 +68,40 @@ window.addEventListener('load', () => {
 const newInquirySubmit = ()=>{
     console.log('New Inquiry Added', newInquiry)
 }
+
+const checkFormErrors = () =>{
+    let errors = '' ;
+
+    if(newInquiry.sourceId==null){
+        errors = errors+'Source is Required, ';
+    }
+    if(newInquiry.courseId==null){
+        errors = errors+'Course is Required, ';
+    }
+    if(newInquiry.firstName==null){
+        errors = errors+'First Name is Required, ';
+    }
+    if(newInquiry.lastName==null){
+        errors = errors+'Last Name is Required, ';
+    }
+    if(newInquiry.primaryMobileNumber==null){
+        errors = errors+'Mobile Number is Required, ';
+
+    }
+    if(newInquiry.idType==null){
+        errors = errors+'ID Type is Required, ';
+
+    }
+    if(newInquiry.idValue==null){
+        errors = errors+'ID Value is Required, ';
+
+    }
+    if(newInquiry.contactTime==null){
+        errors = errors+'Contact Time is Required, ';
+    }
+    if(newInquiry.description==null){
+        errors = errors+'Description is Required, ';
+    }
+
+    return errors;
+}
