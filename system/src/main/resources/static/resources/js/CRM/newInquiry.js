@@ -75,6 +75,40 @@ const newInquirySubmit = ()=>{
     if(errors===''){
 
         //this means there are no any errors
+        //user confirmation is needed (will add later)
+
+        //passing the data to backend
+        //if the data is successfully passed to the database it will set the value of the postServerResponse to "OK"
+        let postServerResponse;
+        $.ajax("/inquiry", {
+            type: "POST",
+            async: false,
+            contentType: "application/json",
+            data: JSON.stringify(newInquiry),
+            success: function (data) {
+                console.log("success " + data);
+                postServerResponse = data;
+            },
+            errors: function (resOb) {
+                console.log("Error " + resOb);
+                postServerResponse = resOb;
+            }
+        });
+
+        //check the postServerResponse value
+        if(postServerResponse==='OK'){
+
+            //this means data successfully passed to the backend
+            //show an alert to user
+            showCustomModal("Inquiry Successfully Added!","success");
+
+        }
+        else{
+            //this means there was a problem with the query
+            //shows an error alert to the user
+            showCustomModal("Operation Failed!","error");
+        }
+
 
     }
     else {
