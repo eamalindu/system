@@ -110,7 +110,7 @@ const rowEdit = (ob, Index) => {
     document.querySelector('#inquirySheetId').innerText = ob.inquiryNumber;
 
     document.querySelector('#inquirySheetCourse').value = ob.courseId.code;
-    document.querySelector('#inquirySheetSource').value = ob.sourceid.name;
+    document.querySelector('#inquirySheetSource').value = ob.sourceId.name;
 
     document.querySelector('#inquirySheetFirstName').value = ob.firstName;
     document.querySelector('#inquirySheetLastName').value = ob.lastName;
