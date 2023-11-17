@@ -44,7 +44,7 @@ const refreshInquiryPoolTable = () => {
         {property: getFullName, dataType: 'function'}
     ];
 
-    fillDataIntoTable(tblInquiryPool, newInquiries, displayPropertyListForInquiryPool, rowEdit, rowPrint, rowDelete);
+    fillDataIntoTable(tblInquiryPool, newInquiries, displayPropertyListForInquiryPool, rowEdit, rowView, rowDelete);
 
 
 }
@@ -105,7 +105,7 @@ const getFullName = (ob) => {
     return firstName + " " + lastName;
 
 }
-const rowEdit = (ob, Index) => {
+const rowView = (ob, Index) => {
 
     document.querySelector('#inquirySheetId').innerText = ob.inquiryNumber;
 
@@ -146,7 +146,7 @@ const rowEdit = (ob, Index) => {
     document.querySelector('#inquirySheetDescription').value = ob.description;
 
 }
-const rowPrint = (ob, Index) => {
+const rowEdit = (ob, Index) => {
 
 }
 const rowDelete = (ob, Index) => {
