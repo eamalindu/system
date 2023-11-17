@@ -10,33 +10,7 @@ window.addEventListener('load', () => {
 const refreshInquiryPoolTable = () => {
 
     //get data from the database with ajax
-    newInquiries = ajaxGetRequest("/inquiry/findall");
-
-    /*
-    scheduledInquiries = [];
-    $.ajax("/STEAM-CRM/Inquiry/test2", {
-        async: false,
-        type: "Get",
-        contentType: "json",
-        success: function (data) {
-            console.log(data);
-            scheduledInquiries = data;
-        },
-        error: function (resOb) {
-            alert("error" + resOb);
-        }
-
-    });
-
-     displayPropertyList2=[
-        {property:'inquiry_id',dataType:'text'},
-        {property:'course_id',dataType:'text'},
-        {property:'source_id',dataType:'text'},
-        {property:'firstname',dataType:'text'},
-    ];
-    fillDataIntoTable(tblScheduledPool, scheduledInquiries, displayPropertyList2, rowEdit, rowPrint, rowDelete);
-     */
-
+    newInquiries = ajaxGetRequest("/inquiry/newInquiry");
     displayPropertyListForInquiryPool = [
         {property: 'inquiryNumber', dataType: 'text'},
         {property: getCourse, dataType: 'function'},
@@ -45,6 +19,21 @@ const refreshInquiryPoolTable = () => {
     ];
 
     fillDataIntoTable(tblInquiryPool, newInquiries, displayPropertyListForInquiryPool, rowEdit, rowView, rowDelete);
+
+    //testing code start
+
+    scheduledInquiries = ajaxGetRequest("/inquiry/test2")
+
+     displayPropertyListForScheduledPool=[
+        {property:'inquiry_id',dataType:'text'},
+        {property:'course_id',dataType:'text'},
+        {property:'source_id',dataType:'text'},
+        {property:'firstname',dataType:'text'},
+    ];
+    fillDataIntoTable(tblScheduledPool, scheduledInquiries, displayPropertyListForScheduledPool, rowEdit, rowView, rowDelete);
+
+//testing code end
+
 
 
 }
