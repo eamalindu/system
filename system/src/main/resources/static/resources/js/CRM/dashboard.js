@@ -145,6 +145,11 @@ const rowView = (ob, Index) => {
     document.querySelector('#inquirySheetNextFollowUp').value = (ob.contactTime).replace('T', ' ');
     document.querySelector('#inquirySheetDescription').value = ob.description;
 
+    //set info section
+    const [addedDate, addedTime] = ob.timeStamp.split("T");
+    document.querySelector('#inquirySheetAddedDate').value = addedDate;
+    document.querySelector('#inquirySheetAddedTime').value = addedTime;
+
 }
 const rowEdit = (ob, Index) => {
 
