@@ -109,18 +109,18 @@ const rowEdit = (ob, Index) => {
 
     document.querySelector('#inquirySheetId').innerText = ob.inquiryNumber;
 
-    document.querySelector('#inquirySheetCourse').value = ob.inquiryId.courseId.code;
-    document.querySelector('#inquirySheetSource').value = ob.inquiryId.sourceid.name;
+    document.querySelector('#inquirySheetCourse').value = ob.courseId.code;
+    document.querySelector('#inquirySheetSource').value = ob.sourceid.name;
 
-    document.querySelector('#inquirySheetFirstName').value = ob.inquiryId.firstName;
-    document.querySelector('#inquirySheetLastName').value = ob.inquiryId.lastName;
-    document.querySelector('#inquirySheetPrimaryMobile').value = ob.inquiryId.primaryMobileNumber;
+    document.querySelector('#inquirySheetFirstName').value = ob.firstName;
+    document.querySelector('#inquirySheetLastName').value = ob.lastName;
+    document.querySelector('#inquirySheetPrimaryMobile').value = ob.primaryMobileNumber;
 
     //email is an optional value therefore it might contain null as the value
     //instead of displaying nothing, we can use if condition to set a value
 
-    if(ob.inquiryId.email!==null){
-        document.querySelector('#inquirySheetEmail').value = ob.inquiryId.email;
+    if(ob.email!==null){
+        document.querySelector('#inquirySheetEmail').value = ob.email;
         document.querySelector('#inquirySheetEmail').classList.remove('text-muted');
 
     }
@@ -130,8 +130,8 @@ const rowEdit = (ob, Index) => {
         document.querySelector('#inquirySheetEmail').classList.add('text-muted');
     }
 
-    if(ob.inquiryId.secondaryMobileNumber !== null){
-        document.querySelector('#inquirySheetSecondaryMobile').value =ob.inquiryId.secondaryMobileNumber ;
+    if(ob.secondaryMobileNumber !== null){
+        document.querySelector('#inquirySheetSecondaryMobile').value =ob.secondaryMobileNumber ;
         document.querySelector('#inquirySheetSecondaryMobile').classList.remove('text-muted');
 
     }else{
@@ -139,11 +139,11 @@ const rowEdit = (ob, Index) => {
         document.querySelector('#inquirySheetSecondaryMobile').classList.add('text-muted');
     }
 
-    document.querySelector('#inquirySheetIdValue').value = ob.inquiryId.idValue;
+    document.querySelector('#inquirySheetIdValue').value = ob.idValue;
 
     //showing date and time with iSO Standarad
-    document.querySelector('#inquirySheetNextFollowUp').value = (ob.inquiryId.contactTime).replace('T', ' ');
-    document.querySelector('#inquirySheetDescription').value = ob.inquiryId.description;
+    document.querySelector('#inquirySheetNextFollowUp').value = (ob.contactTime).replace('T', ' ');
+    document.querySelector('#inquirySheetDescription').value = ob.description;
 
 }
 const rowPrint = (ob, Index) => {
