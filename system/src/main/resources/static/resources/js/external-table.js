@@ -6,7 +6,7 @@
 //1 parameter -> table id
 //2 parameter -> data array list
 //3 parameter -> display Property List (Column headers)
-const fillDataIntoTable = (tabledID, dataList, displayPropertyList,editFunction,printFunction,deleteFunction) => {
+const fillDataIntoTable = (tabledID, dataList, displayPropertyList,editFunction,viewFunction,deleteFunction) => {
     //access the table via querySelector
     //const table = document.querySelector('#tblEmp');
 
@@ -55,17 +55,17 @@ const fillDataIntoTable = (tabledID, dataList, displayPropertyList,editFunction,
         const tdModify = document.createElement('td');
 
         //there are 3 buttons, so create them as well
-        const btnEdit = document.createElement('button');
+        const btnView = document.createElement('button');
 
         //const btnDelete = document.createElement('button');
         //const btnView = document.createElement('button');
 
         //add relevant classes for the created buttons
-        btnEdit.classList.add('btn','p-0', 'fw-bold', 'text-purple','btn-sm');
+        btnView.classList.add('btn','p-0', 'fw-bold', 'text-purple','btn-sm');
 
         //setting attribute to btnEdit so that it will trigger the offcanvas
-        btnEdit.setAttribute('data-bs-target','#offcanvasDeafult');
-        btnEdit.setAttribute('data-bs-toggle','offcanvas');
+        btnView.setAttribute('data-bs-target','#offcanvasDeafult');
+        btnView.setAttribute('data-bs-toggle','offcanvas');
 
        // btnDelete.classList.add('btn', 'custom-btn', 'bg-danger', 'ms-2');
         //btnView.classList.add('btn', 'custom-btn', 'bg-success', 'ms-2');
@@ -73,14 +73,14 @@ const fillDataIntoTable = (tabledID, dataList, displayPropertyList,editFunction,
         //btnEdit.ClassName = 'btn custom-btn bg-warning';
 
         //add text,icons using innerHTML for each button
-        btnEdit.innerHTML = 'View';
+        btnView.innerHTML = 'View';
 
         //btnDelete.innerHTML = '<i class="fa-solid fa-trash"></i>';
         //btnView.innerHTML = '<i class="fa-solid fa-eye"></i>';
 
         //onlick function for buttons
-        btnEdit.onclick = ()=>{
-            editFunction(element,index);
+        btnView.onclick = ()=>{
+            viewFunction(element,index);
         }
         /*
         btnView.onclick = () =>{
@@ -105,7 +105,7 @@ const fillDataIntoTable = (tabledID, dataList, displayPropertyList,editFunction,
          */
 
         //append buttons to the td that's dedicated for the buttons
-        tdModify.appendChild(btnEdit);
+        tdModify.appendChild(btnView);
         //tdModify.appendChild(btnDelete);
         //tdModify.appendChild(btnView);
 
