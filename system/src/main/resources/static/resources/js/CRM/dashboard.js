@@ -147,8 +147,10 @@ const rowView = (ob, Index) => {
 
     //set info section
     const [addedDate, addedTime] = ob.timeStamp.split("T");
-    document.querySelector('#inquirySheetAddedDate').value = addedDate;
-    document.querySelector('#inquirySheetAddedTime').value = addedTime;
+    document.querySelector('#inquirySheetAddedDate').innerText = addedDate;
+    document.querySelector('#inquirySheetAddedTime').innerText = addedTime;
+    console.log(addedDate);
+    console.log(addedTime);
 
 }
 const rowEdit = (ob, Index) => {
