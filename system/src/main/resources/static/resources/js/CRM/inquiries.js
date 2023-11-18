@@ -2,8 +2,7 @@ window.addEventListener('load', () => {
 
     refreshTable();
 
-
-    $(".chosen-inquiry-search").chosen({width: '145px'});
+    $(".chosen-inquiry-search").chosen({width: '190px'});
     $('#inquirySearchDateRange').daterangepicker({
         "locale": {
             "format": "YYYY-MM-DD",
