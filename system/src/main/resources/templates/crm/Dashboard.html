@@ -442,7 +442,7 @@
                                     <label class="fw-bold required small" for="inquiryFollowUpContent">Content</label>
                                 </div>
                                 <textarea class="rounded-0 form-control" cols="80" id="inquiryFollowUpContent" required
-                                          rows="4"></textarea>
+                                          rows="4" onkeyup="inputTextValidator(this,'^[a-zA-Z0-9\\s/]{3,}$','newFollowUp','content')"></textarea>
                                 <div class="text-muted small"><small>Summary of the Customer Feedback.</small></div>
                             </div>
                         </div>
@@ -500,7 +500,7 @@
                         </div>
                         <div class="w-100 ">
                             <button class="btn bg-purple text-white rounded-0 btn-block w-100"
-                                    id="inquiryFollowUpConfirm" type="submit" onclick="newFollowupSubmit()">Add Follow-Up
+                                    id="inquiryFollowUpConfirm" type="submit" onclick="newFollowUpSubmit()">Add Follow-Up
                             </button>
                         </div>
                     </div>
@@ -670,6 +670,7 @@
 <script src="/resources/js/external-table.js" type="text/javascript"></script>
 <script src="/resources/js/external-modalFunction.js" type="text/javascript"></script>
 <script src="/resources/js/CRM/newInquiry.js" type="text/javascript"></script>
+<script src="/resources/js/CRM/newFollowUp.js" type="text/javascript"></script>
 <script src="/resources/js/CRM/dashboard.js" type="text/javascript"></script>
 <script>
     const success = () => {

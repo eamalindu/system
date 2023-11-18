@@ -25,5 +25,7 @@ window.addEventListener('load', () => {
 });
 
 const newFollowUpSubmit = ()=>{
+    //temp fix
+    newFollowUp.inquiryId= document.querySelector('#inquirySheetId').innerText;
     console.log(newFollowUp)
 }
