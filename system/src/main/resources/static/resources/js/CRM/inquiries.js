@@ -61,7 +61,7 @@ const getInquiryId = (ob) =>{
 
 }
 const getSource = (ob) => {
-    return ob.inquiryId.sourceid.name;
+    return ob.inquiryId.sourceId.name;
 };
 
 const getCourse = (ob) =>{
@@ -78,7 +78,7 @@ const getMobileNumber = (ob) =>{
 
 const getInquiryStatus =(ob) =>{
 
-    return ob.inquiryId.inquiryStatusid.name;
+    return ob.inquiryId.inquiryStatusId.name;
 }
 
 const rowEdit = (ob,rowIndex)=>{
@@ -86,7 +86,7 @@ const rowEdit = (ob,rowIndex)=>{
     document.querySelector('#inquirySheetId').innerText = getInquiryId(ob);
 
     document.querySelector('#inquirySheetCourse').value = ob.inquiryId.courseId.code;
-    document.querySelector('#inquirySheetSource').value = ob.inquiryId.sourceid.name;
+    document.querySelector('#inquirySheetSource').value = ob.inquiryId.sourceId.name;
 
     document.querySelector('#inquirySheetFirstName').value = ob.inquiryId.firstName;
     document.querySelector('#inquirySheetLastName').value = ob.inquiryId.lastName;
