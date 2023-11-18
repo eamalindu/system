@@ -121,7 +121,10 @@ const rowView = (ob,rowIndex)=>{
     document.querySelector('#inquirySheetNextFollowUp').value = (ob.inquiryId.contactTime).replace('T', ' ');
     document.querySelector('#inquirySheetDescription').value = ob.inquiryId.description;
 
-
+    const [addedDate, addedTime] = ob.inquiryId.timeStamp.split("T");
+    document.querySelector('#inquirySheetAddedDate').innerText = addedDate;
+    document.querySelector('#inquirySheetAddedTime').innerText = addedTime;
+    document.querySelector('#inquirySheetAddedBy').innerText = ob.inquiryId.addedBy;
 
 
 
