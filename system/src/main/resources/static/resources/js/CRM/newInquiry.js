@@ -30,19 +30,6 @@ window.addEventListener('load', () => {
             "format": "YYYY-MM-DD HH:mm"
         }
     });
-    $('#inquiryFollowUpTime').daterangepicker({
-        "minDate": new Date(),
-        "singleDatePicker": true,
-        "timePicker": true,
-        "timePicker24Hour": true,
-        "autoApply": true,
-        "linkedCalendars": false,
-        "showCustomRangeLabel": false,
-        "drops": "up",
-        "locale": {
-            "format": "YYYY-MM-DD HH:mm"
-        }
-    });
 
     //validation chosen select (for new inquiry)
     $("#inquirySource").chosen().change(function () {
@@ -53,11 +40,6 @@ window.addEventListener('load', () => {
     });
     $("#inquiryIdOption").chosen().change(function () {
         $("#inquiryIdOption_chosen .chosen-single").addClass('select-validated');
-    });
-
-    //validation for chosen select (for inquiry follow-up)
-    $("#inquiryFollowUpType").chosen().change(function () {
-        $("#inquiryFollowUpType_chosen .chosen-single").addClass('select-validated');
     });
 
     //external libraries initialization end
