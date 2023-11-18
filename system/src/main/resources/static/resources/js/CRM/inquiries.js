@@ -9,6 +9,8 @@ window.addEventListener('load', () => {
 
     sources = ajaxGetRequest("/source/findall")
     fillSelectOptions(inquirySearchSource,'Please Select a Source',sources)
+
+    //need to add counsellors also (db not implemented yet)
     //dynamic select end
 
 
