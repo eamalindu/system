@@ -34,8 +34,6 @@ const refreshInquiryPoolTable = () => {
 
 //testing code end
 
-
-
 }
 
 const getCourse = (ob) => {
