@@ -2,6 +2,8 @@ window.addEventListener('load', () => {
 
     refreshTable();
 
+
+    //external libraries initialization
     $(".chosen-inquiry-search").chosen({width: '190px'});
     $('#inquirySearchDateRange').daterangepicker({
         "locale": {
@@ -23,20 +25,7 @@ window.addEventListener('load', () => {
 const refreshTable = () => {
 
     //get data with ajax and database
-    inquiriesWithFollowUps = [];
-    $.ajax("/followup/findall", {
-        async: false,
-        type: "Get",
-        contentType: "json",
-        success: function (data) {
-            console.log(data);
-            inquiriesWithFollowUps = data;
-        },
-        error: function (resOb) {
-            alert("error" + resOb);
-        }
-
-    });
+    inquiriesWithFollowUps = ajaxGetRequest("/followup/findall");
 
     displayPropertyList = [
         {property: getInquiryId,dataType: 'function'},
@@ -47,7 +36,7 @@ const refreshTable = () => {
         {property: 'feeling',dataType: 'text'},
         {property: 'confirmed',dataType: 'text'},
         {property: 'addedBy',dataType: 'text'},
-        {property: 'nextFollowup',dataType: 'text'},
+        {property: getNextFollowup,dataType: 'function'},
         {property: getInquiryStatus,dataType: 'function'}
 
     ];
@@ -79,6 +68,10 @@ const getMobileNumber = (ob) =>{
 const getInquiryStatus =(ob) =>{
 
     return ob.inquiryId.inquiryStatusId.name;
+}
+
+const getNextFollowup = (ob)=>{
+    return ob.nextFollowup.replace('T', ' ');
 }
 
 const rowView = (ob,rowIndex)=>{
