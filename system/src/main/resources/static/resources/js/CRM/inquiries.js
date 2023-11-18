@@ -1,6 +1,15 @@
 window.addEventListener('load', () => {
 
+    //refresh table
     refreshTable();
+
+    //dynamic select start
+    courses = ajaxGetRequest("/course/findall");
+    fillSelectOptions(inquirySearchCourse,'Please Select a Course',courses);
+
+    sources = ajaxGetRequest("/source/findall")
+    fillSelectOptions(inquirySearchSource,'Please Select a Source',sources)
+    //dynamic select end
 
 
     //external libraries initialization
