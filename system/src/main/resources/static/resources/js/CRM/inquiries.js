@@ -52,12 +52,12 @@ const refreshTable = () => {
 
     ];
 
-    fillDataIntoTable(tblInquiry,inquiriesWithFollowUps,displayPropertyList,rowEdit,rowPrint,rowDelete);
+    fillDataIntoTable(tblInquiry,inquiriesWithFollowUps,displayPropertyList,rowEdit,rowView,rowDelete);
 
 }
 
 const getInquiryId = (ob) =>{
-    return ob.inquiryId.id;
+    return ob.inquiryId.inquiryNumber;
 
 }
 const getSource = (ob) => {
@@ -81,7 +81,7 @@ const getInquiryStatus =(ob) =>{
     return ob.inquiryId.inquiryStatusId.name;
 }
 
-const rowEdit = (ob,rowIndex)=>{
+const rowView = (ob,rowIndex)=>{
 
     document.querySelector('#inquirySheetId').innerText = getInquiryId(ob);
 
@@ -126,7 +126,7 @@ const rowEdit = (ob,rowIndex)=>{
 
 
 }
-const rowPrint = (ob,rowIndex)=>{
+const rowEdit = (ob,rowIndex)=>{
 
 }
 const rowDelete = (ob,rowIndex)=>{
