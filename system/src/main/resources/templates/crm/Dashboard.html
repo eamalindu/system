@@ -426,7 +426,7 @@
                                 </div>
                                 <div class="input-group">
                                     <select class="form-select rounded-0 chosen-inquiry"
-                                            data-placeholder="Please Select a Type  " id="inquiryFollowUpType" required>
+                                            data-placeholder="Please Select a Type " id="inquiryFollowUpType" onchange="selectStaticValueValidator(this,'','newFollowUp','type')" required>
                                         <option value=""></option>
                                         <option>Generic Update</option>
                                         <option>Phone Call</option>
@@ -493,14 +493,14 @@
                                     <label class="fw-bold required small" for="inquiryFollowUpTime">Convenient Time To
                                         Contact</label>
                                 </div>
-                                <input class="form-control rounded-0" id="inquiryFollowUpTime" required>
+                                <input class="form-control rounded-0" id="inquiryFollowUpTime" onchange="inputDateTimeValidator(this,'^20[0-9]{2}[-][0-9]{2}[-][0-9]{2}[ ][0-9]{2}[:][0-9]{2}$','newFollowUp','nextFollowup')" required>
                                 <div class="text-muted small"><small>When do you want to contact this customer
                                     again?</small></div>
                             </div>
                         </div>
                         <div class="w-100 ">
                             <button class="btn bg-purple text-white rounded-0 btn-block w-100"
-                                    id="inquiryFollowUpConfirm" type="submit">Add Follow-Up
+                                    id="inquiryFollowUpConfirm" type="submit" onclick="newFollowupSubmit()">Add Follow-Up
                             </button>
                         </div>
                     </div>
