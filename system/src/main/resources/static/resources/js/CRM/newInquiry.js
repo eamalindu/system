@@ -103,6 +103,13 @@ const newInquirySubmit = ()=>{
             //show an alert to user
             showCustomModal("Inquiry Successfully Added!","success");
 
+            //after a successful creation from needs to be resettled and all the validations should be removed
+            //off-canvas is also can be minimized (ask about it)
+
+            $(".chosen-inquiry").removeClass('select-validated');
+            $('select').trigger('chosen:updated');
+            document.getElementById('frmNewInquiry').reset();
+
         }
         else{
             //this means there was a problem with the query
