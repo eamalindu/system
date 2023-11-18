@@ -6,11 +6,11 @@ window.addEventListener('load', () => {
 
     //dynamic select for courses
     courses = ajaxGetRequest("/course/findall");
-    fillSelectOptions(inquiryCourse,'Please Select a Course',courses)
+    fillSelectOptions(inquiryCourse, 'Please Select a Course', courses)
 
     //dynamic select for sources
     sources = ajaxGetRequest("/source/findall")
-    fillSelectOptions(inquirySource,'Please Select a Source',sources)
+    fillSelectOptions(inquirySource, 'Please Select a Source', sources)
 
     //dynamic select end
 
@@ -65,14 +65,14 @@ window.addEventListener('load', () => {
 
 //new inquiry submit start
 
-const newInquirySubmit = ()=>{
+const newInquirySubmit = () => {
     console.log('New Inquiry Added', newInquiry);
 
     //check for form errors
     //calling checkFormErrors()
     const errors = checkFormErrors();
 
-    if(errors===''){
+    if (errors === '') {
 
         //this means there are no any errors
         //user confirmation is needed (will add later)
@@ -97,67 +97,86 @@ const newInquirySubmit = ()=>{
         });
 
         //check the postServerResponse value
-        if(postServerResponse==='OK'){
+        if (postServerResponse === 'OK') {
 
             //this means data successfully passed to the backend
             //show an alert to user
-            showCustomModal("Inquiry Successfully Added!","success");
+            showCustomModal("Inquiry Successfully Added!", "success");
 
             //after a successful creation from needs to be resettled and all the validations should be removed
             //off-canvas is also can be minimized (ask about it)
 
-            $(".chosen-inquiry").removeClass('select-validated');
-            $('select').trigger('chosen:updated');
+            //remove validated class from chosen
+            $("#inquirySource_chosen .chosen-single").removeClass('select-validated');
+            $("#inquiryCourse_chosen .chosen-single").removeClass('select-validated');
+            $("#inquiryIdOption_chosen .chosen-single").removeClass('select-validated');
+
+            //set default option chosen
+            setTimeout(function () {
+                $('select').val('').trigger('chosen:updated');
+            }, 0);
+
+            //reset form values
             document.getElementById('frmNewInquiry').reset();
 
-        }
-        else{
+            //reset all the inputs validation
+            inputs = document.querySelectorAll('input');
+            inputs.forEach(function (input) {
+                // Remove inline styles
+                input.style = '';
+            });
+            //reset the textarea
+            document.querySelector('textarea').style = '';
+
+            //reset the newInquiry object
+            newInquiry = {};
+
+        } else {
             //this means there was a problem with the query
             //shows an error alert to the user
-            showCustomModal("Operation Failed!"+postServerResponse,"error");
+            showCustomModal("Operation Failed!" + postServerResponse, "error");
         }
 
 
-    }
-    else {
+    } else {
         //there are errors
         //display them to the user using external-ModalFunction()
-        showCustomModal(errors,'warning')
+        showCustomModal(errors, 'warning')
     }
 }
 
-const checkFormErrors = () =>{
-    let errors = '' ;
+const checkFormErrors = () => {
+    let errors = '';
 
-    if(newInquiry.sourceId==null){
-        errors = errors+'Source is Required<br>';
+    if (newInquiry.sourceId == null) {
+        errors = errors + 'Source is Required<br>';
     }
-    if(newInquiry.courseId==null){
-        errors = errors+'Course is Required<br>';
+    if (newInquiry.courseId == null) {
+        errors = errors + 'Course is Required<br>';
     }
-    if(newInquiry.firstName==null){
-        errors = errors+'First Name is Required<br>';
+    if (newInquiry.firstName == null) {
+        errors = errors + 'First Name is Required<br>';
     }
-    if(newInquiry.lastName==null){
-        errors = errors+'Last Name is Required<br>';
+    if (newInquiry.lastName == null) {
+        errors = errors + 'Last Name is Required<br>';
     }
-    if(newInquiry.primaryMobileNumber==null){
-        errors = errors+'Mobile Number is Required<br>';
-
-    }
-    if(newInquiry.idType==null){
-        errors = errors+'ID Type is Required<br>';
+    if (newInquiry.primaryMobileNumber == null) {
+        errors = errors + 'Mobile Number is Required<br>';
 
     }
-    if(newInquiry.idValue==null){
-        errors = errors+'ID Value is Required<br>';
+    if (newInquiry.idType == null) {
+        errors = errors + 'ID Type is Required<br>';
 
     }
-    if(newInquiry.contactTime==null){
-        errors = errors+'Contact Time is Required<br>';
+    if (newInquiry.idValue == null) {
+        errors = errors + 'ID Value is Required<br>';
+
     }
-    if(newInquiry.description==null){
-        errors = errors+'Description is Required<br>';
+    if (newInquiry.contactTime == null) {
+        errors = errors + 'Contact Time is Required<br>';
+    }
+    if (newInquiry.description == null) {
+        errors = errors + 'Description is Required<br>';
     }
 
     return errors;
