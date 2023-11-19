@@ -27,9 +27,15 @@ public class Batch {
     @NotNull
     private String batchCode;
 
+    @Column(name = "commencedate")
+    @NotNull
+    private LocalDate commenceDate;
 
-    private LocalDate commencedate;
-    private LocalDate enddate;
+    @Column(name = "enddate")
+    @NotNull
+    private LocalDate endDate;
+
+
     private String seatcount;
     private LocalTime starttime;
     private LocalTime endtime;
