@@ -1,6 +1,7 @@
 package lk.steam.system.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,7 +23,11 @@ public class Batch {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String batchcode;
+    @Column(name = "batchcode",unique = true)
+    @NotNull
+    private String batchCode;
+
+
     private LocalDate commencedate;
     private LocalDate enddate;
     private String seatcount;
@@ -36,6 +41,6 @@ public class Batch {
     private String description;
 
     @ManyToOne
-    @JoinColumn()
+    @JoinColumn(name = "course_id",referencedColumnName = "id")
     private Course course_id;
 }
