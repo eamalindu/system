@@ -35,15 +35,40 @@ public class Batch {
     @NotNull
     private LocalDate endDate;
 
+    @Column(name = "seatcount")
+    @NotNull
+    private Integer seatCount;
 
-    private String seatcount;
-    private LocalTime starttime;
-    private LocalTime endtime;
-    private String createdby;
+    @Column(name = "starttime")
+    @NotNull
+    private LocalTime startTime;
+
+    @Column(name = "endtime")
+    @NotNull
+    private LocalTime endTime;
+
+    @Column(name = "createdby")
+    @NotNull
+    private String createdBy;
+
+    @Column(name = "lecturer")
+    @NotNull
     private String lecturer;
+
+    @Column(name = "status")
+    @NotNull
     private Integer status;
+
+    @Column(name = "timestamp")
+    @NotNull
     private LocalDateTime timestamp;
+
+    @Column(name = "location")
+    @NotNull
     private String location;
+
+    @Column(name = "description")
+    @NotNull
     private String description;
 
     @ManyToOne
