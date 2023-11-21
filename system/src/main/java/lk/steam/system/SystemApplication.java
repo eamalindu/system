@@ -49,4 +49,11 @@ public class SystemApplication {
 		crmInquiriesView.setViewName("crm/Inquiries.html");
 		return crmInquiriesView;
 	}
+
+	@RequestMapping(value = "/STEAM-CRM/Schedules")
+	public ModelAndView crmSchedules(){
+		ModelAndView crmSchedulesView = new ModelAndView();
+		crmSchedulesView.setViewName("crm/Schedules.html");
+		return crmSchedulesView;
+	}
 }
