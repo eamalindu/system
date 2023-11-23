@@ -519,7 +519,7 @@
                 <td class="fw-bold w-25">Course</td>
                 <td class="w-25">
                     <input class="small rounded-0 form-control-sm border-0" id="inquirySheetCourse" readonly
-                           value="Diploma in IT">
+                           value="Diploma in IT" onkeyup="inputTextValidator(this,'','newInquiry','courseId')">
                 </td>
                 <td class="fw-bold w-25">Source</td>
                 <td><input class="small rounded-0 form-control-sm border-0" id="inquirySheetSource" readonly
@@ -528,23 +528,23 @@
             <tr>
                 <td class="fw-bold w-25">First Name</td>
                 <td class="w-25"><input class="small rounded-0 form-control-sm border-0" id="inquirySheetFirstName" readonly
-                                        value="Kasun"></td>
+                                        value="Kasun" onkeyup="inputTextValidator(this,'^[A-Z][a-z]{2,19}$','newInquiry','firstName')"></td>
                 <td class="fw-bold w-25">Last Name</td>
                 <td><input class="small rounded-0 form-control-sm border-0" id="inquirySheetLastName" readonly
-                           value="Malhara"></td>
+                           value="Malhara" onkeyup="inputTextValidator(this,'^[A-Z][a-z]{2,29}$','newInquiry','lastName')"></td>
             </tr>
             <tr>
                 <td class="fw-bold w-25">Phone Number</td>
                 <td class="w-25"><input class="small rounded-0 form-control-sm border-0" id="inquirySheetPrimaryMobile" readonly
-                                        value="0781011144"></td>
+                                        value="0781011144" onkeyup="inputTextValidator(this,'^[0][7][01245678][0-9]{7}$','newInquiry','primaryMobileNumber')"></td>
                 <td class="fw-bold w-25">Email</td>
                 <td><input class="small rounded-0 form-control-sm border-0" id="inquirySheetEmail" readonly
-                           value="eamalindu@gmail.com" placeholder="Optional"></td>
+                           value="eamalindu@gmail.com" placeholder="Optional" onkeyup="inputTextValidator(this,'^[a-z|A-Z]{2,19}[@][a-z|A-Z]{2,8}[.][a-z|A-Z]{2,3}$','newInquiry','email')"></td>
             </tr>
             <tr>
                 <td class="fw-bold w-25">Optional Number</td>
                 <td class="w-25"><input class="small rounded-0 form-control-sm border-0" id="inquirySheetSecondaryMobile" readonly
-                                        value="0781011144" placeholder="Optional"></td>
+                                        value="0781011144" placeholder="Optional" onkeyup="inputTextValidator(this,'^[0][7][01245678][0-9]{7}$','newInquiry','secondaryMobileNumber')"></td>
                 <td class="fw-bold w-25">NIC</td>
                 <td><input class="small rounded-0 form-control-sm border-0" id="inquirySheetIdValue" readonly
                            value="983151108V"></td>

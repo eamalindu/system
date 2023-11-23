@@ -150,6 +150,9 @@ const rowView = (ob, Index) => {
     document.querySelector('#inquirySheetAddedTime').innerText = addedTime;
     document.querySelector('#inquirySheetAddedBy').innerText = ob.addedBy;
 
+    //set the current object to be edited
+    inquiryToBeEdited = ob;
+
 }
 const rowEdit = (ob, Index) => {
     //remove the attribute readonly to make inputs accept the user input values
@@ -166,6 +169,12 @@ const rowEdit = (ob, Index) => {
     //display the update button once the edit button is clicked
     btnInquirySheetUpdate.style.display = 'block';
 
+    //catch old inquiry and new inquiry
+    oldInquiry = JSON.parse(JSON.stringify(inquiryToBeEdited));
+    newInquiry = JSON.parse(JSON.stringify(inquiryToBeEdited));
+
+    console.log(oldInquiry)
+    console.log(newInquiry)
 
 }
 const rowDelete = (ob, Index) => {
