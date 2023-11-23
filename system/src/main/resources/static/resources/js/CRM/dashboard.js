@@ -140,6 +140,16 @@ const rowView = (ob, Index) => {
 
 }
 const rowEdit = (ob, Index) => {
+    inputs = document.querySelectorAll('input');
+    textArea = document.querySelector('textarea');
+    textArea.removeAttribute('readonly');
+    textArea.setAttribute('style','border:2px solid rebeccapurple!important');
+    inputs.forEach(function (input) {
+        input.removeAttribute('readonly');
+        input.setAttribute('style','border:2px solid rebeccapurple!important');
+    });
+
+
 
 }
 const rowDelete = (ob, Index) => {
