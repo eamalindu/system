@@ -150,6 +150,8 @@ const rowView = (ob, Index) => {
 
 }
 const rowEdit = (ob, Index) => {
+    //remove the attribute readonly to make inputs accept the user input values
+    //give a border color to inputs indicate that the input's values are ready to be edited
     inputs = document.querySelectorAll('input');
     textArea = document.querySelector('#inquirySheetDescription');
     textArea.removeAttribute('readonly');
