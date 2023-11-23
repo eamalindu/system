@@ -155,10 +155,10 @@ const rowEdit = (ob, Index) => {
     inputs = document.querySelectorAll('input');
     textArea = document.querySelector('#inquirySheetDescription');
     textArea.removeAttribute('readonly');
-    textArea.setAttribute('style','border:2px solid rebeccapurple!important');
+    textArea.setAttribute('style','border:1px solid #ffc107!important');
     inputs.forEach(function (input) {
         input.removeAttribute('readonly');
-        input.setAttribute('style','border:2px solid rebeccapurple!important');
+        input.setAttribute('style','border:1px solid #ffc107!important');
     });
 
 
