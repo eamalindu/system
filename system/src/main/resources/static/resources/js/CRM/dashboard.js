@@ -27,11 +27,11 @@ const refreshInquiryPoolTable = () => {
 
     scheduledInquiries = ajaxGetRequest("/inquiry/test2")
 
-     displayPropertyListForScheduledPool=[
-        {property:'inquiry_id',dataType:'text'},
-        {property:'course_id',dataType:'text'},
-        {property:'source_id',dataType:'text'},
-        {property:'firstname',dataType:'text'},
+    displayPropertyListForScheduledPool = [
+        {property: 'inquiry_id', dataType: 'text'},
+        {property: 'course_id', dataType: 'text'},
+        {property: 'source_id', dataType: 'text'},
+        {property: 'firstname', dataType: 'text'},
     ];
     fillDataIntoTable(tblScheduledPool, scheduledInquiries, displayPropertyListForScheduledPool, rowEdit, rowView, rowDelete);
 
@@ -100,10 +100,10 @@ const rowView = (ob, Index) => {
     btnInquirySheetUpdate.style.display = 'none';
     inputs = document.querySelectorAll('input');
     textArea = document.querySelector('#inquirySheetDescription');
-    textArea.setAttribute('readonly','true');
+    textArea.setAttribute('readonly', 'true');
     textArea.style = '';
     inputs.forEach(function (input) {
-        input.setAttribute('readonly','true');
+        input.setAttribute('readonly', 'true');
         input.style = '';
 
     });
@@ -120,22 +120,20 @@ const rowView = (ob, Index) => {
     //email is an optional value therefore it might contain null as the value
     //instead of displaying nothing, we can use if condition to set a value
 
-    if(ob.email!==null){
+    if (ob.email !== null) {
         document.querySelector('#inquirySheetEmail').value = ob.email;
         document.querySelector('#inquirySheetEmail').classList.remove('text-muted');
 
-    }
-    else
-    {
+    } else {
         document.querySelector('#inquirySheetEmail').value = '-- Not Provided --';
         document.querySelector('#inquirySheetEmail').classList.add('text-muted');
     }
 
-    if(ob.secondaryMobileNumber !== null){
-        document.querySelector('#inquirySheetSecondaryMobile').value =ob.secondaryMobileNumber ;
+    if (ob.secondaryMobileNumber !== null) {
+        document.querySelector('#inquirySheetSecondaryMobile').value = ob.secondaryMobileNumber;
         document.querySelector('#inquirySheetSecondaryMobile').classList.remove('text-muted');
 
-    }else{
+    } else {
         document.querySelector('#inquirySheetSecondaryMobile').value = '-- Not Provided --';
         document.querySelector('#inquirySheetSecondaryMobile').classList.add('text-muted');
     }
@@ -159,10 +157,10 @@ const rowEdit = (ob, Index) => {
     inputs = document.querySelectorAll('input');
     textArea = document.querySelector('#inquirySheetDescription');
     textArea.removeAttribute('readonly');
-    textArea.setAttribute('style','border:1px solid #ffc107!important');
+    textArea.setAttribute('style', 'border:1px solid #ffc107!important');
     inputs.forEach(function (input) {
         input.removeAttribute('readonly');
-        input.setAttribute('style','border:1px solid #ffc107!important');
+        input.setAttribute('style', 'border:1px solid #ffc107!important');
     });
 
     //display the update button once the edit button is clicked
