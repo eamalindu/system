@@ -3,6 +3,8 @@ window.addEventListener('load', () => {
     //calling refreshInquiryPoolTable function
     refreshInquiryPoolTable();
 
+    btnInquirySheetUpdate.style.display = 'none';
+
 });
 
 
@@ -94,6 +96,7 @@ const getFullName = (ob) => {
 }
 const rowView = (ob, Index) => {
 
+    btnInquirySheetUpdate.style.display = 'none';
     inputs = document.querySelectorAll('input');
     textArea = document.querySelector('#inquirySheetDescription');
     textArea.setAttribute('readonly','true');
@@ -161,6 +164,8 @@ const rowEdit = (ob, Index) => {
         input.setAttribute('style','border:1px solid #ffc107!important');
     });
 
+    //display the update button once the edit button is clicked
+    btnInquirySheetUpdate.style.display = 'block';
 
 
 }
