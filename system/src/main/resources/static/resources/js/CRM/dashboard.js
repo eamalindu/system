@@ -141,7 +141,7 @@ const rowView = (ob, Index) => {
 }
 const rowEdit = (ob, Index) => {
     inputs = document.querySelectorAll('input');
-    textArea = document.querySelector('textarea');
+    textArea = document.querySelector('#inquirySheetDescription');
     textArea.removeAttribute('readonly');
     textArea.setAttribute('style','border:2px solid rebeccapurple!important');
     inputs.forEach(function (input) {
