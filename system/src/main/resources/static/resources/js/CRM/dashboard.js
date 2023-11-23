@@ -97,8 +97,10 @@ const rowView = (ob, Index) => {
     inputs = document.querySelectorAll('input');
     textArea = document.querySelector('#inquirySheetDescription');
     textArea.setAttribute('readonly','true');
+    textArea.style = '';
     inputs.forEach(function (input) {
         input.setAttribute('readonly','true');
+        input.style = '';
 
     });
 
