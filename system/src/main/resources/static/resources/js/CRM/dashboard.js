@@ -94,6 +94,14 @@ const getFullName = (ob) => {
 }
 const rowView = (ob, Index) => {
 
+    inputs = document.querySelectorAll('input');
+    textArea = document.querySelector('#inquirySheetDescription');
+    textArea.setAttribute('readonly','true');
+    inputs.forEach(function (input) {
+        input.setAttribute('readonly','true');
+
+    });
+
     document.querySelector('#inquirySheetId').innerText = ob.inquiryNumber;
 
     document.querySelector('#inquirySheetCourse').value = ob.courseId.code;
