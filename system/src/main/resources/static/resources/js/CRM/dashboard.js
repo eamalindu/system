@@ -3,6 +3,7 @@ window.addEventListener('load', () => {
     //calling refreshInquiryPoolTable function
     refreshInquiryPoolTable();
 
+    //hide the update button
     btnInquirySheetUpdate.style.display = 'none';
 
 });
@@ -95,7 +96,7 @@ const getFullName = (ob) => {
 
 }
 const rowView = (ob, Index) => {
-
+    //hide the update button
     btnInquirySheetUpdate.style.display = 'none';
     inputs = document.querySelectorAll('input');
     textArea = document.querySelector('#inquirySheetDescription');
