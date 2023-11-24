@@ -211,4 +211,10 @@ const rowDelete = (ob, Index) => {
 
 const inquiryUpdate=()=>{
 
+    const errors = checkFormErrors();
+
+    if(errors===''){}
+    else{
+        showCustomModal(errors,'warning');
+    }
 }
