@@ -113,6 +113,11 @@ const newInquirySubmit = () => {
             //reset the newInquiry object
             newInquiry = {};
 
+            //refresh the current html page after 5s
+            setTimeout(function () {
+            location.reload();}, 5000);
+
+
         } else {
             //this means there was a problem with the query
             //shows an error alert to the user
