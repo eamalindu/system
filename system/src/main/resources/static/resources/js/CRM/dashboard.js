@@ -213,7 +213,10 @@ const inquiryUpdate=()=>{
 
     const errors = checkFormErrors();
 
-    if(errors===''){}
+    if(errors===''){
+
+
+    }
     else{
         showCustomModal(errors,'warning');
     }
