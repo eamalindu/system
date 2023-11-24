@@ -6,7 +6,7 @@ window.addEventListener('load', () => {
     //hide the update button
     btnInquirySheetUpdate.style.display = 'none';
 
-    //make the selects dynamic
+    //make the selects dynamic for inquiry sheet
     courses = ajaxGetRequest("/course/findall");
     fillSelectOptions(inquirySheetCourse, 'Please Select a Course', courses);
 
