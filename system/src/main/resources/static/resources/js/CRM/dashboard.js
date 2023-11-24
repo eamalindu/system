@@ -172,6 +172,7 @@ const rowView = (ob, Index) => {
 
 
 }
+//refresh inquiryPool table end
 
 const inquiryEdit = () => {
     //remove the attribute readonly to make inputs accept the user input values
@@ -207,4 +208,7 @@ const inquiryEdit = () => {
 const rowDelete = (ob, Index) => {
 
 }
-//refresh inquiryPool table end
+
+const inquiryUpdate=()=>{
+
+}
