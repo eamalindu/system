@@ -76,7 +76,7 @@ public class InquiryController {
             //set InquiryNumber
             String inqNextNumber = inquiryDAO.getNextInquiryNumber();
 
-            if(inqNextNumber.equals(null)||inqNextNumber.isEmpty()){
+            if(inqNextNumber==null||inqNextNumber.length()==0||inqNextNumber.isEmpty()){
                 inquiry.setInquiryNumber("000001");
             }
             else{
