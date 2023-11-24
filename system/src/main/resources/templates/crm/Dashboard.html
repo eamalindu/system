@@ -547,14 +547,14 @@
                                         value="0781011144" placeholder="Optional" onkeyup="inputTextValidator(this,'^[0][7][01245678][0-9]{7}$','newInquiry','secondaryMobileNumber')"></td>
                 <td class="fw-bold w-25">NIC</td>
                 <td><input class="small rounded-0 form-control-sm border-0" id="inquirySheetIdValue" readonly
-                           value="983151108V"></td>
+                           value="983151108V" onkeyup="inputTextValidator(this,'^(?:[6-9][0-9]{8}([V]|[X]|[v]|[x]){1})|(?:[19|20][0-9]{10})$','newInquiry','idValue')"></td>
             </tr>
             <tr>
                 <td class="fw-bold w-25">Convenient Time To Contact</td>
                 <td class="w-25"><input class="small rounded-0 form-control-sm border-0" id="inquirySheetNextFollowUp"
                                         readonly value="2023-10-26 at 00:00"></td>
                 <td class="fw-bold w-25">Description</td>
-                <td><textarea class="small rounded-0 form-control-sm border-0" id="inquirySheetDescription" readonly></textarea>
+                <td><textarea class="small rounded-0 form-control-sm border-0" id="inquirySheetDescription" onkeyup="inputTextValidator(this,'^[a-zA-Z0-9\\s/]{20,}$','newInquiry','description')" readonly></textarea>
                 </td>
             </tr>
             </tbody>
