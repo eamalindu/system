@@ -221,7 +221,7 @@ const inquiryUpdate=()=>{
             showCustomModal("No changes Detected!","info")
         }
         else{
-            showCustomModal("Following Changes Detected<br><br/>"+updates,"warning")
+            showCustomModal("Following Changes Detected<br><br/><small>"+updates,"warning")
         }
 
     }
@@ -235,13 +235,13 @@ const checkForInquiryUpdates = ()=>{
     let updates = '';
 
     if(newInquiry.email !== oldInquiry.email){
-        updates = "<small class='fw-bold text-lowercase'>"+updates+oldInquiry.email+"</small> <br>was Changed to <br><small class='fw-bold text-lowercase'>"+newInquiry.email+"</small>";
+        updates = updates + "Email was changed to <span class='text-lowercase'>"+newInquiry.email+"</span><br>";
     }
     if(newInquiry.firstName !== oldInquiry.firstName){
-        updates = "<small class='fw-bold text-lowercase'>"+updates+oldInquiry.firstName+"</small> <br>was Changed to <br><small class='fw-bold text-lowercase'>"+newInquiry.firstName+"</small>";
+        updates = updates + "First Name was changed to "+newInquiry.firstName+"<br>";
     }
     if(newInquiry.lastName !== oldInquiry.lastName){
-        updates = "<small class='fw-bold text-lowercase'>"+updates+oldInquiry.lastName+"</small> <br>was Changed to <br><small class='fw-bold text-lowercase'>"+newInquiry.lastName+"</small>";
+        updates = updates + "Last Name was changed to "+newInquiry.lastName+"<br>";
     }
 
     return updates;
