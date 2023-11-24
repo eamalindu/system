@@ -205,6 +205,9 @@ const inquiryEdit = () => {
 }
 const inquiryDropped = () => {
 
+    inquiryToBeDropped = inquiryToBeEdited;
+    console.log(inquiryToBeDropped);
+
 }
 
 const inquiryUpdate = () => {
