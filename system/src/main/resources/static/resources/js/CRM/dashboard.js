@@ -232,4 +232,11 @@ const inquiryUpdate=()=>{
 
 const checkForInquiryUpdates = ()=>{
 
+    let updates = '';
+
+    if(newInquiry.email !== oldInquiry.email){
+        updates = "<small class='fw-bold text-lowercase'>"+updates+oldInquiry.email+"</small> <br>was Changed to <br><small class='fw-bold text-lowercase'>"+newInquiry.email+"</small>";
+    }
+
+    return updates;
 }
