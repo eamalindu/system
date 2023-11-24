@@ -171,6 +171,12 @@ const inquiryEdit = () => {
     textArea = document.querySelector('#inquirySheetDescription');
     textArea.removeAttribute('readonly');
     textArea.setAttribute('style', 'border:1px solid #ffc107!important');
+
+    //remove the disabled attribute from the select
+    //give a border color to indicate that select can be now edited
+    inquirySheetCourse.removeAttribute('disabled');
+    inquirySheetCourse.setAttribute('style', 'border:1px solid #ffc107!important');
+
     inputs.forEach(function (input) {
         input.removeAttribute('readonly');
         input.setAttribute('style', 'border:1px solid #ffc107!important');
