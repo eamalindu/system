@@ -215,9 +215,21 @@ const inquiryUpdate=()=>{
 
     if(errors===''){
 
+        let updates = checkForInquiryUpdates();
+
+        if(updates===""){
+            showCustomModal("No changes Detected!","info")
+        }
+        else{
+            showCustomModal("Following Changes Detected<br><br/>"+updates,"warning")
+        }
 
     }
     else{
         showCustomModal(errors,'warning');
     }
+}
+
+const checkForInquiryUpdates = ()=>{
+
 }
