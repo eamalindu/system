@@ -117,46 +117,46 @@ const rowView = (ob, Index) => {
     //select the appropriate option as selected
     inquirySheetCourse.options[ob.courseId.id].selected = true;
 
-    document.querySelector('#inquirySheetId').innerText = ob.inquiryNumber;
+    inquirySheetId.innerText = ob.inquiryNumber;
 
-    document.querySelector('#inquirySheetSource').value = ob.sourceId.name;
+    inquirySheetSource.value = ob.sourceId.name;
 
-    document.querySelector('#inquirySheetFirstName').value = ob.firstName;
-    document.querySelector('#inquirySheetLastName').value = ob.lastName;
-    document.querySelector('#inquirySheetPrimaryMobile').value = ob.primaryMobileNumber;
+    inquirySheetFirstName.value = ob.firstName;
+    inquirySheetLastName.value = ob.lastName;
+    inquirySheetPrimaryMobile.value = ob.primaryMobileNumber;
 
     //email is an optional value therefore it might contain null as the value
     //instead of displaying nothing, we can use if condition to set a value
 
     if (ob.email !== null) {
-        document.querySelector('#inquirySheetEmail').value = ob.email;
-        document.querySelector('#inquirySheetEmail').classList.remove('text-muted');
+        inquirySheetEmail.value = ob.email;
+        inquirySheetEmail.classList.remove('text-muted');
 
     } else {
-        document.querySelector('#inquirySheetEmail').value = '-- Not Provided --';
-        document.querySelector('#inquirySheetEmail').classList.add('text-muted');
+        inquirySheetEmail.value = '-- Not Provided --';
+        inquirySheetEmail.classList.add('text-muted');
     }
 
     if (ob.secondaryMobileNumber !== null) {
-        document.querySelector('#inquirySheetSecondaryMobile').value = ob.secondaryMobileNumber;
-        document.querySelector('#inquirySheetSecondaryMobile').classList.remove('text-muted');
+        inquirySheetSecondaryMobile.value = ob.secondaryMobileNumber;
+        inquirySheetSecondaryMobile.classList.remove('text-muted');
 
     } else {
-        document.querySelector('#inquirySheetSecondaryMobile').value = '-- Not Provided --';
-        document.querySelector('#inquirySheetSecondaryMobile').classList.add('text-muted');
+        inquirySheetSecondaryMobile.value = '-- Not Provided --';
+        inquirySheetSecondaryMobile.classList.add('text-muted');
     }
 
-    document.querySelector('#inquirySheetIdValue').value = ob.idValue;
+    inquirySheetIdValue.value = ob.idValue;
 
     //showing date and time with iSO Standarad
-    document.querySelector('#inquirySheetNextFollowUp').value = (ob.contactTime).replace('T', ' ');
-    document.querySelector('#inquirySheetDescription').value = ob.description;
+    inquirySheetNextFollowUp.value = (ob.contactTime).replace('T', ' ');
+    inquirySheetDescription.value = ob.description;
 
     //set info section
     const [addedDate, addedTime] = ob.timeStamp.split("T");
-    document.querySelector('#inquirySheetAddedDate').innerText = addedDate;
-    document.querySelector('#inquirySheetAddedTime').innerText = addedTime;
-    document.querySelector('#inquirySheetAddedBy').innerText = ob.addedBy;
+    inquirySheetAddedDate.innerText = addedDate;
+    inquirySheetAddedTime.innerText = addedTime;
+    inquirySheetAddedBy.innerText = ob.addedBy;
 
     //set the current object to be edited
     inquiryToBeEdited = ob;
