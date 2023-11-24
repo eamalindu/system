@@ -237,6 +237,12 @@ const checkForInquiryUpdates = ()=>{
     if(newInquiry.email !== oldInquiry.email){
         updates = "<small class='fw-bold text-lowercase'>"+updates+oldInquiry.email+"</small> <br>was Changed to <br><small class='fw-bold text-lowercase'>"+newInquiry.email+"</small>";
     }
+    if(newInquiry.firstName !== oldInquiry.firstName){
+        updates = "<small class='fw-bold text-lowercase'>"+updates+oldInquiry.firstName+"</small> <br>was Changed to <br><small class='fw-bold text-lowercase'>"+newInquiry.firstName+"</small>";
+    }
+    if(newInquiry.lastName !== oldInquiry.lastName){
+        updates = "<small class='fw-bold text-lowercase'>"+updates+oldInquiry.lastName+"</small> <br>was Changed to <br><small class='fw-bold text-lowercase'>"+newInquiry.lastName+"</small>";
+    }
 
     return updates;
 }
