@@ -210,6 +210,12 @@ const inquiryDropped = () => {
 
     showCustomConfirm('Are You Sure?<br><small>You are about to drop the inquiry <strong>#' + inquiryToBeDropped.inquiryNumber + '</strong></small>',function (result){
 
+        if(result){
+            //database query
+        }
+        else{
+            //close the modal for dropped
+        }
     });
 
 }
