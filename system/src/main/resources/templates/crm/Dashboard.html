@@ -534,7 +534,7 @@
                 <td class="w-25">
                     <select class="form-select rounded-0 small form-select-sm" disabled
                             id="inquirySheetCourse"
-                            onchange="selectDynamicValueValidator(this,'','newInquiry','courseId')" required>
+                            onchange="selectDynamicValueValidator(this,'','editedInquiry','courseId')" required>
                         <option value=""></option>
                         <option>Diploma in IT</option>
                         <option>Diploma in Tamil</option>
@@ -546,7 +546,7 @@
                 <td>
                     <select class="form-select rounded-0 small form-select-sm" disabled
                             id="inquirySheetSource"
-                            onchange="selectDynamicValueValidator(this,'','newInquiry','sourceId')" required>
+                            onchange="selectDynamicValueValidator(this,'','editedInquiry','sourceId')" required>
                         <option value=""></option>
                         <option value="Cold Calling">Cold Calling</option>
                         <option value="Facebook">Facebook</option>
@@ -564,26 +564,26 @@
             <tr>
                 <td class="fw-bold w-25">First Name</td>
                 <td class="w-25"><input class="small rounded-0 form-control-sm border-0 inquirySheetInputs" id="inquirySheetFirstName"
-                                        onkeyup="inputTextValidator(this,'^[A-Z][a-z]{2,19}$','newInquiry','firstName')"
+                                        onkeyup="inputTextValidator(this,'^[A-Z][a-z]{2,19}$','editedInquiry','firstName')"
                                         disabled
                                         value="Kasun">
                 </td>
                 <td class="fw-bold w-25">Last Name</td>
                 <td><input class="small rounded-0 form-control-sm border-0 inquirySheetInputs" id="inquirySheetLastName"
-                           onkeyup="inputTextValidator(this,'^[A-Z][a-z]{2,29}$','newInquiry','lastName')"
+                           onkeyup="inputTextValidator(this,'^[A-Z][a-z]{2,29}$','editedInquiry','lastName')"
                            disabled
                            value="Malhara"></td>
             </tr>
             <tr>
                 <td class="fw-bold w-25">Phone Number</td>
                 <td class="w-25"><input class="small rounded-0 form-control-sm border-0 inquirySheetInputs" id="inquirySheetPrimaryMobile"
-                                        onkeyup="inputTextValidator(this,'^[0][7][01245678][0-9]{7}$','newInquiry','primaryMobileNumber')"
+                                        onkeyup="inputTextValidator(this,'^[0][7][01245678][0-9]{7}$','editedInquiry','primaryMobileNumber')"
                                         disabled
                                         value="0781011144">
                 </td>
                 <td class="fw-bold w-25">Email</td>
                 <td><input class="small rounded-0 form-control-sm border-0 inquirySheetInputs" id="inquirySheetEmail"
-                           onkeyup="inputTextValidator(this,'^[a-z|A-Z]{2,19}[@][a-z|A-Z]{2,8}[.][a-z|A-Z]{2,3}$','newInquiry','email')"
+                           onkeyup="inputTextValidator(this,'^[a-z|A-Z]{2,19}[@][a-z|A-Z]{2,8}[.][a-z|A-Z]{2,3}$','editedInquiry','email')"
                            placeholder="Optional" disabled
                            value="eamalindu@gmail.com">
                 </td>
@@ -592,13 +592,13 @@
                 <td class="fw-bold w-25">Optional Number</td>
                 <td class="w-25"><input class="small rounded-0 form-control-sm border-0 inquirySheetInputs"
                                         id="inquirySheetSecondaryMobile"
-                                        onkeyup="inputTextValidator(this,'^[0][7][01245678][0-9]{7}$','newInquiry','secondaryMobileNumber')"
+                                        onkeyup="inputTextValidator(this,'^[0][7][01245678][0-9]{7}$','editedInquiry','secondaryMobileNumber')"
                                         placeholder="Optional" disabled
                                         value="0781011144">
                 </td>
                 <td class="fw-bold w-25">NIC</td>
                 <td><input class="small rounded-0 form-control-sm border-0 inquirySheetInputs" id="inquirySheetIdValue"
-                           onkeyup="inputTextValidator(this,'^(?:[6-9][0-9]{8}([V]|[X]|[v]|[x]){1})|(?:[19|20][0-9]{10})$','newInquiry','idValue')"
+                           onkeyup="inputTextValidator(this,'^(?:[6-9][0-9]{8}([V]|[X]|[v]|[x]){1})|(?:[19|20][0-9]{10})$','editedInquiry','idValue')"
                            disabled
                            value="983151108V">
                 </td>
@@ -609,7 +609,7 @@
                                         disabled value="2023-10-26 at 00:00"></td>
                 <td class="fw-bold w-25">Description</td>
                 <td><textarea class="small rounded-0 form-control-sm border-0 inquirySheetInputs" id="inquirySheetDescription"
-                              onkeyup="inputTextValidator(this,'^[a-zA-Z0-9\\s/]{20,}$','newInquiry','description')"
+                              onkeyup="inputTextValidator(this,'^[a-zA-Z0-9\\s/]{20,}$','editedInquiry','description')"
                               disabled></textarea>
                 </td>
             </tr>
