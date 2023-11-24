@@ -246,6 +246,12 @@ const checkForInquiryUpdates = ()=>{
     if(newInquiry.email !== oldInquiry.email){
         updates = updates + "Email was changed to <span class='text-lowercase text-purple'>"+newInquiry.email+"</span><br>";
     }
+    if(newInquiry.secondaryMobileNumber !== oldInquiry.secondaryMobileNumber){
+        updates = updates + "Optional Phone Number was changed to <span class='text-purple'>"+newInquiry.secondaryMobileNumber+"</span><br>";
+    }
+    if(newInquiry.idValue !== oldInquiry.idValue){
+        updates = updates + "ID Value was changed to <span class='text-purple'>"+newInquiry.idValue+"</span><br>";
+    }
 
 
     return updates;
