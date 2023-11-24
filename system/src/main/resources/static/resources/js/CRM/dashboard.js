@@ -208,6 +208,10 @@ const inquiryDropped = () => {
     inquiryToBeDropped = inquiryToBeEdited;
     console.log(inquiryToBeDropped);
 
+    showCustomConfirm('You are about to delete the record of : ' + inquiryToBeDropped.fullname + '\nAre You Sure?',function (result){
+
+    });
+
 }
 
 const inquiryUpdate = () => {
