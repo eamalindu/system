@@ -193,8 +193,12 @@ const inquiryEdit = () => {
     oldInquiry = JSON.parse(JSON.stringify(inquiryToBeEdited));
     editedInquiry = JSON.parse(JSON.stringify(inquiryToBeEdited));
 
+    console.log("old inquiry 👇")
     console.log(oldInquiry)
+    console.log("edited inquiry 👇")
     console.log(editedInquiry)
+    console.log("new inquiry 👇")
+    console.log(newInquiry)
 
 }
 const inquiryDropped = () => {
@@ -216,7 +220,7 @@ const inquiryDropped = () => {
 
 const inquiryUpdate = () => {
 
-    const errors = checkFormErrors();
+    const errors = checkInquriyUpdateErrors();
 
     if (errors === '') {
 
@@ -267,4 +271,41 @@ const checkForInquiryUpdates = () => {
 
 
     return updates;
+}
+
+const checkInquriyUpdateErrors = () => {
+    let errors = '';
+
+    if (editedInquiry.sourceId == null) {
+        errors = errors + 'Source is Required<br>';
+    }
+    if (editedInquiry.courseId == null) {
+        errors = errors + 'Course is Required<br>';
+    }
+    if (editedInquiry.firstName == null) {
+        errorseditedInquiry = errors + 'First Name is Required<br>';
+    }
+    if (editedInquiry.lastName == null) {
+        errors = errors + 'Last Name is Required<br>';
+    }
+    if (editedInquiry.primaryMobileNumber == null) {
+        errors = errors + 'Mobile Number is Required<br>';
+
+    }
+    if (editedInquiry.idType == null) {
+        errors = errors + 'ID Type is Required<br>';
+
+    }
+    if (editedInquiry.idValue == null) {
+        errors = errors + 'ID Value is Required<br>';
+
+    }
+    if (editedInquiry.contactTime == null) {
+        errors = errors + 'Contact Time is Required<br>';
+    }
+    if (editedInquiry.description == null) {
+        errors = errors + 'Description is Required<br>';
+    }
+
+    return errors;
 }
