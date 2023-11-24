@@ -518,8 +518,13 @@
             <tr>
                 <td class="fw-bold w-25">Course</td>
                 <td class="w-25">
-                    <input class="small rounded-0 form-control-sm border-0" id="inquirySheetCourse" readonly
-                           value="Diploma in IT" onkeyup="inputTextValidator(this,'','newInquiry','courseId')">
+                    <select class="form-select rounded-0 small form-select-sm" id="inquirySheetCourse" onchange="selectDynamicValueValidator(this,'','newInquiry','courseId')" required disabled>
+                        <option value=""></option>
+                        <option>Diploma in IT</option>
+                        <option>Diploma in Tamil</option>
+                        <option>Certificate in IT</option>
+                        <option>Certificate in English</option>
+                    </select>
                 </td>
                 <td class="fw-bold w-25">Source</td>
                 <td><input class="small rounded-0 form-control-sm border-0" id="inquirySheetSource" readonly
