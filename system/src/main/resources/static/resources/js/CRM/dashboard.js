@@ -208,7 +208,7 @@ const inquiryDropped = () => {
     inquiryToBeDropped = inquiryToBeEdited;
     console.log(inquiryToBeDropped);
 
-    showCustomConfirm('You are about to delete the record of : ' + inquiryToBeDropped.fullname + '\nAre You Sure?',function (result){
+    showCustomConfirm('<small>You are about to drop the inquiry <strong>#' + inquiryToBeDropped.inquiryNumber + '</strong></small><br>Are You Sure?',function (result){
 
     });
 
