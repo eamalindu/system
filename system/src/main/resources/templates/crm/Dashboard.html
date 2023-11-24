@@ -409,7 +409,7 @@
                     class="fa-regular fa-pen-to-square"></i> Edit
                 Info
             </button>
-            <button class="btn btn-sm bg-warning rounded-0 text-white" id="btnInquirySheetUpdate"><i
+            <button class="btn btn-sm bg-warning rounded-0 text-white" onclick="inquiryUpdate()"><i
                     class="fa-solid fa-arrows-rotate"></i> Update
             </button>
         </div>
@@ -452,7 +452,8 @@
                                 <div class="form-label">
                                     <label class="fw-bold required small" for="inquiryFollowUpContent">Content</label>
                                 </div>
-                                <textarea class="rounded-0 form-control" cols="80" id="inquiryFollowUpContent" onkeyup="inputTextValidator(this,'^[a-zA-Z0-9\\s/]{3,}$','newFollowUp','content')"
+                                <textarea class="rounded-0 form-control" cols="80" id="inquiryFollowUpContent"
+                                          onkeyup="inputTextValidator(this,'^[a-zA-Z0-9\\s/]{3,}$','newFollowUp','content')"
                                           required
                                           rows="4"></textarea>
                                 <div class="text-muted small"><small>Summary of the Customer Feedback.</small></div>
@@ -532,7 +533,8 @@
                 <td class="fw-bold w-25">Course</td>
                 <td class="w-25">
                     <select class="form-select rounded-0 small form-select-sm" disabled
-                            id="inquirySheetCourse" onchange="selectDynamicValueValidator(this,'','newInquiry','courseId')" required>
+                            id="inquirySheetCourse"
+                            onchange="selectDynamicValueValidator(this,'','newInquiry','courseId')" required>
                         <option value=""></option>
                         <option>Diploma in IT</option>
                         <option>Diploma in Tamil</option>
@@ -542,9 +544,9 @@
                 </td>
                 <td class="fw-bold w-25">Source</td>
                 <td>
-                    <select class="form-select rounded-0 small form-select-sm" id="inquirySheetSource"
-                            onchange="selectDynamicValueValidator(this,'','newInquiry','sourceId')"
-                            required disabled>
+                    <select class="form-select rounded-0 small form-select-sm" disabled
+                            id="inquirySheetSource"
+                            onchange="selectDynamicValueValidator(this,'','newInquiry','sourceId')" required>
                         <option value=""></option>
                         <option value="Cold Calling">Cold Calling</option>
                         <option value="Facebook">Facebook</option>
@@ -567,7 +569,8 @@
                                         value="Kasun">
                 </td>
                 <td class="fw-bold w-25">Last Name</td>
-                <td><input class="small rounded-0 form-control-sm border-0" id="inquirySheetLastName" onkeyup="inputTextValidator(this,'^[A-Z][a-z]{2,29}$','newInquiry','lastName')"
+                <td><input class="small rounded-0 form-control-sm border-0" id="inquirySheetLastName"
+                           onkeyup="inputTextValidator(this,'^[A-Z][a-z]{2,29}$','newInquiry','lastName')"
                            readonly
                            value="Malhara"></td>
             </tr>
@@ -579,7 +582,8 @@
                                         value="0781011144">
                 </td>
                 <td class="fw-bold w-25">Email</td>
-                <td><input class="small rounded-0 form-control-sm border-0" id="inquirySheetEmail" onkeyup="inputTextValidator(this,'^[a-z|A-Z]{2,19}[@][a-z|A-Z]{2,8}[.][a-z|A-Z]{2,3}$','newInquiry','email')"
+                <td><input class="small rounded-0 form-control-sm border-0" id="inquirySheetEmail"
+                           onkeyup="inputTextValidator(this,'^[a-z|A-Z]{2,19}[@][a-z|A-Z]{2,8}[.][a-z|A-Z]{2,3}$','newInquiry','email')"
                            placeholder="Optional" readonly
                            value="eamalindu@gmail.com">
                 </td>
@@ -587,12 +591,14 @@
             <tr>
                 <td class="fw-bold w-25">Optional Number</td>
                 <td class="w-25"><input class="small rounded-0 form-control-sm border-0"
-                                        id="inquirySheetSecondaryMobile" onkeyup="inputTextValidator(this,'^[0][7][01245678][0-9]{7}$','newInquiry','secondaryMobileNumber')"
+                                        id="inquirySheetSecondaryMobile"
+                                        onkeyup="inputTextValidator(this,'^[0][7][01245678][0-9]{7}$','newInquiry','secondaryMobileNumber')"
                                         placeholder="Optional" readonly
                                         value="0781011144">
                 </td>
                 <td class="fw-bold w-25">NIC</td>
-                <td><input class="small rounded-0 form-control-sm border-0" id="inquirySheetIdValue" onkeyup="inputTextValidator(this,'^(?:[6-9][0-9]{8}([V]|[X]|[v]|[x]){1})|(?:[19|20][0-9]{10})$','newInquiry','idValue')"
+                <td><input class="small rounded-0 form-control-sm border-0" id="inquirySheetIdValue"
+                           onkeyup="inputTextValidator(this,'^(?:[6-9][0-9]{8}([V]|[X]|[v]|[x]){1})|(?:[19|20][0-9]{10})$','newInquiry','idValue')"
                            readonly
                            value="983151108V">
                 </td>
@@ -612,7 +618,8 @@
         <!-- Show Added-by and added time of the inquiry here -->
         <div class="card rounded-0 mb-2">
             <div class="card-body rounded-0 pb-0">
-                <p class="small text-muted text-center">This Inquiry was Created by <span class="fw-bold" id="inquirySheetAddedBy"></span>
+                <p class="small text-muted text-center">This Inquiry was Created by <span class="fw-bold"
+                                                                                          id="inquirySheetAddedBy"></span>
                     on <span class="fw-bold" id="inquirySheetAddedDate"></span> at
                     <span class="fw-bold" id="inquirySheetAddedTime"></span>.</p>
             </div>
