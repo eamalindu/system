@@ -234,15 +234,19 @@ const checkForInquiryUpdates = ()=>{
 
     let updates = '';
 
-    if(newInquiry.email !== oldInquiry.email){
-        updates = updates + "Email was changed to <span class='text-lowercase'>"+newInquiry.email+"</span><br>";
-    }
     if(newInquiry.firstName !== oldInquiry.firstName){
-        updates = updates + "First Name was changed to "+newInquiry.firstName+"<br>";
+        updates = updates + "First Name was changed to <span class='text-purple'>"+newInquiry.firstName+"</span><br>";
     }
     if(newInquiry.lastName !== oldInquiry.lastName){
-        updates = updates + "Last Name was changed to "+newInquiry.lastName+"<br>";
+        updates = updates + "Last Name was changed to <span class='text-purple'>"+newInquiry.lastName+"</span><br>";
     }
+    if(newInquiry.primaryMobileNumber !== oldInquiry.primaryMobileNumber){
+        updates = updates + "Phone Number was changed to <span class='text-purple'>"+newInquiry.primaryMobileNumber+"</span><br>";
+    }
+    if(newInquiry.email !== oldInquiry.email){
+        updates = updates + "Email was changed to <span class='text-lowercase text-purple'>"+newInquiry.email+"</span><br>";
+    }
+
 
     return updates;
 }
