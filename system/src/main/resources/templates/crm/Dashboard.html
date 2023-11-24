@@ -565,26 +565,26 @@
                 <td class="fw-bold w-25">First Name</td>
                 <td class="w-25"><input class="small rounded-0 form-control-sm border-0" id="inquirySheetFirstName"
                                         onkeyup="inputTextValidator(this,'^[A-Z][a-z]{2,19}$','newInquiry','firstName')"
-                                        readonly
+                                        disabled
                                         value="Kasun">
                 </td>
                 <td class="fw-bold w-25">Last Name</td>
                 <td><input class="small rounded-0 form-control-sm border-0" id="inquirySheetLastName"
                            onkeyup="inputTextValidator(this,'^[A-Z][a-z]{2,29}$','newInquiry','lastName')"
-                           readonly
+                           disabled
                            value="Malhara"></td>
             </tr>
             <tr>
                 <td class="fw-bold w-25">Phone Number</td>
                 <td class="w-25"><input class="small rounded-0 form-control-sm border-0" id="inquirySheetPrimaryMobile"
                                         onkeyup="inputTextValidator(this,'^[0][7][01245678][0-9]{7}$','newInquiry','primaryMobileNumber')"
-                                        readonly
+                                        disabled
                                         value="0781011144">
                 </td>
                 <td class="fw-bold w-25">Email</td>
                 <td><input class="small rounded-0 form-control-sm border-0" id="inquirySheetEmail"
                            onkeyup="inputTextValidator(this,'^[a-z|A-Z]{2,19}[@][a-z|A-Z]{2,8}[.][a-z|A-Z]{2,3}$','newInquiry','email')"
-                           placeholder="Optional" readonly
+                           placeholder="Optional" disabled
                            value="eamalindu@gmail.com">
                 </td>
             </tr>
@@ -593,24 +593,24 @@
                 <td class="w-25"><input class="small rounded-0 form-control-sm border-0"
                                         id="inquirySheetSecondaryMobile"
                                         onkeyup="inputTextValidator(this,'^[0][7][01245678][0-9]{7}$','newInquiry','secondaryMobileNumber')"
-                                        placeholder="Optional" readonly
+                                        placeholder="Optional" disabled
                                         value="0781011144">
                 </td>
                 <td class="fw-bold w-25">NIC</td>
                 <td><input class="small rounded-0 form-control-sm border-0" id="inquirySheetIdValue"
                            onkeyup="inputTextValidator(this,'^(?:[6-9][0-9]{8}([V]|[X]|[v]|[x]){1})|(?:[19|20][0-9]{10})$','newInquiry','idValue')"
-                           readonly
+                           disabled
                            value="983151108V">
                 </td>
             </tr>
             <tr>
                 <td class="fw-bold w-25">Convenient Time To Contact</td>
                 <td class="w-25"><input class="small rounded-0 form-control-sm border-0" id="inquirySheetNextFollowUp"
-                                        readonly value="2023-10-26 at 00:00"></td>
+                                        disabled value="2023-10-26 at 00:00"></td>
                 <td class="fw-bold w-25">Description</td>
                 <td><textarea class="small rounded-0 form-control-sm border-0" id="inquirySheetDescription"
                               onkeyup="inputTextValidator(this,'^[a-zA-Z0-9\\s/]{20,}$','newInquiry','description')"
-                              readonly></textarea>
+                              disabled></textarea>
                 </td>
             </tr>
             </tbody>
