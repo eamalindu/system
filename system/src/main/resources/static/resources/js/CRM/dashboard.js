@@ -100,7 +100,7 @@ const rowView = (ob, Index) => {
     btnInquirySheetUpdate.style.display = 'none';
 
     //make all the inputs readonly and remove inline styles
-    inputs = document.querySelectorAll('input');
+    inputs = document.querySelectorAll('.inquirySheetInputs');
     textArea = document.querySelector('#inquirySheetDescription');
     textArea.setAttribute('disabled', 'true');
     textArea.style = '';
@@ -175,7 +175,7 @@ const rowView = (ob, Index) => {
 const inquiryEdit = () => {
     //remove the attribute readonly to make inputs accept the user input values
     //give a border color to inputs indicate that the input's values are ready to be edited
-    inputs = document.querySelectorAll('input');
+    inputs = document.querySelectorAll('.inquirySheetInputs');
     textArea = document.querySelector('#inquirySheetDescription');
     textArea.removeAttribute('disabled');
     textArea.setAttribute('style', 'border:1px solid #ffc107!important');
