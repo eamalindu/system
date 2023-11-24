@@ -21,8 +21,7 @@ const refreshInquiryPoolTable = () => {
     //get data from the database with ajax
     newInquiries = ajaxGetRequest("/inquiry/newInquiry");
     displayPropertyListForInquiryPool = [{property: 'inquiryNumber', dataType: 'text'}, {
-        property: getCourse,
-        dataType: 'function'
+        property: getCourse, dataType: 'function'
     }, {property: getSource, dataType: 'function'}, {property: getFullName, dataType: 'function'}];
 
     fillDataIntoTable(tblInquiryPool, newInquiries, displayPropertyListForInquiryPool, rowView);
@@ -32,8 +31,7 @@ const refreshInquiryPoolTable = () => {
     scheduledInquiries = ajaxGetRequest("/inquiry/test2")
 
     displayPropertyListForScheduledPool = [{property: 'inquiry_id', dataType: 'text'}, {
-        property: 'course_id',
-        dataType: 'text'
+        property: 'course_id', dataType: 'text'
     }, {property: 'source_id', dataType: 'text'}, {property: 'firstname', dataType: 'text'},];
     fillDataIntoTable(tblScheduledPool, scheduledInquiries, displayPropertyListForScheduledPool, rowView);
 
@@ -114,7 +112,7 @@ const rowView = (ob, Index) => {
 
     //add the disabled attribute from the select
     //remove the border color to indicate that select cant be now edited
-    inquirySheetCourse.setAttribute('disabled','true');
+    inquirySheetCourse.setAttribute('disabled', 'true');
     inquirySheetCourse.setAttribute('style', '');
 
     //select the appropriate option as selected
@@ -122,7 +120,7 @@ const rowView = (ob, Index) => {
 
     //add the disabled attribute from the select
     //remove the border color to indicate that select cant be now edited
-    inquirySheetSource.setAttribute('disabled','true');
+    inquirySheetSource.setAttribute('disabled', 'true');
     inquirySheetSource.setAttribute('style', '');
 
     //select the appropriate option as selected
@@ -205,61 +203,59 @@ const inquiryEdit = () => {
     console.log(newInquiry)
 
 }
-const rowDelete = (ob, Index) => {
+const inquiryDropped = () => {
 
 }
 
-const inquiryUpdate=()=>{
+const inquiryUpdate = () => {
 
     const errors = checkFormErrors();
 
-    if(errors===''){
+    if (errors === '') {
 
         let updates = checkForInquiryUpdates();
 
-        if(updates===""){
-            showCustomModal("No changes Detected!","info")
-        }
-        else{
-            showCustomModal("Following Changes Detected<br><br/><small>"+updates,"warning")
+        if (updates === "") {
+            showCustomModal("No changes Detected!", "info")
+        } else {
+            showCustomModal("Following Changes Detected<br><br/><small>" + updates, "warning")
         }
 
-    }
-    else{
-        showCustomModal(errors,'warning');
+    } else {
+        showCustomModal(errors, 'warning');
     }
 }
 
-const checkForInquiryUpdates = ()=>{
+const checkForInquiryUpdates = () => {
 
     let updates = '';
 
-    if(newInquiry.firstName !== oldInquiry.firstName){
-        updates = updates + "First Name was changed to <span class='text-purple'>"+newInquiry.firstName+"</span><br>";
+    if (newInquiry.firstName !== oldInquiry.firstName) {
+        updates = updates + "First Name was changed to <span class='text-purple'>" + newInquiry.firstName + "</span><br>";
     }
-    if(newInquiry.lastName !== oldInquiry.lastName){
-        updates = updates + "Last Name was changed to <span class='text-purple'>"+newInquiry.lastName+"</span><br>";
+    if (newInquiry.lastName !== oldInquiry.lastName) {
+        updates = updates + "Last Name was changed to <span class='text-purple'>" + newInquiry.lastName + "</span><br>";
     }
-    if(newInquiry.primaryMobileNumber !== oldInquiry.primaryMobileNumber){
-        updates = updates + "Phone Number was changed to <span class='text-purple'>"+newInquiry.primaryMobileNumber+"</span><br>";
+    if (newInquiry.primaryMobileNumber !== oldInquiry.primaryMobileNumber) {
+        updates = updates + "Phone Number was changed to <span class='text-purple'>" + newInquiry.primaryMobileNumber + "</span><br>";
     }
-    if(newInquiry.email !== oldInquiry.email){
-        updates = updates + "Email was changed to <span class='text-lowercase text-purple'>"+newInquiry.email+"</span><br>";
+    if (newInquiry.email !== oldInquiry.email) {
+        updates = updates + "Email was changed to <span class='text-lowercase text-purple'>" + newInquiry.email + "</span><br>";
     }
-    if(newInquiry.secondaryMobileNumber !== oldInquiry.secondaryMobileNumber){
-        updates = updates + "Optional Phone Number was changed to <span class='text-purple'>"+newInquiry.secondaryMobileNumber+"</span><br>";
+    if (newInquiry.secondaryMobileNumber !== oldInquiry.secondaryMobileNumber) {
+        updates = updates + "Optional Phone Number was changed to <span class='text-purple'>" + newInquiry.secondaryMobileNumber + "</span><br>";
     }
-    if(newInquiry.idValue !== oldInquiry.idValue){
-        updates = updates + "ID Value was changed to <span class='text-purple'>"+newInquiry.idValue+"</span><br>";
+    if (newInquiry.idValue !== oldInquiry.idValue) {
+        updates = updates + "ID Value was changed to <span class='text-purple'>" + newInquiry.idValue + "</span><br>";
     }
-    if(newInquiry.description !== oldInquiry.description){
-        updates = updates + "Description was changed to <span class='text-purple'>"+newInquiry.description+"</span><br>";
+    if (newInquiry.description !== oldInquiry.description) {
+        updates = updates + "Description was changed to <span class='text-purple'>" + newInquiry.description + "</span><br>";
     }
-    if(newInquiry.courseId.name !== oldInquiry.courseId.name){
-        updates = updates + "Course was changed to <span class='text-purple'>"+newInquiry.courseId.name+"</span><br>";
+    if (newInquiry.courseId.name !== oldInquiry.courseId.name) {
+        updates = updates + "Course was changed to <span class='text-purple'>" + newInquiry.courseId.name + "</span><br>";
     }
-    if(newInquiry.sourceId.name !== oldInquiry.sourceId.name){
-        updates = updates + "Source was changed to <span class='text-purple'>"+newInquiry.sourceId.name+"</span><br>";
+    if (newInquiry.sourceId.name !== oldInquiry.sourceId.name) {
+        updates = updates + "Source was changed to <span class='text-purple'>" + newInquiry.sourceId.name + "</span><br>";
     }
 
 
