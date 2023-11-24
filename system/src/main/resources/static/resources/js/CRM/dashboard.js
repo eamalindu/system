@@ -9,6 +9,8 @@ window.addEventListener('load', () => {
     //make the selects dynamic for inquiry sheet
     courses = ajaxGetRequest("/course/findall");
     fillSelectOptions(inquirySheetCourse, 'Please Select a Course', courses);
+    sources = ajaxGetRequest("/source/findall")
+    fillSelectOptions(inquirySheetSource, 'Please Select a Source', sources)
 
 });
 
@@ -118,9 +120,15 @@ const rowView = (ob, Index) => {
     //select the appropriate option as selected
     inquirySheetCourse.options[ob.courseId.id].selected = true;
 
-    inquirySheetId.innerText = ob.inquiryNumber;
+    //add the disabled attribute from the select
+    //remove the border color to indicate that select cant be now edited
+    inquirySheetSource.setAttribute('disabled','true');
+    inquirySheetSource.setAttribute('style', '');
 
-    inquirySheetSource.value = ob.sourceId.name;
+    //select the appropriate option as selected
+    inquirySheetSource.options[ob.sourceId.id].selected = true;
+
+    inquirySheetId.innerText = ob.inquiryNumber;
 
     inquirySheetFirstName.value = ob.firstName;
     inquirySheetLastName.value = ob.lastName;
