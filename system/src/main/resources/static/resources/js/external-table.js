@@ -6,7 +6,7 @@
 //1 parameter -> table id
 //2 parameter -> data array list
 //3 parameter -> display Property List (Column headers)
-const fillDataIntoTable = (tabledID, dataList, displayPropertyList,editFunction,viewFunction,deleteFunction) => {
+const fillDataIntoTable = (tabledID, dataList, displayPropertyList,viewFunction) => {
     //access the table via querySelector
     //const table = document.querySelector('#tblEmp');
 
