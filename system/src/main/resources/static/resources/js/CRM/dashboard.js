@@ -185,6 +185,8 @@ const inquiryEdit = () => {
     //give a border color to indicate that select can be now edited
     inquirySheetCourse.removeAttribute('disabled');
     inquirySheetCourse.setAttribute('style', 'border:1px solid #ffc107!important');
+    inquirySheetSource.removeAttribute('disabled');
+    inquirySheetSource.setAttribute('style', 'border:1px solid #ffc107!important');
 
     inputs.forEach(function (input) {
         input.removeAttribute('readonly');
