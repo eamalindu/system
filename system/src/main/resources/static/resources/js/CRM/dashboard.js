@@ -6,6 +6,10 @@ window.addEventListener('load', () => {
     //hide the update button
     btnInquirySheetUpdate.style.display = 'none';
 
+    //make the selects dynamic
+    courses = ajaxGetRequest("/course/findall");
+    fillSelectOptions(inquirySheetCourse, 'Please Select a Course', courses);
+
 });
 
 
@@ -110,10 +114,6 @@ const rowView = (ob, Index) => {
     //remove the border color to indicate that select cant be now edited
     inquirySheetCourse.setAttribute('disabled','true');
     inquirySheetCourse.setAttribute('style', '');
-
-    //make the selects dynamic
-    courses = ajaxGetRequest("/course/findall");
-    fillSelectOptions(inquirySheetCourse, 'Please Select a Course', courses);
 
     //select the appropriate option as selected
     inquirySheetCourse.options[ob.courseId.id].selected = true;
