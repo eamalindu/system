@@ -42,5 +42,10 @@ public interface InquiryDAO extends JpaRepository<Inquiry,Integer> {
     @Query(value = "SELECT * FROM steam.inquiry JOIN ( SELECT * FROM steam.followup  WHERE DATE(nextfollowup) = CURDATE()) AS followup ON inquiry.id = followup.inquiry_id;",nativeQuery = true)
     List<Map<String,Object>> test2();
 
+    //Get the next inquiry number form the database
+    //This data will be used in InquiryController
+    @Query(value = "SELECT LPAD(MAX(inq.inquirynumber) + 1, 6, 0) AS inquirynumber FROM inquiry AS inq;",nativeQuery = true)
+    String getNextInquiryNumber();
+
 }
 
