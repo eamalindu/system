@@ -208,7 +208,7 @@ const inquiryDropped = () => {
     inquiryToBeDropped = inquiryToBeEdited;
     console.log(inquiryToBeDropped);
 
-    showCustomConfirm('<small>You are about to drop the inquiry <strong>#' + inquiryToBeDropped.inquiryNumber + '</strong></small><br>Are You Sure?',function (result){
+    showCustomConfirm('Are You Sure?<br><small>You are about to drop the inquiry <strong>#' + inquiryToBeDropped.inquiryNumber + '</strong></small>',function (result){
 
     });
 
