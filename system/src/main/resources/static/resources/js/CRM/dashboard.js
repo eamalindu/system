@@ -255,10 +255,10 @@ const checkForInquiryUpdates = ()=>{
     if(newInquiry.description !== oldInquiry.description){
         updates = updates + "Description was changed to <span class='text-purple'>"+newInquiry.description+"</span><br>";
     }
-    if(newInquiry.courseId !== oldInquiry.courseId){
+    if(newInquiry.courseId.name !== oldInquiry.courseId.name){
         updates = updates + "Course was changed to <span class='text-purple'>"+newInquiry.courseId.name+"</span><br>";
     }
-    if(newInquiry.sourceId !== oldInquiry.sourceId){
+    if(newInquiry.sourceId.name !== oldInquiry.sourceId.name){
         updates = updates + "Source was changed to <span class='text-purple'>"+newInquiry.sourceId.name+"</span><br>";
     }
 
