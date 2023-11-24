@@ -106,6 +106,11 @@ const rowView = (ob, Index) => {
 
     });
 
+    //add the disabled attribute from the select
+    //remove the border color to indicate that select cant be now edited
+    inquirySheetCourse.setAttribute('disabled','true');
+    inquirySheetCourse.setAttribute('style', '');
+
     //make the selects dynamic
     courses = ajaxGetRequest("/course/findall");
     fillSelectOptions(inquirySheetCourse, 'Please Select a Course', courses);
