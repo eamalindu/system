@@ -21,7 +21,7 @@ const refreshInquiryPoolTable = () => {
         {property: getFullName, dataType: 'function'}
     ];
 
-    fillDataIntoTable(tblInquiryPool, newInquiries, displayPropertyListForInquiryPool, rowEdit, rowView, rowDelete);
+    fillDataIntoTable(tblInquiryPool, newInquiries, displayPropertyListForInquiryPool,rowView);
 
     //testing code start
 
@@ -33,7 +33,7 @@ const refreshInquiryPoolTable = () => {
         {property: 'source_id', dataType: 'text'},
         {property: 'firstname', dataType: 'text'},
     ];
-    fillDataIntoTable(tblScheduledPool, scheduledInquiries, displayPropertyListForScheduledPool, rowEdit, rowView, rowDelete);
+    fillDataIntoTable(tblScheduledPool, scheduledInquiries, displayPropertyListForScheduledPool,rowView);
 
 //testing code end
 
@@ -154,7 +154,8 @@ const rowView = (ob, Index) => {
     inquiryToBeEdited = ob;
 
 }
-const rowEdit = (ob, Index) => {
+
+const inquiryEdit = () => {
     //remove the attribute readonly to make inputs accept the user input values
     //give a border color to inputs indicate that the input's values are ready to be edited
     inputs = document.querySelectorAll('input');
