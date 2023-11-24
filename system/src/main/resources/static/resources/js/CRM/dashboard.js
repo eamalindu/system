@@ -252,6 +252,9 @@ const checkForInquiryUpdates = ()=>{
     if(newInquiry.idValue !== oldInquiry.idValue){
         updates = updates + "ID Value was changed to <span class='text-purple'>"+newInquiry.idValue+"</span><br>";
     }
+    if(newInquiry.description !== oldInquiry.description){
+        updates = updates + "Description was changed to <span class='text-purple'>"+newInquiry.description+"</span><br>";
+    }
 
 
     return updates;
