@@ -191,10 +191,10 @@ const inquiryEdit = () => {
 
     //catch old inquiry and new inquiry
     oldInquiry = JSON.parse(JSON.stringify(inquiryToBeEdited));
-    newInquiry = JSON.parse(JSON.stringify(inquiryToBeEdited));
+    editedInquiry = JSON.parse(JSON.stringify(inquiryToBeEdited));
 
     console.log(oldInquiry)
-    console.log(newInquiry)
+    console.log(editedInquiry)
 
 }
 const inquiryDropped = () => {
@@ -237,32 +237,32 @@ const checkForInquiryUpdates = () => {
 
     let updates = '';
 
-    if (newInquiry.firstName !== oldInquiry.firstName) {
-        updates = updates + "First Name was changed to <span class='text-purple'>" + newInquiry.firstName + "</span><br>";
+    if (editedInquiry.firstName !== oldInquiry.firstName) {
+        updates = updates + "First Name was changed to <span class='text-purple'>" + editedInquiry.firstName + "</span><br>";
     }
-    if (newInquiry.lastName !== oldInquiry.lastName) {
-        updates = updates + "Last Name was changed to <span class='text-purple'>" + newInquiry.lastName + "</span><br>";
+    if (editedInquiry.lastName !== oldInquiry.lastName) {
+        updates = updates + "Last Name was changed to <span class='text-purple'>" + editedInquiry.lastName + "</span><br>";
     }
-    if (newInquiry.primaryMobileNumber !== oldInquiry.primaryMobileNumber) {
-        updates = updates + "Phone Number was changed to <span class='text-purple'>" + newInquiry.primaryMobileNumber + "</span><br>";
+    if (editedInquiry.primaryMobileNumber !== oldInquiry.primaryMobileNumber) {
+        updates = updates + "Phone Number was changed to <span class='text-purple'>" + editedInquiry.primaryMobileNumber + "</span><br>";
     }
-    if (newInquiry.email !== oldInquiry.email) {
-        updates = updates + "Email was changed to <span class='text-lowercase text-purple'>" + newInquiry.email + "</span><br>";
+    if (editedInquiry.email !== oldInquiry.email) {
+        updates = updates + "Email was changed to <span class='text-lowercase text-purple'>" + editedInquiry.email + "</span><br>";
     }
-    if (newInquiry.secondaryMobileNumber !== oldInquiry.secondaryMobileNumber) {
-        updates = updates + "Optional Phone Number was changed to <span class='text-purple'>" + newInquiry.secondaryMobileNumber + "</span><br>";
+    if (editedInquiry.secondaryMobileNumber !== oldInquiry.secondaryMobileNumber) {
+        updates = updates + "Optional Phone Number was changed to <span class='text-purple'>" + editedInquiry.secondaryMobileNumber + "</span><br>";
     }
-    if (newInquiry.idValue !== oldInquiry.idValue) {
-        updates = updates + "ID Value was changed to <span class='text-purple'>" + newInquiry.idValue + "</span><br>";
+    if (editedInquiry.idValue !== oldInquiry.idValue) {
+        updates = updates + "ID Value was changed to <span class='text-purple'>" + editedInquiry.idValue + "</span><br>";
     }
-    if (newInquiry.description !== oldInquiry.description) {
-        updates = updates + "Description was changed to <span class='text-purple'>" + newInquiry.description + "</span><br>";
+    if (editedInquiry.description !== oldInquiry.description) {
+        updates = updates + "Description was changed to <span class='text-purple'>" + editedInquiry.description + "</span><br>";
     }
-    if (newInquiry.courseId.name !== oldInquiry.courseId.name) {
-        updates = updates + "Course was changed to <span class='text-purple'>" + newInquiry.courseId.name + "</span><br>";
+    if (editedInquiry.courseId.name !== oldInquiry.courseId.name) {
+        updates = updates + "Course was changed to <span class='text-purple'>" + editedInquiry.courseId.name + "</span><br>";
     }
-    if (newInquiry.sourceId.name !== oldInquiry.sourceId.name) {
-        updates = updates + "Source was changed to <span class='text-purple'>" + newInquiry.sourceId.name + "</span><br>";
+    if (editedInquiry.sourceId.name !== oldInquiry.sourceId.name) {
+        updates = updates + "Source was changed to <span class='text-purple'>" + editedInquiry.sourceId.name + "</span><br>";
     }
 
 
