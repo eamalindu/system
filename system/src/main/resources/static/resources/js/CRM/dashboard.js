@@ -98,6 +98,8 @@ const getFullName = (ob) => {
 const rowView = (ob, Index) => {
     //hide the update button
     btnInquirySheetUpdate.style.display = 'none';
+
+    //make all the inputs readonly and remove inline styles
     inputs = document.querySelectorAll('input');
     textArea = document.querySelector('#inquirySheetDescription');
     textArea.setAttribute('readonly', 'true');
@@ -108,9 +110,15 @@ const rowView = (ob, Index) => {
 
     });
 
+    //make the selects dynamic
+    courses = ajaxGetRequest("/course/findall");
+    fillSelectOptions(inquirySheetCourse, 'Please Select a Course', courses);
+
+    //select the appropriate option as selected
+    inquirySheetCourse.options[ob.courseId.id].selected = true;
+
     document.querySelector('#inquirySheetId').innerText = ob.inquiryNumber;
 
-    document.querySelector('#inquirySheetCourse').value = ob.courseId.code;
     document.querySelector('#inquirySheetSource').value = ob.sourceId.name;
 
     document.querySelector('#inquirySheetFirstName').value = ob.firstName;
@@ -152,6 +160,7 @@ const rowView = (ob, Index) => {
 
     //set the current object to be edited
     inquiryToBeEdited = ob;
+
 
 }
 
