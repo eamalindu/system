@@ -14,26 +14,22 @@ const refreshInquiryPoolTable = () => {
 
     //get data from the database with ajax
     newInquiries = ajaxGetRequest("/inquiry/newInquiry");
-    displayPropertyListForInquiryPool = [
-        {property: 'inquiryNumber', dataType: 'text'},
-        {property: getCourse, dataType: 'function'},
-        {property: getSource, dataType: 'function'},
-        {property: getFullName, dataType: 'function'}
-    ];
+    displayPropertyListForInquiryPool = [{property: 'inquiryNumber', dataType: 'text'}, {
+        property: getCourse,
+        dataType: 'function'
+    }, {property: getSource, dataType: 'function'}, {property: getFullName, dataType: 'function'}];
 
-    fillDataIntoTable(tblInquiryPool, newInquiries, displayPropertyListForInquiryPool,rowView);
+    fillDataIntoTable(tblInquiryPool, newInquiries, displayPropertyListForInquiryPool, rowView);
 
     //testing code start
 
     scheduledInquiries = ajaxGetRequest("/inquiry/test2")
 
-    displayPropertyListForScheduledPool = [
-        {property: 'inquiry_id', dataType: 'text'},
-        {property: 'course_id', dataType: 'text'},
-        {property: 'source_id', dataType: 'text'},
-        {property: 'firstname', dataType: 'text'},
-    ];
-    fillDataIntoTable(tblScheduledPool, scheduledInquiries, displayPropertyListForScheduledPool,rowView);
+    displayPropertyListForScheduledPool = [{property: 'inquiry_id', dataType: 'text'}, {
+        property: 'course_id',
+        dataType: 'text'
+    }, {property: 'source_id', dataType: 'text'}, {property: 'firstname', dataType: 'text'},];
+    fillDataIntoTable(tblScheduledPool, scheduledInquiries, displayPropertyListForScheduledPool, rowView);
 
 //testing code end
 
