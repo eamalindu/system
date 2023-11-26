@@ -199,6 +199,18 @@ select:invalid[multiple] {
     background-color: rebeccapurple;
 }
 
+/*inquirySheetInputs class*/
+.inquirySheetInputs{
+    border:1px solid transparent;
+    background: white;
+    color: black;
+
+}
+/*overriding default*/
+.form-select:disabled {
+    background-color: white;
+}
+
 /*Medium devices responsive*/
 @media (max-width: 870px) {
     .custom-login-form-container {
