@@ -259,6 +259,9 @@ const checkForInquiryUpdates = () => {
     if (editedInquiry.secondaryMobileNumber !== oldInquiry.secondaryMobileNumber) {
         updates = updates + "Optional Phone Number was changed to <span class='text-purple'>" + editedInquiry.secondaryMobileNumber + "</span><br>";
     }
+    if (editedInquiry.idType !== oldInquiry.idType) {
+        updates = updates + "ID Type was changed to <span class='text-purple'>" + editedInquiry.idType + "</span><br>";
+    }
     if (editedInquiry.idValue !== oldInquiry.idValue) {
         updates = updates + "ID Value was changed to <span class='text-purple'>" + editedInquiry.idValue + "</span><br>";
     }
