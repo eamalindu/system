@@ -121,6 +121,9 @@ const newInquirySubmit = () => {
                     location.reload();}, 5000);
 
                      */
+                    //trigger offcanvas button
+                    offCanvasInquiryCloseButton.click();
+
 
 
                 } else {
