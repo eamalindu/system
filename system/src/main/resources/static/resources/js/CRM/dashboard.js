@@ -240,7 +240,7 @@ const inquiryUpdate = () => {
         if (updates === "") {
             showCustomModal("No changes Detected!", "info")
         } else {
-            showCustomModal("Following Changes Detected<br><br/><small>" + updates, "warning")
+            showCustomModal("Following Changes Detected<br><br/><small>" + updates+"</small>", "warning")
         }
 
     } else {
