@@ -162,6 +162,9 @@ const rowView = (ob, Index) => {
     inquirySheetAddedTime.innerText = addedTime;
     inquirySheetAddedBy.innerText = ob.addedBy;
 
+    //set id type
+    inquirySheetIdType.value = ob.idType;
+
     //set the current object to be edited
     currentInquiry = ob;
 
