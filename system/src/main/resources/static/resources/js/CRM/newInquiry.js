@@ -58,71 +58,82 @@ const newInquirySubmit = () => {
 
         //this means there are no any errors
         //user confirmation is needed (will add later)
+        showCustomConfirm("You are about to add a New inquiry<br>Are You Sure?",function (result){
+            if(result){
+                //passing the data to backend
+                //if the data is successfully passed to the database it will set the value of the postServerResponse to "OK"
+                let postServerResponse;
 
-        //passing the data to backend
-        //if the data is successfully passed to the database it will set the value of the postServerResponse to "OK"
-        let postServerResponse;
+                $.ajax("/inquiry", {
+                    type: "POST",
+                    async: false, // set the async option to false to wait for the response
+                    contentType: "application/json",
+                    data: JSON.stringify(newInquiry),
+                    success: function (data) {
+                        console.log("success " + data);
+                        postServerResponse = data;
 
-        $.ajax("/inquiry", {
-            type: "POST",
-            async: false, // set the async option to false to wait for the response
-            contentType: "application/json",
-            data: JSON.stringify(newInquiry),
-            success: function (data) {
-                console.log("success " + data);
-                postServerResponse = data;
-            },
-            error: function (resOb) {
-                console.log("Error " + resOb);
-                postServerResponse = resOb;
+                    },
+                    error: function (resOb) {
+                        console.log("Error " + resOb);
+                        postServerResponse = resOb;
+
+                    }
+                });
+                //check the postServerResponse value
+                if (postServerResponse === 'OK') {
+
+                    //this means data successfully passed to the backend
+                    //show an alert to user
+                    showCustomModal("Inquiry Successfully Added!", "success");
+
+                    //after a successful creation from needs to be resettled and all the validations should be removed
+                    //off-canvas is also can be minimized (ask about it)
+
+                    //remove validated class from chosen
+                    $("#inquirySource_chosen .chosen-single").removeClass('select-validated');
+                    $("#inquiryCourse_chosen .chosen-single").removeClass('select-validated');
+                    $("#inquiryIdOption_chosen .chosen-single").removeClass('select-validated');
+
+                    //set default option chosen
+                    setTimeout(function () {
+                        $('select').val('').trigger('chosen:updated');
+                    }, 0);
+
+                    //reset form values
+                    document.getElementById('frmNewInquiry').reset();
+
+                    //reset all the inputs validation
+                    inputs = document.querySelectorAll('input');
+                    inputs.forEach(function (input) {
+                        // Remove inline styles
+                        input.style = '';
+                    });
+                    //reset the textarea
+                    document.querySelector('textarea').style = '';
+
+                    //reset the newInquiry object
+                    newInquiry = {};
+
+                    /*
+                    //refresh the current html page after 5s
+                    setTimeout(function () {
+                    location.reload();}, 5000);
+
+                     */
+
+
+                } else {
+                    //this means there was a problem with the query
+                    //shows an error alert to the user
+                    showCustomModal("Operation Failed!" + postServerResponse, "error");
+                }
+
+            }
+            else{
+                showCustomModal("Operation Cancelled!", "info");
             }
         });
-
-        //check the postServerResponse value
-        if (postServerResponse === 'OK') {
-
-            //this means data successfully passed to the backend
-            //show an alert to user
-            showCustomModal("Inquiry Successfully Added!", "success");
-
-            //after a successful creation from needs to be resettled and all the validations should be removed
-            //off-canvas is also can be minimized (ask about it)
-
-            //remove validated class from chosen
-            $("#inquirySource_chosen .chosen-single").removeClass('select-validated');
-            $("#inquiryCourse_chosen .chosen-single").removeClass('select-validated');
-            $("#inquiryIdOption_chosen .chosen-single").removeClass('select-validated');
-
-            //set default option chosen
-            setTimeout(function () {
-                $('select').val('').trigger('chosen:updated');
-            }, 0);
-
-            //reset form values
-            document.getElementById('frmNewInquiry').reset();
-
-            //reset all the inputs validation
-            inputs = document.querySelectorAll('input');
-            inputs.forEach(function (input) {
-                // Remove inline styles
-                input.style = '';
-            });
-            //reset the textarea
-            document.querySelector('textarea').style = '';
-
-            //reset the newInquiry object
-            newInquiry = {};
-
-            //refresh the current html page after 5s
-            setTimeout(function () {
-            location.reload();}, 5000);
-
-
-        } else {
-            //this means there was a problem with the query
-            //shows an error alert to the user
-            showCustomModal("Operation Failed!" + postServerResponse, "error");
-        }
 
 
     } else {
