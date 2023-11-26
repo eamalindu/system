@@ -163,7 +163,7 @@ const rowView = (ob, Index) => {
     inquirySheetAddedBy.innerText = ob.addedBy;
 
     //set the current object to be edited
-    inquiryToBeEdited = ob;
+    currentInquiry = ob;
 
 
 }
@@ -190,8 +190,8 @@ const inquiryEdit = () => {
     btnInquirySheetUpdate.style.display = 'block';
 
     //catch old inquiry and new inquiry
-    oldInquiry = JSON.parse(JSON.stringify(inquiryToBeEdited));
-    editedInquiry = JSON.parse(JSON.stringify(inquiryToBeEdited));
+    oldInquiry = JSON.parse(JSON.stringify(currentInquiry));
+    editedInquiry = JSON.parse(JSON.stringify(currentInquiry));
 
     console.log("old inquiry 👇")
     console.log(oldInquiry)
@@ -203,7 +203,7 @@ const inquiryEdit = () => {
 }
 const inquiryDropped = () => {
 
-    inquiryToBeDropped = inquiryToBeEdited;
+    inquiryToBeDropped = currentInquiry;
     console.log(inquiryToBeDropped);
 
     showCustomConfirm('Are You Sure?<br><small>You are about to drop the inquiry <strong>#' + inquiryToBeDropped.inquiryNumber + '</strong></small>',function (result){
@@ -283,7 +283,7 @@ const checkInquriyUpdateErrors = () => {
         errors = errors + 'Course is Required<br>';
     }
     if (editedInquiry.firstName == null) {
-        errorseditedInquiry = errors + 'First Name is Required<br>';
+        errors = errors + 'First Name is Required<br>';
     }
     if (editedInquiry.lastName == null) {
         errors = errors + 'Last Name is Required<br>';
