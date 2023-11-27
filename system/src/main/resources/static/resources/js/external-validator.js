@@ -142,7 +142,7 @@ const selectDynamicValueValidator = (elementID,pattern,object,property) => {
     }
     else{
         elementID.style.border = '1px solid red';
-        elementID.style.background = 'rgba(255,0,0,0.2)';
+        elementID.style.background = 'rgba(255,0,0,0.4)';
         window[object][property] = null;
     }
 }
