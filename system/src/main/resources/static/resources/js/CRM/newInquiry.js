@@ -115,15 +115,10 @@ const newInquirySubmit = () => {
                     //reset the newInquiry object
                     newInquiry = {};
 
-                    /*
-                    //refresh the current html page after 5s
-                    setTimeout(function () {
-                    location.reload();}, 5000);
-
-                     */
                     //trigger offcanvas button
                     offCanvasInquiryCloseButton.click();
 
+                    refreshInquiryPoolTable();
 
 
                 } else {
