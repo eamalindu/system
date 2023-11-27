@@ -87,6 +87,7 @@ const newInquirySubmit = () => {
                     //show an alert to user
                     showCustomModal("Inquiry Successfully Added!", "success");
 
+                    resetInquiryForm();
 
 
                     refreshInquiryPoolTable();
