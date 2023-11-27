@@ -87,36 +87,7 @@ const newInquirySubmit = () => {
                     //show an alert to user
                     showCustomModal("Inquiry Successfully Added!", "success");
 
-                    //after a successful creation from needs to be resettled and all the validations should be removed
-                    //off-canvas is also can be minimized (ask about it)
 
-                    //remove validated class from chosen
-                    $("#inquirySource_chosen .chosen-single").removeClass('select-validated');
-                    $("#inquiryCourse_chosen .chosen-single").removeClass('select-validated');
-                    $("#inquiryIdOption_chosen .chosen-single").removeClass('select-validated');
-
-                    //set default option chosen
-                    setTimeout(function () {
-                        $('select').val('').trigger('chosen:updated');
-                    }, 0);
-
-                    //reset form values
-                    document.getElementById('frmNewInquiry').reset();
-
-                    //reset all the inputs validation
-                    inputs = document.querySelectorAll('input');
-                    inputs.forEach(function (input) {
-                        // Remove inline styles
-                        input.style = '';
-                    });
-                    //reset the textarea
-                    document.querySelector('textarea').style = '';
-
-                    //reset the newInquiry object
-                    newInquiry = {};
-
-                    //trigger offcanvas button
-                    offCanvasInquiryCloseButton.click();
 
                     refreshInquiryPoolTable();
 
@@ -176,4 +147,35 @@ const checkFormErrors = () => {
     }
 
     return errors;
+}
+
+const resetInquiryForm = ()=>{
+    //after a successful creation from needs to be resettled and all the validations should be removed
+    //off-canvas is also can be minimized (ask about it)
+
+    //remove validated class from chosen
+    $("#inquirySource_chosen .chosen-single").removeClass('select-validated');
+    $("#inquiryCourse_chosen .chosen-single").removeClass('select-validated');
+    $("#inquiryIdOption_chosen .chosen-single").removeClass('select-validated');
+
+    //set default option chosen
+    setTimeout(function () {
+        $('select').val('').trigger('chosen:updated');
+    }, 0);
+
+    //reset form values
+    document.getElementById('frmNewInquiry').reset();
+
+    //reset all the inputs validation using their common class name (newInquiryInputs)
+    inputs = document.querySelectorAll('.newInquiryInputs');
+    inputs.forEach(function (input) {
+        // Remove inline styles
+        input.style = '';
+    });
+
+    //reset the newInquiry object
+    newInquiry = {};
+
+    //trigger offcanvas button
+    offCanvasInquiryCloseButton.click();
 }
