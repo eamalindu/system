@@ -26,6 +26,37 @@ window.addEventListener('load', () => {
 
 const newFollowUpSubmit = ()=>{
     //temp fix
-    newFollowUp.inquiryId= document.querySelector('#inquirySheetId').innerText;
-    console.log(newFollowUp)
+    //newFollowUp.inquiryId= document.querySelector('#inquirySheetId').innerText;
+    newFollowUp.inquiryId = currentInquiry;
+    console.log('New Inquiry Added',newFollowUp);
+
+    //check for form errors
+    //get user confirmation
+    //pass data to backend
+
+}
+
+
+const checkFollowupFormErrors=()=>{
+    let errors = '';
+
+    if (newFollowUp.inquiryId == null) {
+        errors = errors + 'Inquiry is Required<br>';
+    }
+    if (newFollowUp.type == null) {
+        errors = errors + 'Type is Required<br>';
+    }
+    if (newFollowUp.content == null) {
+        errors = errors + 'Content is Required<br>';
+    }
+    if (newFollowUp.feeling == null) {
+        errors = errors + 'Feeling is Required<br>';
+    }
+    if (newFollowUp.confirmed == null) {
+        errors = errors + 'Confirmed is Required<br>';
+    }
+    if (newFollowUp.nextFollowup == null) {
+        errors = errors + 'Contact Time is Required<br>';
+    }
+    return errors;
 }
