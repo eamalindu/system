@@ -28,7 +28,7 @@ const newFollowUpSubmit = () => {
     //temp fix
     //newFollowUp.inquiryId= document.querySelector('#inquirySheetId').innerText;
     newFollowUp.inquiryId = currentInquiry;
-    console.log('New Inquiry Added', newFollowUp);
+    console.log('New Follow Up Added', newFollowUp);
 
     //check for form errors
     const errors = checkFollowupFormErrors();
@@ -36,7 +36,17 @@ const newFollowUpSubmit = () => {
     if (errors == '') {
         //this means there are no any errors
         //get user confirmation
-        //pass data to backend
+        showCustomConfirm('Are You Sure?<br><small>You are about to add a Follow-up to the Inquiry <strong>#' + currentInquiry.inquiryNumber + '</strong></small>',function (result){
+
+            if (result){
+                //pass data to backend
+            }
+            else{
+                showCustomModal("Operation Cancelled!", 'info');
+            }
+        });
+
+
 
     } else {
         //there are errors
