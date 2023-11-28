@@ -40,6 +40,11 @@ const newFollowUpSubmit = () => {
 
             if (result){
                 //pass data to backend
+                //reset the form
+                //remove validations
+                //close the offCanvas
+                //refresh the table
+                //null the newFollowup Object
             }
             else{
                 showCustomModal("Operation Cancelled!", 'info');
