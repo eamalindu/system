@@ -215,7 +215,7 @@ const inquiryEdit = () => {
 
     inputs.forEach(function (input) {
         input.removeAttribute('disabled');
-        input.setAttribute('style', 'border:1px solid #ffc107!important;background:initial');
+        input.setAttribute('style', 'border:1px solid #0DCAF0!important;background-color:rgba(13,202,240,0.2);');
     });
 
     //display the update button once the edit button is clicked
