@@ -92,4 +92,19 @@ public class InquiryController {
         }
     }
 
+
+    @PutMapping
+    public String updateInquiry(@RequestBody Inquiry inquiry){
+        try {
+            //no need to check anything, because there are no any unique values
+            inquiryDAO.save(inquiry);
+            return "OK";
+
+        }
+        catch (Exception ex){
+            return "Update Failed "+ex.getMessage();
+        }
+
+    }
+
 }
