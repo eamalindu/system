@@ -12,7 +12,7 @@ window.addEventListener('load', () => {
     sources = ajaxGetRequest("/source/findall")
     fillSelectOptions(inquirySheetSource, 'Please Select a Source', sources);
 
-    //initializing daterangepicker
+    //initializing daterangepicker in inquiry sheet
     $('#inquirySheetNextFollowUp').daterangepicker({
         "minDate": new Date(),
         "singleDatePicker": true,
@@ -179,7 +179,7 @@ const rowView = (ob, Index) => {
     inquirySheetIdValue.value = ob.idValue;
 
     //showing date and time with iSO Standarad
-    inquirySheetNextFollowUp.value = (ob.contactTime).replace('T', ' ');
+    inquirySheetNextFollowUp.value = (ob.contactTime).replace('T', ' ').slice(0, -3);
     inquirySheetDescription.value = ob.description;
 
     //set info section
