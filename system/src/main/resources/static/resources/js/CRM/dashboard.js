@@ -30,7 +30,7 @@ window.addEventListener('load', () => {
 
     //when apply is clicked data will validate and bind to the editedInquiry object
     $('#inquirySheetNextFollowUp').on('apply.daterangepicker',function (){
-        inputDateTimeValidator(inquirySheetNextFollowUp,'^20[0-9]{2}[-][0-9]{2}[-][0-9]{2}[ ][0-9]{2}[:][0-9]{2}$','editedInquiry','contactTime')
+        inputDateTimeValidator(this,'^20[0-9]{2}[-][0-9]{2}[-][0-9]{2}[ ][0-9]{2}[:][0-9]{2}$','editedInquiry','contactTime')
     });
 
 });
