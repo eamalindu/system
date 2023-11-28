@@ -240,7 +240,48 @@ const inquiryUpdate = () => {
         if (updates === "") {
             showCustomModal("No changes Detected!", "info")
         } else {
-            showCustomModal("Following Changes Detected<br><br/><small>" + updates+"</small>", "warning")
+            showCustomConfirm("You are About to Update this Inquiry<br><br>Following Changes Detected!<br/><small>" + updates+"</small><br>Are You Sure?", function (result){
+
+                if(result){
+                    let postServerResponse;
+                    $.ajax("/inquiry", {
+                        type: "PUT",
+                        async: false,
+                        contentType: "application/json",
+                        data: JSON.stringify(editedInquiry),
+                        success: function (data) {
+                            console.log("success " + data);
+                            postServerResponse = data;
+                        },
+                        error: function (resOb) {
+                            console.log("Error " + resOb);
+                            postServerResponse = resOb;
+                        }
+                    });
+                    //if data passed successfully
+                    //show a success alert
+                    if(postServerResponse === "OK"){
+
+                        showCustomModal("Inquiry Successfully Updated!","success")
+                        //close the offCanvas and refresh the table
+                        offCanvasInquirySheetCloseButton.click();
+                        refreshInquiryPoolTable();
+
+                    }
+
+                    //if data passed unsuccessfully
+                    //show an error alert
+                    else
+                    {
+                        showCustomModal("Operation Failed! <br> Inquiry Record Not Updated! "+postServerResponse,"error")
+                    }
+
+                }
+                else{
+                    showCustomModal("Operation Cancelled!", "info")
+                }
+
+            });
         }
 
     } else {
