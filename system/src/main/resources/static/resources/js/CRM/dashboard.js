@@ -10,7 +10,28 @@ window.addEventListener('load', () => {
     courses = ajaxGetRequest("/course/findall");
     fillSelectOptions(inquirySheetCourse, 'Please Select a Course', courses);
     sources = ajaxGetRequest("/source/findall")
-    fillSelectOptions(inquirySheetSource, 'Please Select a Source', sources)
+    fillSelectOptions(inquirySheetSource, 'Please Select a Source', sources);
+
+    //initializing daterangepicker
+    $('#inquirySheetNextFollowUp').daterangepicker({
+        "minDate": new Date(),
+        "singleDatePicker": true,
+        "timePicker": true,
+        "timePicker24Hour": true,
+        "autoApply": true,
+        "linkedCalendars": false,
+        "showCustomRangeLabel": false,
+        "drops": "up",
+        "locale": {
+            "format": "YYYY-MM-DD HH:mm"
+
+        }
+    });
+
+    //when apply is clicked data will validate and bind to the editedInquiry object
+    $('#inquirySheetNextFollowUp').on('apply.daterangepicker',function (){
+        inputDateTimeValidator(inquirySheetNextFollowUp,'^20[0-9]{2}[-][0-9]{2}[-][0-9]{2}[ ][0-9]{2}[:][0-9]{2}$','editedInquiry','contactTime')
+    });
 
 });
 
@@ -316,6 +337,9 @@ const checkForInquiryUpdates = () => {
     }
     if (editedInquiry.description !== oldInquiry.description) {
         updates = updates + "Description was changed to <span class='text-purple'>" + editedInquiry.description + "</span><br>";
+    }
+    if (editedInquiry.contactTime !== oldInquiry.contactTime) {
+        updates = updates + "Contact Time was changed to <span class='text-purple'>" + editedInquiry.contactTime + "</span><br>";
     }
     if (editedInquiry.courseId.name !== oldInquiry.courseId.name) {
         updates = updates + "Course was changed to <span class='text-purple'>" + editedInquiry.courseId.name + "</span><br>";
