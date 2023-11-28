@@ -24,20 +24,31 @@ window.addEventListener('load', () => {
 
 });
 
-const newFollowUpSubmit = ()=>{
+const newFollowUpSubmit = () => {
     //temp fix
     //newFollowUp.inquiryId= document.querySelector('#inquirySheetId').innerText;
     newFollowUp.inquiryId = currentInquiry;
-    console.log('New Inquiry Added',newFollowUp);
+    console.log('New Inquiry Added', newFollowUp);
 
     //check for form errors
-    //get user confirmation
-    //pass data to backend
+    const errors = checkFollowupFormErrors();
+
+    if (errors == '') {
+        //this means there are no any errors
+        //get user confirmation
+        //pass data to backend
+
+    } else {
+        //there are errors
+        //display them to the user using external-ModalFunction()
+        showCustomModal(errors, 'warning')
+    }
+
 
 }
 
 
-const checkFollowupFormErrors=()=>{
+const checkFollowupFormErrors = () => {
     let errors = '';
 
     if (newFollowUp.inquiryId == null) {
