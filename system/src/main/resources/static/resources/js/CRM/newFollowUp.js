@@ -84,8 +84,7 @@ const newFollowUpSubmit = () => {
                     //this means data successfully passed to the backend
                     //show an alert to user
                     showCustomModal("Follow Up Successfully Added!", "success");
-
-
+                    resetFollowupForm()
                     //refresh the table
                     //null the newFollowup Object
 
