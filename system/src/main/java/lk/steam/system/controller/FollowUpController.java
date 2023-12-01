@@ -40,10 +40,11 @@ public class FollowUpController {
                 //This means the current inquiry is a new inquiry
                 //Need to change the inquiry status from new inquiry to processing
 
-                //get inquiryID from the followUp object
+                //get inquiry from the followUp object
                 Inquiry currentInquiry = inquiryDAO.getReferenceById(followUp.getInquiryId().getId());
                 //change inquiry status to 2
                 currentInquiry.setInquiryStatusId(new InquiryStatus(2, "Processing"));
+                //save inquiry
                 inquiryDAO.save(currentInquiry);
 
                 //set auto generated values
