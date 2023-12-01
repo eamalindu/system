@@ -85,9 +85,7 @@ const newFollowUpSubmit = () => {
                     //show an alert to user
                     showCustomModal("Follow Up Successfully Added!", "success");
 
-                    //reset the form
-                    //remove validations
-                    //close the offCanvas
+
                     //refresh the table
                     //null the newFollowup Object
 
@@ -138,4 +136,11 @@ const checkFollowupFormErrors = () => {
         errors = errors + 'Contact Time is Required<br>';
     }
     return errors;
+}
+
+const resetFollowupForm = ()=>{
+    //reset the form
+    //remove validations
+    //close the offCanvas
+
 }
