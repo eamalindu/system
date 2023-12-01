@@ -5,6 +5,7 @@ import lk.steam.system.entity.FollowUp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
@@ -28,6 +29,12 @@ public class FollowUpController {
     public String saveNewFollowup(@RequestBody FollowUp followUp){
 
         try{
+
+            //set auto generated values
+            followUp.setFollowUpTime(LocalDateTime.now());
+            followUp.setAddedBy("User1");
+
+            followUpDAO.save(followUp);
 
             return "OK";
 
