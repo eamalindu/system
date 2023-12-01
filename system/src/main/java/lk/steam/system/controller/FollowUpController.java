@@ -65,6 +65,9 @@ public class FollowUpController {
                 //no followups cannot be added
                 return "<br>This Inquiry is Dropped! <br><br><small class='text-muted'>Followups cannot be added to <b>Dropped</b> Inquiries<small>";
             } else {
+                //This means the current inquiry is a processing inquiry
+                //followups can be added
+
                 //set auto generated values
                 followUp.setFollowUpTime(LocalDateTime.now());
                 followUp.setAddedBy("User1");
