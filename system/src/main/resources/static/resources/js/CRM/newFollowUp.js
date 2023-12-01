@@ -88,6 +88,7 @@ const newFollowUpSubmit = () => {
                     //refresh the table
                     //null the newFollowup Object
                     newFollowUp = {};
+                    offCanvasInquirySheetCloseButton.click();
 
 
                 } else {
