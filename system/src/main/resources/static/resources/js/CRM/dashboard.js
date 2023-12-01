@@ -12,26 +12,6 @@ window.addEventListener('load', () => {
     sources = ajaxGetRequest("/source/findall")
     fillSelectOptions(inquirySheetSource, 'Please Select a Source', sources);
 
-    //initializing daterangepicker in inquiry sheet
-    $('#inquirySheetNextFollowUp').daterangepicker({
-        "minDate": new Date(),
-        "singleDatePicker": true,
-        "timePicker": true,
-        "timePicker24Hour": true,
-        "autoApply": true,
-        "linkedCalendars": false,
-        "showCustomRangeLabel": false,
-        "drops": "up",
-        "locale": {
-            "format": "YYYY-MM-DD HH:mm"
-
-        }
-    });
-
-    //when apply is clicked data will validate and bind to the editedInquiry object
-    $('#inquirySheetNextFollowUp').on('apply.daterangepicker',function (){
-        inputDateTimeValidator(this,'^20[0-9]{2}[-][0-9]{2}[-][0-9]{2}[ ][0-9]{2}[:][0-9]{2}$','editedInquiry','contactTime')
-    });
 
 });
 
