@@ -60,6 +60,24 @@ const newFollowUpSubmit = () => {
 
             if (result){
                 //pass data to backend
+                let postServerResponse;
+
+                $.ajax("/followup",{
+                    type:"POST",
+                    async:false,
+                    contentType: "application/json",
+                    data: JSON.stringify(newFollowUp),
+                    success: function (data) {
+                        console.log("success " + data);
+                        postServerResponse = data;
+
+                    },
+                    error: function (resOb) {
+                        console.log("Error " + resOb);
+                        postServerResponse = resOb;
+
+                    }
+                })
                 //reset the form
                 //remove validations
                 //close the offCanvas
