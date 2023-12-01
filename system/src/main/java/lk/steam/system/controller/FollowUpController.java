@@ -52,10 +52,10 @@ public class FollowUpController {
                 return "OK";
 
             } else if (followUp.getInquiryId().getInquiryStatusId().getId() == 3) {
-                return "This Inquiry is Already Registered!";
+                return "<br>This Inquiry is Already Registered! <br><br><small class='text-muted'>Followups cannot be added to <b>Registered</b> Inquiries<small>";
 
             } else if (followUp.getInquiryId().getInquiryStatusId().getId() == 4) {
-                return "This Inquiry is Dropped!";
+                return "<br>This Inquiry is Dropped! <br><br><small class='text-muted'>Followups cannot be added to <b>Dropped</b> Inquiries<small>";
             } else {
                 //set auto generated values
                 followUp.setFollowUpTime(LocalDateTime.now());
@@ -63,7 +63,7 @@ public class FollowUpController {
 
                 followUpDAO.save(followUp);
 
-                return "OK"+followUp.getInquiryId().getId();
+                return "OK";
 
             }
 
