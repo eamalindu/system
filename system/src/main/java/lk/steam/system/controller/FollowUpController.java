@@ -56,6 +56,8 @@ public class FollowUpController {
                 return "OK";
 
             } else if (followUp.getInquiryId().getInquiryStatusId().getId() == 3) {
+                //This means the current inquiry is a registered inquiry
+                //no followups cannot be added
                 return "<br>This Inquiry is Already Registered! <br><br><small class='text-muted'>Followups cannot be added to <b>Registered</b> Inquiries<small>";
 
             } else if (followUp.getInquiryId().getInquiryStatusId().getId() == 4) {
