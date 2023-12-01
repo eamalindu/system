@@ -37,7 +37,7 @@ public class FollowUpController {
         try {
 
             if (followUp.getInquiryId().getInquiryStatusId().getId()==1) {
-                //this means the current inquiry is a new inquiry
+                //This means the current inquiry is a new inquiry
                 //Need to change the inquiry status from new inquiry to processing
 
                 //get inquiryID from the followUp object
