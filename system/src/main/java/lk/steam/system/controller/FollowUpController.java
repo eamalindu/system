@@ -37,6 +37,9 @@ public class FollowUpController {
         try {
 
             if (followUp.getInquiryId().getInquiryStatusId().getId()==1) {
+                //this means the current inquiry is a new inquiry
+                //Need to change the inquiry status from new inquiry to processing
+
                 //get inquiryID from the followUp object
                 Inquiry currentInquiry = inquiryDAO.getReferenceById(followUp.getInquiryId().getId());
                 //change inquiry status to 2
