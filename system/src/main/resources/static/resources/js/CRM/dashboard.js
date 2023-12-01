@@ -252,7 +252,7 @@ const inquiryDropped = () => {
 
 const inquiryUpdate = () => {
 
-    const errors = checkInquriyUpdateErrors();
+    const errors = checkInquiryUpdateErrors();
 
     if (errors === '') {
 
@@ -352,7 +352,7 @@ const checkForInquiryUpdates = () => {
     return updates;
 }
 
-const checkInquriyUpdateErrors = () => {
+const checkInquiryUpdateErrors = () => {
     let errors = '';
 
     if (editedInquiry.sourceId == null) {
