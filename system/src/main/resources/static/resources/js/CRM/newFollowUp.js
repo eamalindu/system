@@ -77,12 +77,27 @@ const newFollowUpSubmit = () => {
                         postServerResponse = resOb;
 
                     }
-                })
-                //reset the form
-                //remove validations
-                //close the offCanvas
-                //refresh the table
-                //null the newFollowup Object
+                });
+                //check the postServerResponse value
+                if (postServerResponse === 'OK') {
+
+                    //this means data successfully passed to the backend
+                    //show an alert to user
+                    showCustomModal("Follow Up Successfully Added!", "success");
+
+                    //reset the form
+                    //remove validations
+                    //close the offCanvas
+                    //refresh the table
+                    //null the newFollowup Object
+
+
+                } else {
+                    //this means there was a problem with the query
+                    //shows an error alert to the user
+                    showCustomModal("Operation Failed!" + postServerResponse, "error");
+                }
+
             }
             else{
                 showCustomModal("Operation Cancelled!", 'info');
