@@ -87,6 +87,7 @@ const newFollowUpSubmit = () => {
                     resetFollowupForm()
                     //refresh the table
                     //null the newFollowup Object
+                    newFollowUp = {};
 
 
                 } else {
