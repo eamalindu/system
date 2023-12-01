@@ -50,7 +50,7 @@ public class FollowUpController {
                 //set auto generated values
                 followUp.setFollowUpTime(LocalDateTime.now());
                 followUp.setAddedBy("User1");
-
+                //save followup
                 followUpDAO.save(followUp);
 
                 return "OK";
