@@ -339,7 +339,7 @@ const checkForInquiryUpdates = () => {
         updates = updates + "Description was changed to <span class='text-purple'>" + editedInquiry.description + "</span><br>";
     }
     if (editedInquiry.contactTime !== oldInquiry.contactTime) {
-        updates = updates + "Contact Time was changed to <span class='text-purple'>" + editedInquiry.contactTime.replace('T', ' ').slice(0, -3); + "</span><br>";
+        updates = updates + "Contact Time was changed to <span class='text-purple'>" + editedInquiry.contactTime.replace('T', ' ').slice(0, -8); + "</span><br>";
     }
     if (editedInquiry.courseId.name !== oldInquiry.courseId.name) {
         updates = updates + "Course was changed to <span class='text-purple'>" + editedInquiry.courseId.name + "</span><br>";
