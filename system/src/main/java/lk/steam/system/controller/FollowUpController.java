@@ -61,6 +61,8 @@ public class FollowUpController {
                 return "<br>This Inquiry is Already Registered! <br><br><small class='text-muted'>Followups cannot be added to <b>Registered</b> Inquiries<small>";
 
             } else if (followUp.getInquiryId().getInquiryStatusId().getId() == 4) {
+                //This means the current inquiry is a dropped inquiry
+                //no followups cannot be added
                 return "<br>This Inquiry is Dropped! <br><br><small class='text-muted'>Followups cannot be added to <b>Dropped</b> Inquiries<small>";
             } else {
                 //set auto generated values
