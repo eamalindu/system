@@ -108,23 +108,6 @@ const rowView = (ob, Index) => {
 
     });
 
-    //add the disabled attribute from the select
-    //remove the border color to indicate that select cant be now edited
-    /*
-    inquirySheetCourse.setAttribute('disabled', 'true');
-    inquirySheetCourse.setAttribute('style', '');
-     */
-
-    //select the appropriate option as selected
-    //inquirySheetCourse.options[ob.courseId.id].selected = true;
-
-    //add the disabled attribute from the select
-    //remove the border color to indicate that select cant be now edited
-    /*
-    inquirySheetSource.setAttribute('disabled', 'true');
-    inquirySheetSource.setAttribute('style', '');
-
-     */
 
     //select the appropriate option as selected
     //inquirySheetSource.options[ob.sourceId.id].selected = true;
@@ -187,13 +170,6 @@ const inquiryEdit = () => {
 
     //remove the disabled attribute from the select
     //give a border color to indicate that select can be now edited
-    /*
-    inquirySheetCourse.removeAttribute('disabled');
-    inquirySheetCourse.setAttribute('style', 'border:1px solid #ffc107!important');
-    inquirySheetSource.removeAttribute('disabled');
-    inquirySheetSource.setAttribute('style', 'border:1px solid #ffc107!important');
-
-     */
 
     inputs.forEach(function (input) {
         input.removeAttribute('disabled');
