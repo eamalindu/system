@@ -6,11 +6,11 @@ window.addEventListener('load', () => {
 
     //dynamic select for courses
     courses = ajaxGetRequest("/course/findall");
-    fillSelectOptions(inquiryCourse, 'Please Select a Course', courses)
+    fillSelectOptions(inquiryCourse, 'Please Select a Course', courses,'name')
 
     //dynamic select for sources
     sources = ajaxGetRequest("/source/findall")
-    fillSelectOptions(inquirySource, 'Please Select a Source', sources)
+    fillSelectOptions(inquirySource, 'Please Select a Source', sources,'name')
 
     //dynamic select end
 

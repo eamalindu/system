@@ -5,10 +5,10 @@ window.addEventListener('load', () => {
 
     //dynamic select start
     courses = ajaxGetRequest("/course/findall");
-    fillSelectOptions(inquirySearchCourse,'Please Select a Course',courses);
+    fillSelectOptions(inquirySearchCourse,'Please Select a Course',courses,'name');
 
     sources = ajaxGetRequest("/source/findall")
-    fillSelectOptions(inquirySearchSource,'Please Select a Source',sources)
+    fillSelectOptions(inquirySearchSource,'Please Select a Source',sources,'name')
 
     //need to add counsellors also (db not implemented yet)
     //dynamic select end

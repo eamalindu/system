@@ -8,9 +8,9 @@ window.addEventListener('load', () => {
 
     //make the selects dynamic for inquiry sheet
     courses = ajaxGetRequest("/course/findall");
-    fillSelectOptions(inquirySheetCourse, 'Please Select a Course', courses);
+    fillSelectOptions(inquirySheetCourse, 'Please Select a Course', courses,'name');
     sources = ajaxGetRequest("/source/findall")
-    fillSelectOptions(inquirySheetSource, 'Please Select a Source', sources);
+    fillSelectOptions(inquirySheetSource, 'Please Select a Source', sources,'name');
 
 
 });
