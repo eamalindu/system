@@ -20,7 +20,7 @@ window.addEventListener('load', () => {
 const refreshInquiryPoolTable = () => {
 
     //get data from the database with ajax
-    newInquiries = ajaxGetRequest("/inquiry/findall");
+    newInquiries = ajaxGetRequest("/inquiry/newInquiry");
     displayPropertyListForInquiryPool = [{property: 'inquiryNumber', dataType: 'text'}, {
         property: getCourse, dataType: 'function'
     }, {property: getSource, dataType: 'function'}, {property: getFullName, dataType: 'function'}];
