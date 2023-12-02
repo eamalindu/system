@@ -28,6 +28,9 @@ const fillSelectOptions = (elementID, message, dataList,displayProperty,selected
         option.innerText = ob[displayProperty];
         //converting JavaScript values to JSON strings
         option.value = JSON.stringify(ob);
+        if(selectedValue===ob[displayProperty]){
+            option.selected = "selected";
+        }
         selectElement.appendChild(option);
     })
 
