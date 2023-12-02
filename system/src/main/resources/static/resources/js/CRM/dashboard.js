@@ -20,7 +20,7 @@ window.addEventListener('load', () => {
 const refreshInquiryPoolTable = () => {
 
     //get data from the database with ajax
-    newInquiries = ajaxGetRequest("/inquiry/newInquiry");
+    newInquiries = ajaxGetRequest("/inquiry/findall");
     displayPropertyListForInquiryPool = [{property: 'inquiryNumber', dataType: 'text'}, {
         property: getCourse, dataType: 'function'
     }, {property: getSource, dataType: 'function'}, {property: getFullName, dataType: 'function'}];
@@ -116,7 +116,7 @@ const rowView = (ob, Index) => {
      */
 
     //select the appropriate option as selected
-    inquirySheetCourse.options[ob.courseId.id].selected = true;
+    //inquirySheetCourse.options[ob.courseId.id].selected = true;
 
     //add the disabled attribute from the select
     //remove the border color to indicate that select cant be now edited
@@ -127,7 +127,9 @@ const rowView = (ob, Index) => {
      */
 
     //select the appropriate option as selected
-    inquirySheetSource.options[ob.sourceId.id].selected = true;
+    //inquirySheetSource.options[ob.sourceId.id].selected = true;
+    fillSelectOptions(inquirySheetSource,'Please Select a Source',sources,'name',ob.sourceId.name)
+    fillSelectOptions(inquirySheetCourse,'Please Select a Course',courses,'name',ob.courseId.name)
 
     inquirySheetId.innerText = ob.inquiryNumber;
 
