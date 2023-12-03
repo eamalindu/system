@@ -3,6 +3,9 @@ window.addEventListener('load', () => {
     //refresh table
     refreshTable();
 
+    //hide the update button
+    btnInquirySheetUpdate.style.display = 'none';
+
     //dynamic select start
     courses = ajaxGetRequest("/course/findall");
     fillSelectOptions(inquirySearchCourse,'Please Select a Course',courses,'name');
@@ -87,6 +90,14 @@ const getNextFollowup = (ob)=>{
 
 const rowView = (ob,rowIndex)=>{
 
+    //make all the inputs readonly and remove inline styles
+    inputs = document.querySelectorAll('.inquirySheetInputs');
+    inputs.forEach(function (input) {
+        input.setAttribute('disabled', 'true');
+        input.style = '';
+
+    });
+
     inquirySheetId.innerText = getInquiryId(ob);
 
     //document.querySelector('#inquirySheetCourse').value = ob.inquiryId.courseId.code;
@@ -133,6 +144,172 @@ const rowView = (ob,rowIndex)=>{
     inquirySheetAddedTime.innerText = addedTime;
     inquirySheetAddedBy.innerText = ob.inquiryId.addedBy;
 
+    currentInquiryObj = ob.inquiryId;
+
+}
+const inquiryEdit = () => {
+    //remove the attribute readonly to make inputs accept the user input values
+    //give a border color to inputs indicate that the input's values are ready to be edited
+    inputs = document.querySelectorAll('.inquirySheetInputs');
+
+    //remove the disabled attribute from the select
+    //give a border color to indicate that select can be now edited
+
+    inputs.forEach(function (input) {
+        input.removeAttribute('disabled');
+        input.setAttribute('style', 'border:1px solid #0DCAF0!important;background-color:rgba(13,202,240,0.2);');
+    });
+
+    //display the update button once the edit button is clicked
+    btnInquirySheetUpdate.style.display = 'block';
+
+    //catch old inquiry and new inquiry
+    oldInquiry = JSON.parse(JSON.stringify(currentInquiryObj));
+    editedInquiry = JSON.parse(JSON.stringify(currentInquiryObj));
+
+    console.log("old inquiry 👇")
+    console.log(oldInquiry)
+    console.log("edited inquiry 👇")
+    console.log(editedInquiry)
+    console.log("new inquiry 👇")
+    console.log(newInquiry)
+
+}
+const inquiryUpdate = () => {
+
+    const errors = checkInquiryUpdateErrors();
+
+    if (errors === '') {
+
+        let updates = checkForInquiryUpdates();
+
+        if (updates === "") {
+            showCustomModal("No changes Detected!", "info")
+        } else {
+            showCustomConfirm("You are About to Update this Inquiry<br><br>Following Changes Detected!<br/><br/><small>" + updates+"</small><br>Are You Sure?", function (result){
+
+                if(result){
+                    let postServerResponse;
+                    $.ajax("/inquiry", {
+                        type: "PUT",
+                        async: false,
+                        contentType: "application/json",
+                        data: JSON.stringify(editedInquiry),
+                        success: function (data) {
+                            console.log("success " + data);
+                            postServerResponse = data;
+                        },
+                        error: function (resOb) {
+                            console.log("Error " + resOb);
+                            postServerResponse = resOb;
+                        }
+                    });
+                    //if data passed successfully
+                    //show a success alert
+                    if(postServerResponse === "OK"){
+
+                        showCustomModal("Inquiry Successfully Updated!","success")
+                        //close the offCanvas and refresh the table
+                        offCanvasInquirySheetCloseButton.click();
+                        refreshTable();
+
+                    }
+
+                        //if data passed unsuccessfully
+                    //show an error alert
+                    else
+                    {
+                        showCustomModal("Operation Failed! <br> Inquiry Record Not Updated! "+postServerResponse,"error")
+                    }
+
+                }
+                else{
+                    showCustomModal("Operation Cancelled!", "info")
+                }
+
+            });
+        }
+
+    } else {
+        showCustomModal(errors, 'warning');
+    }
+}
+
+const checkForInquiryUpdates = () => {
+
+    let updates = '';
+
+    if (editedInquiry.firstName !== oldInquiry.firstName) {
+        updates = updates + "First Name was changed to <span class='text-purple'>" + editedInquiry.firstName + "</span><br>";
+    }
+    if (editedInquiry.lastName !== oldInquiry.lastName) {
+        updates = updates + "Last Name was changed to <span class='text-purple'>" + editedInquiry.lastName + "</span><br>";
+    }
+    if (editedInquiry.primaryMobileNumber !== oldInquiry.primaryMobileNumber) {
+        updates = updates + "Phone Number was changed to <span class='text-purple'>" + editedInquiry.primaryMobileNumber + "</span><br>";
+    }
+    if (editedInquiry.email !== oldInquiry.email) {
+        updates = updates + "Email was changed to <span class='text-lowercase text-purple'>" + editedInquiry.email + "</span><br>";
+    }
+    if (editedInquiry.secondaryMobileNumber !== oldInquiry.secondaryMobileNumber) {
+        updates = updates + "Optional Phone Number was changed to <span class='text-purple'>" + editedInquiry.secondaryMobileNumber + "</span><br>";
+    }
+    if (editedInquiry.idType !== oldInquiry.idType) {
+        updates = updates + "ID Type was changed to <span class='text-purple'>" + editedInquiry.idType + "</span><br>";
+    }
+    if (editedInquiry.idValue !== oldInquiry.idValue) {
+        updates = updates + "ID Value was changed to <span class='text-purple'>" + editedInquiry.idValue + "</span><br>";
+    }
+    if (editedInquiry.description !== oldInquiry.description) {
+        updates = updates + "Description was changed to <span class='text-purple'>" + editedInquiry.description + "</span><br>";
+    }
+    if (editedInquiry.contactTime !== oldInquiry.contactTime) {
+        updates = updates + "Contact Time was changed to <span class='text-purple'>" + editedInquiry.contactTime.replace('T', ' ').slice(0, -8); + "</span><br>";
+    }
+    if (editedInquiry.courseId.name !== oldInquiry.courseId.name) {
+        updates = updates + "Course was changed to <span class='text-purple'>" + editedInquiry.courseId.name + "</span><br>";
+    }
+    if (editedInquiry.sourceId.name !== oldInquiry.sourceId.name) {
+        updates = updates + "Source was changed to <span class='text-purple'>" + editedInquiry.sourceId.name + "</span><br>";
+    }
 
 
+    return updates;
+}
+
+const checkInquiryUpdateErrors = () => {
+    let errors = '';
+
+    if (editedInquiry.sourceId == null) {
+        errors = errors + 'Source is Required<br>';
+    }
+    if (editedInquiry.courseId == null) {
+        errors = errors + 'Course is Required<br>';
+    }
+    if (editedInquiry.firstName == null) {
+        errors = errors + 'First Name is Required<br>';
+    }
+    if (editedInquiry.lastName == null) {
+        errors = errors + 'Last Name is Required<br>';
+    }
+    if (editedInquiry.primaryMobileNumber == null) {
+        errors = errors + 'Mobile Number is Required<br>';
+
+    }
+    if (editedInquiry.idType == null) {
+        errors = errors + 'ID Type is Required<br>';
+
+    }
+    if (editedInquiry.idValue == null) {
+        errors = errors + 'ID Value is Required<br>';
+
+    }
+    if (editedInquiry.contactTime == null) {
+        errors = errors + 'Contact Time is Required<br>';
+    }
+    if (editedInquiry.description == null) {
+        errors = errors + 'Description is Required<br>';
+    }
+
+    return errors;
 }
