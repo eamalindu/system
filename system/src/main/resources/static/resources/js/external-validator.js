@@ -29,7 +29,7 @@ const inputTextValidator = (element, pattern,object,property) => {
 
             window[object][property] = null;
             element.style.border = '1px solid red';
-            element.style.background = 'rgba(255,0,0,0.4)';
+            element.style.background = 'rgba(255,0,0,0.2)';
         }
     }
     //if the element is null, check if its required or not
@@ -40,7 +40,7 @@ const inputTextValidator = (element, pattern,object,property) => {
         //if element is required, display error / warning (use border color or boostrap validation)
         if (element.required) {
             element.style.border = '1px solid red';
-            element.style.background = 'rgba(255,0,0,0.4)';
+            element.style.background = 'rgba(255,0,0,0.2)';
         }
         //if the element is not required, display the default colors (remove boostrap validation)
         else {
@@ -90,7 +90,7 @@ const inputDateTimeValidator = (element, pattern,object,property) => {
 
             window[object][property] = null;
             element.style.border = '1px solid red';
-            element.style.background = 'rgba(255,0,0,0.4)';
+            element.style.background = 'rgba(255,0,0,0.2)';
         }
     }
     //if the element is null, check if its required or not
@@ -101,7 +101,7 @@ const inputDateTimeValidator = (element, pattern,object,property) => {
         //if element is required, display error / warning (use border color or boostrap validation)
         if (element.required) {
             element.style.border = '1px solid red';
-            element.style.background = 'rgba(255,0,0,0.4)';
+            element.style.background = 'rgba(255,0,0,0.2)';
         }
         //if the element is not required, display the default colors (remove boostrap validation)
         else {
@@ -128,7 +128,7 @@ const selectStaticValueValidator = (elementID,pattern,object,property) => {
    }
    else{
        elementID.style.border = '1px solid red';
-       elementID.style.background = 'rgba(255,0,0,0.4)';
+       elementID.style.background = 'rgba(255,0,0,0.2)';
       // elementID.setAttribute('style', 'background:rgba(255,0,0,0.2) !important;border:1px solid red');
        window[object][property] = null;
    }
@@ -142,7 +142,7 @@ const selectDynamicValueValidator = (elementID,pattern,object,property) => {
     }
     else{
         elementID.style.border = '1px solid red';
-        elementID.style.background = 'rgba(255,0,0,0.4)';
+        elementID.style.background = 'rgba(255,0,0,0.2)';
         window[object][property] = null;
     }
 }
