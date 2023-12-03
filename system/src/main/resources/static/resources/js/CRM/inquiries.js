@@ -87,48 +87,51 @@ const getNextFollowup = (ob)=>{
 
 const rowView = (ob,rowIndex)=>{
 
-    document.querySelector('#inquirySheetId').innerText = getInquiryId(ob);
+    inquirySheetId.innerText = getInquiryId(ob);
 
-    document.querySelector('#inquirySheetCourse').value = ob.inquiryId.courseId.code;
-    document.querySelector('#inquirySheetSource').value = ob.inquiryId.sourceId.name;
+    //document.querySelector('#inquirySheetCourse').value = ob.inquiryId.courseId.code;
+    //document.querySelector('#inquirySheetSource').value = ob.inquiryId.sourceId.name;
 
-    document.querySelector('#inquirySheetFirstName').value = ob.inquiryId.firstName;
-    document.querySelector('#inquirySheetLastName').value = ob.inquiryId.lastName;
-    document.querySelector('#inquirySheetPrimaryMobile').value = ob.inquiryId.primaryMobileNumber;
+    fillSelectOptions(inquirySheetSource,'Please Select a Source',sources,'name',ob.inquiryId.sourceId.name);
+    fillSelectOptions(inquirySheetCourse,'Please Select a Course',courses,'name',ob.inquiryId.courseId.name);
+
+    inquirySheetFirstName.value = ob.inquiryId.firstName;
+    inquirySheetLastName.value = ob.inquiryId.lastName;
+    inquirySheetPrimaryMobile.value = ob.inquiryId.primaryMobileNumber;
 
     //email is an optional value therefore it might contain null as the value
     //instead of displaying nothing, we can use if condition to set a value
 
     if(ob.inquiryId.email!==null){
-        document.querySelector('#inquirySheetEmail').value = ob.inquiryId.email;
-        document.querySelector('#inquirySheetEmail').classList.remove('text-muted');
+        inquirySheetEmail.value = ob.inquiryId.email;
+        inquirySheetEmail.classList.remove('text-muted');
 
     }
     else
     {
-        document.querySelector('#inquirySheetEmail').value = '-- Not Provided --';
-        document.querySelector('#inquirySheetEmail').classList.add('text-muted');
+        inquirySheetEmail.value = '-- Not Provided --';
+        inquirySheetEmail.classList.add('text-muted');
     }
 
     if(ob.inquiryId.secondaryMobileNumber !== null){
-        document.querySelector('#inquirySheetSecondaryMobile').value =ob.inquiryId.secondaryMobileNumber ;
-        document.querySelector('#inquirySheetSecondaryMobile').classList.remove('text-muted');
+        inquirySheetSecondaryMobile.value =ob.inquiryId.secondaryMobileNumber ;
+        inquirySheetSecondaryMobile.classList.remove('text-muted');
 
     }else{
-        document.querySelector('#inquirySheetSecondaryMobile').value = '-- Not Provided --';
-        document.querySelector('#inquirySheetSecondaryMobile').classList.add('text-muted');
+        inquirySheetSecondaryMobile.value = '-- Not Provided --';
+        inquirySheetSecondaryMobile.classList.add('text-muted');
     }
 
-    document.querySelector('#inquirySheetIdValue').value = ob.inquiryId.idValue;
+    inquirySheetIdValue.value = ob.inquiryId.idValue;
 
     //showing date and time with iSO Standarad
-    document.querySelector('#inquirySheetNextFollowUp').value = (ob.inquiryId.contactTime).replace('T', ' ');
-    document.querySelector('#inquirySheetDescription').value = ob.inquiryId.description;
+    inquirySheetNextFollowUp.value = (ob.inquiryId.contactTime).replace('T', ' ');
+    inquirySheetDescription.value = ob.inquiryId.description;
 
     const [addedDate, addedTime] = ob.inquiryId.timeStamp.split("T");
-    document.querySelector('#inquirySheetAddedDate').innerText = addedDate;
-    document.querySelector('#inquirySheetAddedTime').innerText = addedTime;
-    document.querySelector('#inquirySheetAddedBy').innerText = ob.inquiryId.addedBy;
+    inquirySheetAddedDate.innerText = addedDate;
+    inquirySheetAddedTime.innerText = addedTime;
+    inquirySheetAddedBy.innerText = ob.inquiryId.addedBy;
 
 
 
