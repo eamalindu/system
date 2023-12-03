@@ -62,3 +62,22 @@ const ajaxGetRequest = (url) =>{
     return Response;
 
 }
+
+
+//test code to show all the followups when an inquiry object is given
+//need to implement a backend service (to get followup details when an inquiry is given)
+//need to ask
+const showFollowupCard =()=>{
+    // Create the main div with the card class and rounded-0 and mb-2 classes
+    const cardDiv = document.createElement('div');
+    cardDiv.className = 'card rounded-0 mb-2';
+
+    // Create the card body div with rounded-0 class
+    const cardBodyDiv = document.createElement('div');
+    cardBodyDiv.className = 'card-body rounded-0';
+
+    // Create the row div
+    const rowDiv = document.createElement('div');
+    rowDiv.className = 'row';
+
+}
