@@ -133,9 +133,3 @@ const rowView = (ob,rowIndex)=>{
 
 
 }
-const rowEdit = (ob,rowIndex)=>{
-
-}
-const rowDelete = (ob,rowIndex)=>{
-
-}
