@@ -52,7 +52,7 @@ const refreshTable = () => {
 
     ];
 
-    fillDataIntoTable(tblInquiry,inquiriesWithFollowUps,displayPropertyList,rowEdit,rowView,rowDelete);
+    fillDataIntoTable(tblInquiry,inquiriesWithFollowUps,displayPropertyList,rowView);
 
 }
 
