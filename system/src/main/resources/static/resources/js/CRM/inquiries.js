@@ -36,7 +36,7 @@ window.addEventListener('load', () => {
 const refreshTable = () => {
 
     //get data with ajax and database
-    inquiriesWithFollowUps = ajaxGetRequest("/followup/findall");
+    inquiriesWithFollowUps = ajaxGetRequest("/followup/latestFollowup");
 
     displayPropertyList = [
         {property: getInquiryId,dataType: 'function'},
