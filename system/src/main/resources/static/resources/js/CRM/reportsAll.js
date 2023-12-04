@@ -48,3 +48,56 @@ const refreshReportAllTable = () =>{
     fillDataIntoTable(tblReportsAll,allInquiries,displayPropertyListForReoprtAll,rowView);
 
 }
+
+const getSourceName=(ob)=>{
+    switch (ob.sourceId.name) {
+        case "Cold Calling":
+            return "<i class=\"fa-solid fa-table\"></i>";
+            break;
+
+        case "Facebook":
+            return "<i class=\"fa-brands fa-facebook-f\"></i>";
+            break;
+
+        case "Leaflets":
+            return "<i class=\"fa-solid fa-note-sticky\"></i>";
+            break;
+
+        case "Letter Campaign":
+            return "<i class=\"fa-solid fa-envelope\"></i>";
+            break;
+
+        case "Personal Contact":
+            return "<i class=\"fa-solid fa-person\"></i>";
+            break;
+
+        case "Phone Call":
+            return "<i class=\"fa-solid fa-phone\"></i>";
+            break;
+
+        case "Seminar":
+            return "<i class=\"fa-solid fa-person-chalkboard\"></i>";
+            break;
+
+        case "SMS Campaign":
+            return "<i class=\"fa-solid fa-comment-sms\"></i>";
+            break;
+
+        case "Walk In":
+            return "<i class=\"fa-solid fa-person-walking\"></i>";
+            break;
+
+        case "WhatsApp":
+            return "<i class=\"fa-brands fa-whatsapp\"></i>";
+            break;
+    }
+
+}
+
+const getCourseName=(ob)=>{
+    return ob.courseId.code;
+}
+
+const rowView = (ob)=>{
+
+}
