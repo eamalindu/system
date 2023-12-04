@@ -29,6 +29,22 @@ window.addEventListener('load',()=>{
 
     refreshReportAllTable();
 
+    //testing data export as excel file
+    btnToExcel.addEventListener('click',()=>{
+
+        showCustomConfirm("You are About to Download the Inquiries From <span class='text-purple small'>"+reportrange.innerText.replace(' ','')+"</span><br> Are You Sure ?",function (result){
+
+
+        })
+         columnsToExport = [
+            { name: "Inquiry Number", data: "inquiryNumber" },
+            { name: "First Name", data: "firstName" },
+            { name: "Last Name", data: "lastName" },
+            { name: "Course ID", data: "courseId.name" }
+        ];
+        exportToExcel(allInquiries,reportrange.innerText.replace(' ',''),columnsToExport);
+    })
+
 })
 
 const refreshReportAllTable = () =>{
