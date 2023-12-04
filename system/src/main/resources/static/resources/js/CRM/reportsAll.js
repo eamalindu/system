@@ -36,6 +36,10 @@ window.addEventListener('load',()=>{
             if(result){
                 columnsToExport = [
                     { name: "Inquiry Number", data: "inquiryNumber" },
+                    { name: "Course Name", data: "courseId.name" },
+                    { name: "Source Name", data: "sourceId.name" },
+                    { name: "Source Name", data: "sourceId.name" },
+                    { name: "inquiry Status", data: "inquiryStatusId.name" },
                     { name: "First Name", data: "firstName" },
                     { name: "Last Name", data: "lastName" },
                     { name: "Primary Mobile Number", data: "primaryMobileNumber" },
@@ -44,12 +48,9 @@ window.addEventListener('load',()=>{
                     { name: "ID Value", data: "idValue" },
                     { name: "Contact Time", data: "contactTime" },
                     { name: "Description", data: "description" },
-                    { name: "Added By", data: "User1" },
-                    { name: "Created Timestamp", data: "timeStamp" },
-                    { name: "Course Name", data: "courseId.name" },
-                    { name: "Source Name", data: "sourceId.name" },
-                    { name: "Source Name", data: "sourceId.name" },
-                    { name: "inquiry Status", data: "inquiryStatusId.name" }
+                    { name: "Added By", data: "addedBy" },
+                    { name: "Created Timestamp", data: "timeStamp" }
+
                 ];
                 exportToExcel(allInquiries,reportrange.innerText.replace(' ',''),columnsToExport);
                 showCustomModal("Downloaded Successfully!","success")
