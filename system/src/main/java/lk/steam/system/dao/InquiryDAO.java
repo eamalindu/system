@@ -11,11 +11,6 @@ import java.util.Map;
 @Repository
 public interface InquiryDAO extends JpaRepository<Inquiry,Integer> {
 
-    //display all the inquiry
-    //this data will be shown in crm-> Reports-> All
-    @Query(value = "SELECT * FROM inquiry",nativeQuery = true)
-    List<Inquiry> findAllInquiry();
-
     //display all the active inquiries (New and Processing)
     //without any follow-ups
     @Query(value = "SELECT * FROM inquiry WHERE inquirystatus_id =1 OR inquirystatus_id=2",nativeQuery = true)
