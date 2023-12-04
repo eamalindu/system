@@ -33,16 +33,33 @@ window.addEventListener('load',()=>{
     btnToExcel.addEventListener('click',()=>{
 
         showCustomConfirm("You are About to Download the Inquiries From <span class='text-purple small'>"+reportrange.innerText.replace(' ','')+"</span><br> Are You Sure ?",function (result){
-
+            if(result){
+                columnsToExport = [
+                    { name: "Inquiry Number", data: "inquiryNumber" },
+                    { name: "First Name", data: "firstName" },
+                    { name: "Last Name", data: "lastName" },
+                    { name: "Primary Mobile Number", data: "primaryMobileNumber" },
+                    { name: "Secondary Mobile Number", data: "secondaryMobileNumber" },
+                    { name: "Email Address", data: "email" },
+                    { name: "ID Value", data: "idValue" },
+                    { name: "Contact Time", data: "contactTime" },
+                    { name: "Description", data: "description" },
+                    { name: "Added By", data: "User1" },
+                    { name: "Created Timestamp", data: "timeStamp" },
+                    { name: "Course Name", data: "courseId.name" },
+                    { name: "Source Name", data: "sourceId.name" },
+                    { name: "Source Name", data: "sourceId.name" },
+                    { name: "inquiry Status", data: "inquiryStatusId.name" }
+                ];
+                exportToExcel(allInquiries,reportrange.innerText.replace(' ',''),columnsToExport);
+                showCustomModal("Downloaded Successfully!","success")
+            }
+            else{
+                showCustomModal("Operation Canceled!","info")
+            }
 
         })
-         columnsToExport = [
-            { name: "Inquiry Number", data: "inquiryNumber" },
-            { name: "First Name", data: "firstName" },
-            { name: "Last Name", data: "lastName" },
-            { name: "Course ID", data: "courseId.name" }
-        ];
-        exportToExcel(allInquiries,reportrange.innerText.replace(' ',''),columnsToExport);
+
     })
 
 })
