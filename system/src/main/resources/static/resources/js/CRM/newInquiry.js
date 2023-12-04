@@ -92,6 +92,21 @@ const newInquirySubmit = () => {
                     //refreshInquiriesTable();
                     //refreshReportAllTable();
 
+                    //getting the document name
+                    const documentTitleArray = document.title.split(" | ");
+                    const documentTitle = documentTitleArray[0];
+
+                    if (documentTitle == "Dashboard") {
+                        refreshInquiryPoolTable();
+                        //refreshInquiryScheduleTable();
+                    } else if (documentTitle == "Inquiries") {
+                        refreshInquiriesTable();
+                    } else if (documentTitle == "Reports-All") {
+                        refreshReportAllTable();
+
+                    } else {
+                        console.log("Error");
+                    }
 
 
                 } else {
