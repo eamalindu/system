@@ -27,4 +27,24 @@ window.addEventListener('load',()=>{
 
     });
 
+    refreshReportAllTable()
+
 })
+
+const refreshReportAllTable = () =>{
+
+    allInquiries = ajaxGetRequest();
+
+    displayPropertyListForReoprtAll = [
+        {property: 'inquiryNumber',dataType:'text'},
+        {property: getSourceName,dataType: 'function'},
+        {property: getCourseName,dataType: 'function'},
+        {property: getFullName,dataType: 'function'},
+        {property: 'primaryMobileNumber',dataType: 'text'},
+        {property: 'addedBy',dataType: 'text'},
+        {property: getInquiryStatus,dataType: 'function'},
+    ];
+
+    fillDataIntoTable(tblReportsAll,allInquiries,displayPropertyListForReoprtAll,rowView);
+
+}
