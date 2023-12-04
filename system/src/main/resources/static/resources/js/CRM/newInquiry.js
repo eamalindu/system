@@ -6,11 +6,11 @@ window.addEventListener('load', () => {
 
     //dynamic select for courses
     courses = ajaxGetRequest("/course/findall");
-    fillSelectOptions(inquiryCourse, 'Please Select a Course', courses,'name')
+    fillSelectOptions(inquiryCourse, 'Please Select a Course', courses, 'name')
 
     //dynamic select for sources
     sources = ajaxGetRequest("/source/findall")
-    fillSelectOptions(inquirySource, 'Please Select a Source', sources,'name')
+    fillSelectOptions(inquirySource, 'Please Select a Source', sources, 'name')
 
     //dynamic select end
 
@@ -58,23 +58,19 @@ const newInquirySubmit = () => {
 
         //this means there are no any errors
         //user confirmation is needed (will add later)
-        showCustomConfirm("You are about to add a New inquiry<br>Are You Sure?",function (result){
-            if(result){
+        showCustomConfirm("You are about to add a New inquiry<br>Are You Sure?", function (result) {
+            if (result) {
                 //passing the data to backend
                 //if the data is successfully passed to the database it will set the value of the postServerResponse to "OK"
                 let postServerResponse;
 
                 $.ajax("/inquiry", {
-                    type: "POST",
-                    async: false, // set the async option to false to wait for the response
-                    contentType: "application/json",
-                    data: JSON.stringify(newInquiry),
-                    success: function (data) {
+                    type: "POST", async: false, // set the async option to false to wait for the response
+                    contentType: "application/json", data: JSON.stringify(newInquiry), success: function (data) {
                         console.log("success " + data);
                         postServerResponse = data;
 
-                    },
-                    error: function (resOb) {
+                    }, error: function (resOb) {
                         console.log("Error " + resOb);
                         postServerResponse = resOb;
 
@@ -89,8 +85,13 @@ const newInquirySubmit = () => {
 
                     resetInquiryForm();
 
+                    //needs to refresh all the tables in the system
 
-                    refreshInquiryPoolTable();
+                    //refreshInquiryPoolTable();
+                    //refreshInquiryScheduleTable();
+                    //refreshInquiriesTable();
+                    //refreshReportAllTable();
+
 
 
                 } else {
@@ -99,8 +100,7 @@ const newInquirySubmit = () => {
                     showCustomModal("Operation Failed!" + postServerResponse, "error");
                 }
 
-            }
-            else{
+            } else {
                 showCustomModal("Operation Cancelled!", "info");
             }
         });
@@ -150,7 +150,7 @@ const checkFormErrors = () => {
     return errors;
 }
 
-const resetInquiryForm = ()=>{
+const resetInquiryForm = () => {
     //after a successful creation from needs to be resettled and all the validations should be removed
     //off-canvas is also can be minimized (ask about it)
 

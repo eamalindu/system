@@ -1,7 +1,7 @@
 window.addEventListener('load', () => {
 
     //refresh table
-    refreshTable();
+    refreshInquiriesTable();
 
     //hide the update button
     btnInquirySheetUpdate.style.display = 'none';
@@ -36,7 +36,7 @@ window.addEventListener('load', () => {
 });
 
 
-const refreshTable = () => {
+const refreshInquiriesTable = () => {
 
     //get data with ajax and database
     inquiriesWithFollowUps = ajaxGetRequest("/followup/latestFollowup");
