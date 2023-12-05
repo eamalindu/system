@@ -62,6 +62,38 @@ window.addEventListener('load',()=>{
         })
 
     })
+    btnToCSV.addEventListener('click',()=>{
+
+        showCustomConfirm("You are About to Download the Inquiries From <span class='text-purple small'>"+reportrange.innerText.replace(' ','')+"</span><br> Are You Sure ?",function (result){
+            if(result){
+                columnsToExport = [
+                    { name: "Inquiry Number", data: "inquiryNumber" },
+                    { name: "Course Name", data: "courseId.name" },
+                    { name: "Source Name", data: "sourceId.name" },
+                    { name: "Source Name", data: "sourceId.name" },
+                    { name: "inquiry Status", data: "inquiryStatusId.name" },
+                    { name: "First Name", data: "firstName" },
+                    { name: "Last Name", data: "lastName" },
+                    { name: "Primary Mobile Number", data: "primaryMobileNumber" },
+                    { name: "Secondary Mobile Number", data: "secondaryMobileNumber" },
+                    { name: "Email Address", data: "email" },
+                    { name: "ID Value", data: "idValue" },
+                    { name: "Contact Time", data: "contactTime" },
+                    { name: "Description", data: "description" },
+                    { name: "Added By", data: "addedBy" },
+                    { name: "Created Timestamp", data: "timeStamp" }
+
+                ];
+                exportToCSV(allInquiries,reportrange.innerText.replace(' ',''),columnsToExport);
+                showCustomModal("Downloaded Successfully!","success")
+            }
+            else{
+                showCustomModal("Operation Canceled!","info")
+            }
+
+        })
+
+    })
 
 })
 
