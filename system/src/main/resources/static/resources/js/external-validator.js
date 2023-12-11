@@ -19,7 +19,7 @@ const inputTextValidator = (element, pattern,object,property) => {
         if (new RegExp(pattern).test(element.value)) {
 
             element.style.border = '1px solid green';
-            //element.style.background = 'rgba(0,255,0,0.2)';
+            element.style.background = 'white';
             element.style.color='green';
             element.classList.add('is-valid');
             element.classList.remove('is-invalid');
@@ -32,7 +32,7 @@ const inputTextValidator = (element, pattern,object,property) => {
 
             window[object][property] = null;
             element.style.border = '1px solid red';
-            //element.style.background = 'rgba(255,0,0,0.2)';
+            element.style.background = 'white';
             element.style.color='red';
 
             element.classList.remove('is-valid');
@@ -47,7 +47,7 @@ const inputTextValidator = (element, pattern,object,property) => {
         //if element is required, display error / warning (use border color or boostrap validation)
         if (element.required) {
             element.style.border = '1px solid red';
-            //element.style.background = 'rgba(255,0,0,0.2)';
+            element.style.background = 'white';
             element.style.color='red';
 
             element.classList.remove('is-valid');
@@ -75,7 +75,7 @@ const inputDateTimeValidator = (element, pattern,object,property) => {
         if (new RegExp(pattern).test(element.value)) {
 
             element.style.border = '1px solid green';
-            //element.style.background = 'rgba(0,255,0,0.2)';
+            element.style.background = 'white';
             element.style.color='green';
 
             element.classList.add('is-valid');
@@ -150,8 +150,9 @@ const inputDateTimeValidator = (element, pattern,object,property) => {
 const selectStaticValueValidator = (elementID,pattern,object,property) => {
    if(elementID.value !== ''){
         elementID.style.border = '1px solid green';
-       //elementID.style.background = 'rgba(0,255,0,0.2)';
+       elementID.style.background = 'white';
        elementID.style.color='green';
+       elementID.style.paddingRight = '0';
       // elementID.setAttribute('style', 'background:rgba(0,255,0,0.2) !important;border:1px solid green');
        elementID.classList.add('is-valid');
        elementID.classList.remove('is-invalid');
@@ -173,8 +174,8 @@ const selectDynamicValueValidator = (elementID,pattern,object,property) => {
     if(elementID.value !== ''){
         elementID.style.border = '1px solid green';
         elementID.style.color='green';
-        //elementID.style.background = 'rgba(0,255,0,0.2)';
-
+        elementID.style.background = 'white';
+        elementID.style.paddingRight = '0';
         elementID.classList.add('is-valid');
         elementID.classList.remove('is-invalid');
         window[object][property] = JSON.parse(elementID.value);
