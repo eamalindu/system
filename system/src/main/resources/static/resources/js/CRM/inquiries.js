@@ -90,11 +90,15 @@ const getNextFollowup = (ob)=>{
 
 const rowView = (ob,rowIndex)=>{
 
+    //hide the update button
+    btnInquirySheetUpdate.style.display = 'none';
+
     //make all the inputs readonly and remove inline styles
     inputs = document.querySelectorAll('.inquirySheetInputs');
     inputs.forEach(function (input) {
         input.setAttribute('disabled', 'true');
         input.style = '';
+        input.classList.remove('is-valid');
 
     });
 
