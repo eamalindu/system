@@ -109,7 +109,6 @@ const rowView = (ob, Index) => {
         input.classList.remove('is-valid');
     });
 
-
     //select the appropriate option as selected
     //inquirySheetSource.options[ob.sourceId.id].selected = true;
     fillSelectOptions(inquirySheetSource,'Please Select a Source',sources,'name',ob.sourceId.name)

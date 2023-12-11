@@ -159,5 +159,5 @@ const resetFollowupForm = ()=>{
         input.classList.remove('is-valid');
     });
     //close the offCanvas
-
+    offCanvasInquirySheetCloseButton.click();
 }
