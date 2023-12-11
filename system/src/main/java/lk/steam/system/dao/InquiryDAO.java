@@ -37,9 +37,9 @@ public interface InquiryDAO extends JpaRepository<Inquiry,Integer> {
             "WHERE f.followuptime = (SELECT MAX(followuptime) FROM followup WHERE followup.inquiry_id = i.id) ORDER BY i.id;",nativeQuery = true)
     List<Map<String,Object>> test();
 
-    //Display all the inquires with follow-up data
+    //Display all the inquires with max follow-up data
     //This data will be shown in crm-> Dashboard-> schedule pool
-    @Query(value = "SELECT * FROM steam.inquiry JOIN ( SELECT * FROM steam.followup  WHERE DATE(nextfollowup) = CURDATE()) AS followup ON inquiry.id = followup.inquiry_id;",nativeQuery = true)
+    @Query(value = "SELECT * FROM steam.inquiry JOIN ( SELECT * FROM steam.followup WHERE DATE(nextfollowup) = CURDATE() ORDER BY id DESC LIMIT 1) AS followup ON inquiry.id = followup.inquiry_id;",nativeQuery = true)
     List<Map<String,Object>> test2();
 
     //Get the next inquiry number form the database
