@@ -105,7 +105,8 @@ const rowView = (ob, Index) => {
     inputs.forEach(function (input) {
         input.setAttribute('disabled', 'true');
         input.style = '';
-
+        //remove bootstrap validation classes
+        input.classList.remove('is-valid');
     });
 
 
