@@ -178,8 +178,10 @@ select:invalid[multiple] {
 
 /*Validated chosen select*/
 .select-validated{
-    background: rgba(0,255,0,0.2)!important;
+    /*background: rgba(0,255,0,0.2)!important;*/
     border: 1px solid green!important;
+    color: green!important;
+    background: white!important;
 }
 
 /*Custom css for daterangepicker*/
@@ -212,6 +214,24 @@ select:invalid[multiple] {
 /*overriding default*/
 .form-select:disabled {
     background-color: white;
+}
+.valid-feedback{
+    width: fit-content;
+    padding: 0.25rem 0.5rem;
+    margin-top: 0.1rem;
+    font-size: 13px;
+    color: #fff;
+    background-color: var(--bs-success);
+    border-radius: var(--bs-border-radius);
+}
+.invalid-feedback{
+    width: fit-content;
+    padding: 0.25rem 0.5rem;
+    margin-top: 0.1rem;
+    font-size: 13px;
+    color: #fff;
+    background-color: var(--bs-danger);
+    border-radius: var(--bs-border-radius);
 }
 
 /*Medium devices responsive*/
