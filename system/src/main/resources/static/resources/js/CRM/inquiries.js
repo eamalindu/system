@@ -148,7 +148,7 @@ const rowView = (ob,rowIndex)=>{
     inquirySheetAddedTime.innerText = addedTime;
     inquirySheetAddedBy.innerText = ob.inquiryId.addedBy;
 
-    currentInquiryObj = ob.inquiryId;
+    currentInquiry = ob.inquiryId;
 
 }
 const inquiryEdit = () => {
@@ -168,8 +168,8 @@ const inquiryEdit = () => {
     btnInquirySheetUpdate.style.display = 'block';
 
     //catch old inquiry and new inquiry
-    oldInquiry = JSON.parse(JSON.stringify(currentInquiryObj));
-    editedInquiry = JSON.parse(JSON.stringify(currentInquiryObj));
+    oldInquiry = JSON.parse(JSON.stringify(currentInquiry));
+    editedInquiry = JSON.parse(JSON.stringify(currentInquiry));
 
     console.log("old inquiry 👇")
     console.log(oldInquiry)
