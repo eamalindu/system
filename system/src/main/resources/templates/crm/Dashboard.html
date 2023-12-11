@@ -375,7 +375,7 @@
                     Follow Up</h3>
             </div>
             <div class="card-body bg-light rounded-0">
-                <form onsubmit="return false">
+                <form onsubmit="return false" id="frmNewFollowup">
                     <div class="row">
                         <div class="col-6">
                             <div class="mb-3">
@@ -402,7 +402,7 @@
                                 <div class="form-label">
                                     <label class="fw-bold required small" for="inquiryFollowUpContent">Content</label>
                                 </div>
-                                <textarea class="rounded-0 form-control" cols="80" id="inquiryFollowUpContent" style="font-size: 13px"
+                                <textarea class="rounded-0 form-control newFollowupInputs" cols="80" id="inquiryFollowUpContent" style="font-size: 13px"
                                           onkeyup="inputTextValidator(this,'^[a-zA-Z0-9\\s/]{3,}$','newFollowUp','content')"
                                           required
                                           rows="4"></textarea>
@@ -417,19 +417,19 @@
                                     <label class="fw-bold required small">Feeling</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" id="inquiryFollowUpFeelingPositive" onchange="newFollowUp.feeling=this.value;"
+                                    <input class="form-check-input newFollowupInputs" id="inquiryFollowUpFeelingPositive" onchange="newFollowUp.feeling=this.value;"
                                            name="inquiryFollowUpFeeling" type="radio" value="Positive">
                                     <label class="form-check-label small"
                                            for="inquiryFollowUpFeelingPositive">Positive</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" id="inquiryFollowUpFeelingNeutral" onchange="newFollowUp.feeling=this.value;"
+                                    <input class="form-check-input newFollowupInputs" id="inquiryFollowUpFeelingNeutral" onchange="newFollowUp.feeling=this.value;"
                                            name="inquiryFollowUpFeeling" type="radio" value="Neutral">
                                     <label class="form-check-label small"
                                            for="inquiryFollowUpFeelingNeutral">Neutral</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" id="inquiryFollowUpFeelingNegative" onchange="newFollowUp.feeling=this.value;"
+                                    <input class="form-check-input newFollowupInputs" id="inquiryFollowUpFeelingNegative" onchange="newFollowUp.feeling=this.value;"
                                            name="inquiryFollowUpFeeling" type="radio" value="Negative">
                                     <label class="form-check-label small"
                                            for="inquiryFollowUpFeelingNegative">Negative</label>
@@ -443,12 +443,12 @@
                                         confirmed to register?</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" id="inquiryFollowUpConfirmYes" onchange="newFollowUp.confirmed=this.value;"
+                                    <input class="form-check-input newFollowupInputs" id="inquiryFollowUpConfirmYes" onchange="newFollowUp.confirmed=this.value;"
                                            name="inquiryFollowUpConfirm" type="radio" value="Yes">
                                     <label class="form-check-label small" for="inquiryFollowUpConfirmYes">Yes</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" id="inquiryFollowUpConfirmNo" onchange="newFollowUp.confirmed=this.value;"
+                                    <input class="form-check-input newFollowupInputs" id="inquiryFollowUpConfirmNo" onchange="newFollowUp.confirmed=this.value;"
                                            name="inquiryFollowUpConfirm" type="radio" value="No">
                                     <label class="form-check-label small" for="inquiryFollowUpConfirmNo">No</label>
                                 </div>
@@ -458,7 +458,7 @@
                                     <label class="fw-bold required small" for="inquiryFollowUpTime">Convenient Time To
                                         Contact</label>
                                 </div>
-                                <input class="form-control rounded-0" id="inquiryFollowUpTime" style="font-size: 13px"
+                                <input class="form-control rounded-0 newFollowupInputs" id="inquiryFollowUpTime" style="font-size: 13px"
                                        onchange="inputDateTimeValidator(this,'^20[0-9]{2}[-][0-9]{2}[-][0-9]{2}[ ][0-9]{2}[:][0-9]{2}$','newFollowUp','nextFollowup')"
                                        required>
                                 <div class="valid-feedback">Value Accepted</div>

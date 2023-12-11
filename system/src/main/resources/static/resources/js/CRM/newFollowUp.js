@@ -141,7 +141,23 @@ const checkFollowupFormErrors = () => {
 
 const resetFollowupForm = ()=>{
     //reset the form
+    frmNewFollowup.reset();
+    $("#inquiryFollowUpType_chosen .chosen-single").removeClass('select-validated');
+    inquiryFollowUpType.classList.remove('is-valid');
+
+    //set default option chosen
+    setTimeout(function () {
+        $('select').val('').trigger('chosen:updated');
+    }, 0);
     //remove validations
+    //reset all the inputs validation using their common class name (newFollowupInputs)
+    inputs = document.querySelectorAll('.newFollowupInputs');
+    inputs.forEach(function (input) {
+        // Remove inline styles
+        input.style = '';
+        //remove bootstrap validation classes
+        input.classList.remove('is-valid');
+    });
     //close the offCanvas
 
 }
