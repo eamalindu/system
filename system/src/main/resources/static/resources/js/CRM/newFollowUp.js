@@ -90,6 +90,23 @@ const newFollowUpSubmit = () => {
                     newFollowUp = {};
                     offCanvasInquirySheetCloseButton.click();
 
+                    //refreshing the tables
+                    //getting the document name
+                    const documentTitleArray = document.title.split(" | ");
+                    const documentTitle = documentTitleArray[0];
+
+                    if (documentTitle == "Dashboard") {
+                        refreshInquiryPoolTable();
+                        //refreshInquiryScheduleTable();
+                    } else if (documentTitle == "Inquiries") {
+                        refreshInquiriesTable();
+                    } else if (documentTitle == "Reports-All") {
+                        refreshReportAllTable();
+
+                    } else {
+                        console.log("Error");
+                    }
+
 
                 } else {
                     //this means there was a problem with the query
