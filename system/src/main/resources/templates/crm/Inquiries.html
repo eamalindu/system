@@ -238,6 +238,7 @@
                                 <option value="Walk-In">Walk-In</option>
                                 <option value="WhatsApp">WhatsApp</option>
                             </select>
+                            <div class="valid-feedback">Value Accepted</div>
                         </div>
                     </div>
                     <div class="mb-3">
@@ -255,6 +256,7 @@
                                 <option>Certificate in IT</option>
                                 <option>Certificate in English</option>
                             </select>
+                            <div class="valid-feedback">Value Accepted</div>
                         </div>
                     </div>
                     <div class="mb-2">
@@ -264,6 +266,8 @@
                         <input class="form-control rounded-0 newInquiryInputs" id="inquiryFirstName"
                                onkeyup="inputTextValidator(this,'^[A-Z][a-z]{2,19}$','newInquiry','firstName')" required
                                type="text">
+                        <div class="valid-feedback">Value Accepted</div>
+                        <div class="invalid-feedback">Please provide a valid first name</div>
                     </div>
                     <div class="mb-2">
                         <div class="form-label small">
@@ -272,6 +276,8 @@
                         <input class="form-control rounded-0 newInquiryInputs" id="inquiryLastName"
                                onkeyup="inputTextValidator(this,'^[A-Z][a-z]{2,29}$','newInquiry','lastName')" required
                                type="text">
+                        <div class="valid-feedback">Value Accepted</div>
+                        <div class="invalid-feedback">Please provide a valid last name</div>
                     </div>
                     <div class="mb-2">
                         <div class="form-label small">
@@ -280,6 +286,8 @@
                         <input class="form-control rounded-0 newInquiryInputs" id="inquiryMobileNumber"
                                onkeyup="inputTextValidator(this,'^[0][7][01245678][0-9]{7}$','newInquiry','primaryMobileNumber')"
                                required type="text">
+                        <div class="valid-feedback">Value Accepted</div>
+                        <div class="invalid-feedback">Please provide a valid mobile number</div>
                     </div>
                     <div class="mb-2">
                         <div class="form-label small">
@@ -288,6 +296,9 @@
                         <input class="form-control rounded-0 newInquiryInputs" id="inquiryAdditionalMobileNumber"
                                onkeyup="inputTextValidator(this,'^[0][7][01245678][0-9]{7}$','newInquiry','secondaryMobileNumber')"
                                placeholder="Optional" type="text">
+                        <div class="valid-feedback">Value Accepted</div>
+                        <div class="invalid-feedback">Please provide a valid mobile number</div>
+
                     </div>
                     <div class="mb-2">
                         <div class="form-label small">
@@ -297,6 +308,8 @@
                                onkeyup="inputTextValidator(this,'^[a-z|A-Z]{2,19}[@][a-z|A-Z]{2,8}[.][a-z|A-Z]{2,3}$','newInquiry','email')"
                                placeholder="Optional"
                                type="text">
+                        <div class="valid-feedback">Value Accepted</div>
+                        <div class="invalid-feedback">Please provide a valid email</div>
                     </div>
                     <div class="mb-2">
                         <div class="form-label">
@@ -314,6 +327,8 @@
                             <input class="form-control rounded-0 newInquiryInputs" id="inquiryID"
                                    onkeyup="inputTextValidator(this,'^(?:[6-9][0-9]{8}([V]|[X]|[v]|[x]){1})|(?:[19|20][0-9]{10})$','newInquiry','idValue')"
                                    required>
+                            <div class="valid-feedback w-100 rounded">Value Accepted</div>
+                            <div class="invalid-feedback">Please provide a valid nic/postal</div>
                         </div>
                     </div>
                     <div class="mb-2">
@@ -323,6 +338,8 @@
                         <input class="form-control rounded-0 newInquiryInputs" id="inquiryTime"
                                onchange="inputDateTimeValidator(this,'^20[0-9]{2}[-][0-9]{2}[-][0-9]{2}[ ][0-9]{2}[:][0-9]{2}$','newInquiry','contactTime')"
                                required>
+                        <div class="valid-feedback">Value Accepted</div>
+                        <div class="invalid-feedback">Please provide a valid contact Time</div>
                     </div>
                     <div class="mb-3">
                         <div class="form-label">
@@ -332,6 +349,8 @@
                                   onkeyup="inputTextValidator(this,'^[a-zA-Z0-9\\s/]{20,}$','newInquiry','description')"
                                   required
                                   rows="4"></textarea>
+                        <div class="valid-feedback">Value Accepted</div>
+                        <div class="invalid-feedback">Please provide a valid description</div>
                         <div class="text-muted small"><small> a short description which will be useful for the
                             counsellor who will be handling this inquiry</small></div>
                     </div>
