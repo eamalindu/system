@@ -173,6 +173,11 @@ const resetInquiryForm = () => {
     $("#inquirySource_chosen .chosen-single").removeClass('select-validated');
     $("#inquiryCourse_chosen .chosen-single").removeClass('select-validated');
     $("#inquiryIdOption_chosen .chosen-single").removeClass('select-validated');
+    inquirySource.classList.remove('is-valid');
+    inquiryCourse.classList.remove('is-valid');
+    inquiryIdOption.classList.remove('is-valid');
+
+
 
     //set default option chosen
     setTimeout(function () {
@@ -187,6 +192,8 @@ const resetInquiryForm = () => {
     inputs.forEach(function (input) {
         // Remove inline styles
         input.style = '';
+        //remove bootstrap validation classes
+        input.classList.remove('is-valid');
     });
 
     //reset the newInquiry object
