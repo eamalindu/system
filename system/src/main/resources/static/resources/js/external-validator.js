@@ -58,11 +58,10 @@ const inputTextValidator = (element, pattern,object,property) => {
             element.style.border = '1px solid #ced4da';
             element.style.background = 'white';
             element.style.color='black';
-            /*
             element.classList.remove('is-valid');
             element.classList.remove('is-invalid');
 
-             */
+
         }
     }
 
