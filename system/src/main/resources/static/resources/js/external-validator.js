@@ -19,7 +19,10 @@ const inputTextValidator = (element, pattern,object,property) => {
         if (new RegExp(pattern).test(element.value)) {
 
             element.style.border = '1px solid green';
-            element.style.background = 'rgba(0,255,0,0.2)';
+            //element.style.background = 'rgba(0,255,0,0.2)';
+            element.style.color='green';
+            element.classList.add('is-valid');
+            element.classList.remove('is-invalid');
 
            window[object][property] = element.value;
 
@@ -29,7 +32,11 @@ const inputTextValidator = (element, pattern,object,property) => {
 
             window[object][property] = null;
             element.style.border = '1px solid red';
-            element.style.background = 'rgba(255,0,0,0.2)';
+            //element.style.background = 'rgba(255,0,0,0.2)';
+            element.style.color='red';
+
+            element.classList.remove('is-valid');
+            element.classList.add('is-invalid');
         }
     }
     //if the element is null, check if its required or not
@@ -40,12 +47,19 @@ const inputTextValidator = (element, pattern,object,property) => {
         //if element is required, display error / warning (use border color or boostrap validation)
         if (element.required) {
             element.style.border = '1px solid red';
-            element.style.background = 'rgba(255,0,0,0.2)';
+            //element.style.background = 'rgba(255,0,0,0.2)';
+            element.style.color='red';
+
+            element.classList.remove('is-valid');
+            element.classList.add('is-invalid');
         }
         //if the element is not required, display the default colors (remove boostrap validation)
         else {
             element.style.border = '1px solid #ced4da';
             element.style.background = 'white';
+            element.style.color='black';
+            element.classList.remove('is-valid');
+            element.classList.remove('is-invalid');
         }
     }
 
@@ -59,7 +73,8 @@ const inputDateTimeValidator = (element, pattern,object,property) => {
         if (new RegExp(pattern).test(element.value)) {
 
             element.style.border = '1px solid green';
-            element.style.background = 'rgba(0,255,0,0.2)';
+            //element.style.background = 'rgba(0,255,0,0.2)';
+            element.style.color='green';
 
             //This is a temp fix
             //when user add the date and time it saves as string ex: (2023-11-16 19:30)
@@ -90,7 +105,8 @@ const inputDateTimeValidator = (element, pattern,object,property) => {
 
             window[object][property] = null;
             element.style.border = '1px solid red';
-            element.style.background = 'rgba(255,0,0,0.2)';
+            //element.style.background = 'rgba(255,0,0,0.2)';
+            element.style.color='red';
         }
     }
     //if the element is null, check if its required or not
@@ -101,12 +117,14 @@ const inputDateTimeValidator = (element, pattern,object,property) => {
         //if element is required, display error / warning (use border color or boostrap validation)
         if (element.required) {
             element.style.border = '1px solid red';
-            element.style.background = 'rgba(255,0,0,0.2)';
+            //element.style.background = 'rgba(255,0,0,0.2)';
+            element.style.color='red';
         }
         //if the element is not required, display the default colors (remove boostrap validation)
         else {
             element.style.border = '1px solid #ced4da';
             element.style.background = 'white';
+            element.style.color='black';
         }
     }
 }
@@ -121,14 +139,16 @@ const inputDateTimeValidator = (element, pattern,object,property) => {
 const selectStaticValueValidator = (elementID,pattern,object,property) => {
    if(elementID.value !== ''){
         elementID.style.border = '1px solid green';
-       elementID.style.background = 'rgba(0,255,0,0.2)';
+       //elementID.style.background = 'rgba(0,255,0,0.2)';
+       elementID.style.color='green';
       // elementID.setAttribute('style', 'background:rgba(0,255,0,0.2) !important;border:1px solid green');
        window[object][property] = elementID.value;
 
    }
    else{
        elementID.style.border = '1px solid red';
-       elementID.style.background = 'rgba(255,0,0,0.2)';
+       //elementID.style.background = 'rgba(255,0,0,0.2)';
+       elementID.style.color='red';
       // elementID.setAttribute('style', 'background:rgba(255,0,0,0.2) !important;border:1px solid red');
        window[object][property] = null;
    }
@@ -137,12 +157,14 @@ const selectStaticValueValidator = (elementID,pattern,object,property) => {
 const selectDynamicValueValidator = (elementID,pattern,object,property) => {
     if(elementID.value !== ''){
         elementID.style.border = '1px solid green';
-        elementID.style.background = 'rgba(0,255,0,0.2)';
+        elementID.style.color='green';
+        //elementID.style.background = 'rgba(0,255,0,0.2)';
         window[object][property] = JSON.parse(elementID.value);
     }
     else{
         elementID.style.border = '1px solid red';
-        elementID.style.background = 'rgba(255,0,0,0.2)';
+        elementID.style.color='red';
+        //elementID.style.background = 'rgba(255,0,0,0.2)';
         window[object][property] = null;
     }
 }
