@@ -85,28 +85,11 @@ const newInquirySubmit = () => {
 
                     resetInquiryForm();
 
-                    //needs to refresh all the tables in the system
+                    //needs to refresh all the tables in the dashboard
 
-                    //refreshInquiryPoolTable();
-                    //refreshInquiryScheduleTable();
-                    //refreshInquiriesTable();
-                    //refreshReportAllTable();
-
-                    //getting the document name
-                    const documentTitleArray = document.title.split(" | ");
-                    const documentTitle = documentTitleArray[0];
-
-                    if (documentTitle == "Dashboard") {
                         refreshInquiryPoolTable();
                         //refreshInquiryScheduleTable();
-                    } else if (documentTitle == "Inquiries") {
-                        refreshInquiriesTable();
-                    } else if (documentTitle == "Reports-All") {
-                        refreshReportAllTable();
 
-                    } else {
-                        console.log("Error");
-                    }
 
 
                 } else {
