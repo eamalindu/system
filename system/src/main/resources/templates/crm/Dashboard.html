@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
           name="viewport">
-    <title>Dashboard | STEAM CRM</title>
+    <title>Dashboard | STEAM IMS</title>
     <!-- Favicon Icon -->
     <link href="/resources/images/icon-sq.png" rel="icon" type="image/png">
     <!-- Bootstrap CSS File-->
@@ -39,7 +39,7 @@
 <!-- Nav Bar Start -->
 <nav class="navbar navbar-expand-lg bg-purple p-1">
     <div class="container-fluid">
-        <a class="navbar-brand text-white" href="Dashboard"><strong>CRM</strong> : : STEAM</a>
+        <a class="navbar-brand text-white" href="Dashboard"><strong>IMS</strong> : : STEAM</a>
         <button aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
                 data-bs-target="#navbarText" data-bs-toggle="collapse" type="button">
             <span class="navbar-toggler-icon" style="filter: invert(100%)"></span>
@@ -96,6 +96,91 @@
 <!-- Display Current Page /breadcrumbs -->
 <div class="container-fluid bg-custom-white custom-banner">
     <h5>Dashboard</h5>
+</div>
+
+<div class="container-fluid">
+
+    <div class="card-footer pt-3 pb-4">
+        <div class="row">
+            <div class="col-lg-3 col-12">
+                <div class="card card-body rounded-0 h-100 pointer text-muted dashboard-widget-yellow" onclick="showSchedulePool()">
+                    <div class="row h-100">
+                        <div class="col-3 d-flex align-items-center justify-content-center">
+                            <div class="d-flex align-items-center justify-content-center"
+                                 style="border-radius: 50%;height: 60px;width: 60px;background: #fff7e5">
+                                <i class="fa-solid fa-clock" style="color:#FDE74C;font-size: 25px" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="col-9 d-flex align-items-center justify-content-around">
+                            <span class="text-uppercase">Scheduled Inquiries</span>
+                            <span class="text-dark display-6 fw-bold">3</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-lg-3 col-12">
+                <div class="card card-body rounded-0 h-100 pointer text-muted dashboard-widget-red" onclick="showNewPool()">
+                    <div class="row h-100">
+                        <div class="col-3 d-flex align-items-center justify-content-center">
+                            <div class="d-flex align-items-center justify-content-center"
+                                 style="border-radius: 50%;height: 60px;width: 60px;background: #f7dddd">
+                                <i class="fa-solid fa-hourglass-half" style="color:#fd4c4c;font-size: 25px"
+                                   aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="col-9 d-flex align-items-center justify-content-around">
+                            <span class="lh-1 text-uppercase">Pending Inquiries</span>
+                            <span class="text-dark display-6 lh-1 fw-bold">1</span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-12">
+                <div class="card card-body rounded-0 h-100 text-muted dashboard-widget-green">
+                    <div class="row h-100">
+                        <div class="col-3 d-flex align-items-center justify-content-center">
+                            <div class="d-flex align-items-center justify-content-center"
+                                 style="border-radius: 50%;height: 60px;width: 60px;background: #DDF6F7">
+                                <i class="fa-solid fa-circle-check" style="color:#1ec781;font-size: 25px"
+                                   aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="col-9 d-flex align-items-center justify-content-around">
+                            <span class="text-uppercase">Registered Inquiries</span>
+                            <span class="text-dark display-6 fw-bold">6</span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-12">
+                <a aria-controls="offcanvasRight" aria-current="page" class="text-decoration-none" data-bs-target="#offCanvasInquiry" data-bs-toggle="offcanvas">
+                    <div class="card card-body rounded-0 h-100 pointer text-muted dashboard-widget-blue">
+                        <div class="row h-100">
+                            <div class="col-3 d-flex align-items-center justify-content-center">
+                                <div class="d-flex align-items-center justify-content-center"
+                                     style="border-radius: 50%;height: 60px;width: 60px;background: #c1eaff">
+                                    <i class="fa-solid fa-circle-plus" style="color:#1e7bc7;font-size: 25px"
+                                       aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <div class="col-9 lh-1 d-flex align-items-center justify-content-center">
+                                <div class="lh-1">
+                                    <span class="text-uppercase">Add New Inquiry</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 <!-- inquiry pool start -->
