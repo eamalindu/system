@@ -346,3 +346,10 @@ const checkInquiryUpdateErrors = () => {
 
     return errors;
 }
+
+const showSchedulePool=()=>{
+    SchedulePool.classList.remove('d-none');
+}
+const showNewPool=()=>{
+    newPool.classList.remove('d-none');
+}
