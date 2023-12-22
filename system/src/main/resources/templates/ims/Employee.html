@@ -273,7 +273,7 @@
                         <div class="form-label">
                             <label class="fw-bold small required" for="employeeAddress">Address</label>
                         </div>
-                        <input class="form-control rounded-0 newEmployeeInputs" id="employeeAddress" required type="text">
+                        <input class="form-control rounded-0 newEmployeeInputs" id="employeeAddress" required type="text" onkeyup="inputTextValidator(this,'^No:[\\s]*(\\d+\\/\\d*[A-Z]?)[,\\s]+(\\w+)[,\\s]+(\\w+)\\.$','newEmployee','address')">
                         <div class="valid-feedback">Value Accepted</div>
                         <div class="invalid-feedback">Please provide a valid address</div>
                     </div>
@@ -281,7 +281,7 @@
                         <div class="form-label">
                             <label class="fw-bold small required" for="employeeCivilStatus">Civil Status</label>
                         </div>
-                        <select class="form-select rounded-0 newEmployeeInputs" id="employeeCivilStatus" required data-placeholder="Please Select a Civil Status">
+                        <select class="form-select rounded-0 newEmployeeInputs" id="employeeCivilStatus" required data-placeholder="Please Select a Civil Status"  onchange="selectStaticValueValidator(this,'','newEmployee','civilStatus')">
                             <option value=""></option>
                             <option value="Single">Single</option>
                             <option value="Married">Married</option>
@@ -294,7 +294,7 @@
                         <div class="form-label">
                             <label class="fw-bold small required" for="employeeDesignation">Designation</label>
                         </div>
-                        <select class="form-select rounded-0 newEmployeeInputs" id="employeeDesignation" required>
+                        <select class="form-select rounded-0 newEmployeeInputs" id="employeeDesignation" required onchange="selectDynamicValueValidator(this,'','newEmployee','designationID')">
                             <option>Dynamic Value 1</option>
                             <option>Dynamic Value 2</option>
                             <option>Dynamic Value 3</option>
@@ -307,7 +307,7 @@
                         <div class="form-label">
                             <label class="fw-bold small required" for="employeeStatus">Employee Status</label>
                         </div>
-                        <select class="form-select rounded-0 newEmployeeInputs" id="employeeStatus" required>
+                        <select class="form-select rounded-0 newEmployeeInputs" id="employeeStatus" required onchange="selectDynamicValueValidator(this,'','newEmployee','employeeStatusID')">
                             <option>Dynamic Value 1</option>
                             <option>Dynamic Value 2</option>
                             <option>Dynamic Value 3</option>
