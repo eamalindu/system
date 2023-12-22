@@ -201,7 +201,9 @@
                         <div class="form-label">
                             <label class="fw-bold required small" for="employeeFullName">Full Name</label>
                         </div>
-                        <input class="form-control rounded-0 newEmployeeInputs" id="employeeFullName" required>
+                        <input class="form-control rounded-0 newEmployeeInputs" id="employeeFullName" required  onkeyup="inputTextValidator(this,'^[A-Z][a-z]{2,19}[ ][A-Z][a-z]{2,29}$','newEmployee','fullName')">
+                        <div class="valid-feedback">Value Accepted</div>
+                        <div class="invalid-feedback">Please provide a valid full name</div>
                     </div>
                     <div class="mb-2">
                         <div class="form-label">
