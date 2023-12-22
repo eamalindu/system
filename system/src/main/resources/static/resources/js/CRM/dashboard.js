@@ -12,6 +12,8 @@ window.addEventListener('load', () => {
     sources = ajaxGetRequest("/source/findall")
     fillSelectOptions(inquirySheetSource, 'Please Select a Source', sources,'name');
 
+    refreshDashboardWidgets();
+
 
 });
 
@@ -352,4 +354,10 @@ const showSchedulePool=()=>{
 }
 const showNewPool=()=>{
     newPool.classList.remove('d-none');
+}
+
+const refreshDashboardWidgets=()=>{
+    //getting new inquiry count
+    newInquiryCount = ajaxGetRequest("/inquiry/newinquirycount")
+    textNewInquiryCount.innerText = newInquiryCount;
 }

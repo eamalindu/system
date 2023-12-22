@@ -88,7 +88,9 @@ const newInquirySubmit = () => {
                     //needs to refresh all the tables in the dashboard
 
                         refreshInquiryPoolTable();
+                        refreshDashboardWidgets();
                         //refreshInquiryScheduleTable();
+
 
 
 
