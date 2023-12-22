@@ -46,3 +46,7 @@ window.addEventListener('load',()=>{
 const refreshEmployeeTable = ()=>{
 
 }
+
+const newEmployeeSubmit=()=>{
+    console.log(newEmployee)
+}
