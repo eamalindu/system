@@ -16,7 +16,7 @@ public class EmployeeController {
     @Autowired
     private EmployeeDAO employeeDAO;
 
-    @GetMapping(value = "/findall")
+    @GetMapping(value = "/findall",produces = "application/json")
     public List<Employee> findAll(){
 
         return employeeDAO.findAll();
