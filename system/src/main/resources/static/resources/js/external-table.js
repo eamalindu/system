@@ -1,5 +1,5 @@
 //Reusable Component
-//this external Tavble Function can be used for multiple instances
+//this external Table Function can be used for multiple instances
 //instead of writing multiple code segments we can minimize the codes by writing a common validator that can be used at any place
 
 //create a function for fill data into table
