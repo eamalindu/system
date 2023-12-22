@@ -12,7 +12,7 @@ public class SystemApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SystemApplication.class, args);
-		System.out.println("Hello");
+		System.out.println("Project is now running!");
 	}
 
 	@RequestMapping(value = {"/" , "/index"})
