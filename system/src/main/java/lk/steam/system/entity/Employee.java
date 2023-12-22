@@ -75,7 +75,7 @@ public class Employee {
     @JoinColumn(name = "employeestatus_id",referencedColumnName = "id")
     private EmployeeStatus employeeStatusID;
 
-    //@ManyToOne
-    //@JoinColumn(name = "designation_id",referencedColumnName = "id")
-    //private Designation designationID;
+    @ManyToOne
+    @JoinColumn(name = "designation_id",referencedColumnName = "id")
+    private Designation designationID;
 }
