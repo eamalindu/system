@@ -63,4 +63,10 @@ public class SystemApplication {
 		crmReportsAllView.setViewName("ims/Reports-All.html");
 		return crmReportsAllView;
 	}
+	@RequestMapping(value = "/STEAM-CRM/Administrations")
+	public ModelAndView crmAdministrations(){
+		ModelAndView crmReportsAllView = new ModelAndView();
+		crmReportsAllView.setViewName("ims/Administrations.html");
+		return crmReportsAllView;
+	}
 }
