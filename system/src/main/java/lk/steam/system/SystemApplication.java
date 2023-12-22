@@ -22,7 +22,7 @@ public class SystemApplication {
 		return homeView;
 	}
 
-	@RequestMapping(value = "/STEAM-CRM")
+	@RequestMapping(value = "/STEAM-IMS")
 	public ModelAndView crmUI(){
 		ModelAndView crmView = new ModelAndView();
 		crmView.setViewName("ims/index.html");
@@ -36,34 +36,34 @@ public class SystemApplication {
 		return rmsView;
 	}
 
-	@RequestMapping(value = "/STEAM-CRM/Dashboard")
+	@RequestMapping(value = "/STEAM-IMS/Dashboard")
 	public ModelAndView crmDashboard(){
 		ModelAndView rmsView = new ModelAndView();
 		rmsView.setViewName("ims/dashboard.html");
 		return rmsView;
 	}
 
-	@RequestMapping(value = "/STEAM-CRM/Inquiries")
+	@RequestMapping(value = "/STEAM-IMS/Inquiries")
 	public ModelAndView crmInquiries(){
 		ModelAndView crmInquiriesView = new ModelAndView();
 		crmInquiriesView.setViewName("ims/Inquiries.html");
 		return crmInquiriesView;
 	}
 
-	@RequestMapping(value = "/STEAM-CRM/Schedules")
+	@RequestMapping(value = "/STEAM-IMS/Schedules")
 	public ModelAndView crmSchedules(){
 		ModelAndView crmSchedulesView = new ModelAndView();
 		crmSchedulesView.setViewName("ims/Schedules.html");
 		return crmSchedulesView;
 	}
 
-	@RequestMapping(value = "/STEAM-CRM/Reports-All")
+	@RequestMapping(value = "/STEAM-IMS/Reports-All")
 	public ModelAndView crmReportsAll(){
 		ModelAndView crmReportsAllView = new ModelAndView();
 		crmReportsAllView.setViewName("ims/Reports-All.html");
 		return crmReportsAllView;
 	}
-	@RequestMapping(value = "/STEAM-CRM/Administrations")
+	@RequestMapping(value = "/STEAM-IMS/Administrations")
 	public ModelAndView crmAdministrations(){
 		ModelAndView crmReportsAllView = new ModelAndView();
 		crmReportsAllView.setViewName("ims/Administrations.html");
