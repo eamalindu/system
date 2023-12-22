@@ -59,6 +59,11 @@ public class InquiryController {
         return inquiryDAO.test2();
     }
 
+    @GetMapping(value = "/newinquirycount",produces = "application/json")
+    public String newInquiryCount(){
+        return inquiryDAO.getNewInquiryCount();
+    }
+
     @PostMapping
     public String saveNewInquiry(@RequestBody Inquiry inquiry){
 
