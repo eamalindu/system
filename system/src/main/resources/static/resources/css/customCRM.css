@@ -310,6 +310,9 @@ select:invalid[multiple] {
 .newInquiryInputs{
     font-size: 13px;
 }
+.newEmployeeInputs{
+    font-size: 13px;
+}
 /*overriding default*/
 .form-select:disabled {
     background-color: white;
