@@ -71,7 +71,11 @@ public class Employee {
     private LocalDateTime added_timestamp;
 
 
-    private Integer employeeStatusID;
+    //@ManyToOne
+    //@JoinColumn(name = "employeestatus_id",referencedColumnName = "id")
+    //private EmployeeStatus employeeStatusID;
 
-    private Integer designationID;
+    //@ManyToOne
+    //@JoinColumn(name = "designation_id",referencedColumnName = "id")
+    //private Designation designationID;
 }
