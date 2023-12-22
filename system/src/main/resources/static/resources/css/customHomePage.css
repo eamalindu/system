@@ -16,12 +16,12 @@
 }
 
 #rmsCard {
-    background: linear-gradient( #55C152 50%, #55C152, #07cb00, #07cb00 50%);
+    background: linear-gradient( #55C152 50%, #55C152, #07a500, #07a500 50%);
     background-size: 100% 200%;
     color: white;
     /*transition effect for background*/
     transition: all ease-in-out 1s;
-    outline: 3px solid #07cb00;
+    outline: 3px solid #07a500;
 }
 
 #rmsCard:hover {
