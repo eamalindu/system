@@ -217,7 +217,7 @@
                         <div class="form-label">
                             <label class="fw-bold required small" for="employeeNIC">NIC Number</label>
                         </div>
-                        <input class="form-control rounded-0 newEmployeeInputs" id="employeeNIC" required>
+                        <input class="form-control rounded-0 newEmployeeInputs" id="employeeNIC" required onkeyup="inputTextValidator(this,'^(?:[6-9][0-9]{8}([V]|[X]|[v]|[x]){1})|(?:[19|20][0-9]{10})$','newEmployee','nic')">
                         <div class="valid-feedback">Value Accepted</div>
                         <div class="invalid-feedback">Please provide a valid NIC</div>
                     </div>
