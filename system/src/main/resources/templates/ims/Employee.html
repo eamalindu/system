@@ -257,7 +257,7 @@
                         <div class="form-label">
                             <label class="fw-bold required small" for="employeeMobile">Mobile Number</label>
                         </div>
-                        <input class="form-control rounded-0 newEmployeeInputs" id="employeeMobile" required type="text">
+                        <input class="form-control rounded-0 newEmployeeInputs" id="employeeMobile" required type="text"  onkeyup="inputTextValidator(this,'^[0][7][01245678][0-9]{7}$','newEmployee','mobileNumber')">
                         <div class="valid-feedback">Value Accepted</div>
                         <div class="invalid-feedback">Please provide a valid Mobile Number</div>
                     </div>
@@ -265,7 +265,7 @@
                         <div class="form-label">
                             <label class="fw-bold small" for="employeeLand">Land Number</label>
                         </div>
-                        <input class="form-control rounded-0 newEmployeeInputs" id="employeeLand" required type="text" placeholder="Optional">
+                        <input class="form-control rounded-0 newEmployeeInputs" id="employeeLand" type="text" placeholder="Optional" onkeyup="inputTextValidator(this,'^[0][12345689][0-9]{8}$','newEmployee','landNumber')">
                         <div class="valid-feedback">Value Accepted</div>
                         <div class="invalid-feedback">Please provide a valid Land Number</div>
                     </div>
