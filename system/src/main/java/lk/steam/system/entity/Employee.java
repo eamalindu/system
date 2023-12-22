@@ -32,7 +32,7 @@ public class Employee {
     @NotNull
     private String callingName;
 
-    @Column(name = "nic", length = 10)
+    @Column(name = "nic", length = 10,unique = true)
     @NotNull
     private String nic;
 
