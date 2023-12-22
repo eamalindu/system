@@ -1,4 +1,7 @@
 package lk.steam.system.dao;
 
-public interface EmployeeStatusDAO {
+import lk.steam.system.entity.EmployeeStatus;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface EmployeeStatusDAO extends JpaRepository<EmployeeStatus,Integer> {
 }
