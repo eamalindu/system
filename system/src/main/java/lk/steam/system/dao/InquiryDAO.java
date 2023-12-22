@@ -47,5 +47,10 @@ public interface InquiryDAO extends JpaRepository<Inquiry,Integer> {
     @Query(value = "SELECT LPAD(MAX(inq.inquirynumber) + 1, 6, 0) AS inquirynumber FROM inquiry AS inq;",nativeQuery = true)
     String getNextInquiryNumber();
 
+    //get count of the new inquiry
+    //this data will be used in dashboard IMS
+    @Query(value = "SELECT count(*) FROM inquiry where date(contacttime) <= current_date() and inquirystatus_id =1;",nativeQuery = true)
+    String getNewInquiryCount();
+
 }
 
