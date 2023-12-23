@@ -57,7 +57,18 @@ const newEmployeeSubmit=()=>{
     const errors = checkEmployeeFormErrors()
 
     if(errors===''){
+        //this means there are no any errors
+        //user confirmation is needed (will add later)
+        showCustomConfirm("You are about to add a New Employee<br>Are You Sure?", function (result) {
+            if (result) {
+                //passing the data to backend
+                //if the data is successfully passed to the database it will set the value of the postServerResponse to "OK"
+                let postServerResponse;
 
+            } else {
+                showCustomModal("Operation Cancelled!", "info");
+            }
+        });
     }
     else{
         //there are errors
