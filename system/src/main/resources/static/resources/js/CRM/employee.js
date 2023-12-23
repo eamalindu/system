@@ -48,7 +48,18 @@ const refreshEmployeeTable = ()=>{
 }
 
 const newEmployeeSubmit=()=>{
-    console.log(newEmployee)
+    console.log(newEmployee);
+
+    const errors = checkEmployeeFormErrors()
+
+    if(errors===''){
+
+    }
+    else{
+        //there are errors
+        //display them to the user using external-ModalFunction()
+        showCustomModal(errors, 'warning');
+    }
 }
 
 
