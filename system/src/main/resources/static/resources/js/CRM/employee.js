@@ -50,3 +50,44 @@ const refreshEmployeeTable = ()=>{
 const newEmployeeSubmit=()=>{
     console.log(newEmployee)
 }
+
+
+const checkEmployeeFormErrors = ()=>{
+    let errors = '';
+
+    if(newEmployee.fullName==null){
+        errors = errors +'Full Name is Required<br>';
+    }
+    if(newEmployee.nic==null){
+        errors = errors +'NIC is Required<br>';
+    }
+    if(newEmployee.dob==null){
+        errors = errors +'Date of Birth is Required<br>';
+    }
+    if(newEmployee.email==null){
+        errors = errors +'Email is Required<br>';
+    }
+    if(newEmployee.mobileNumber==null){
+        errors = errors +'Mobile Number is Required<br>';
+    }
+    if(newEmployee.address==null){
+        errors = errors +'Address is Required<br>';
+    }
+    if(newEmployee.civilStatus==null){
+        errors = errors +'Civil Status is Required<br>';
+    }
+    if(newEmployee.designationID==null){
+        errors = errors +'Designation is Required<br>';
+    }
+    if(newEmployee.employeeStatusID==null){
+        errors = errors +'Employee Status is Required<br>';
+    }
+    if(newEmployee.gender==null){
+        errors = errors +'Gender is Required<br>';
+    }
+    if(newEmployee.callingName==null){
+        errors = errors +'Calling Name is Required<br>';
+    }
+
+    return errors;
+}
