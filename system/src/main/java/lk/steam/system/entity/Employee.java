@@ -24,6 +24,10 @@ public class Employee {
     @NotNull
     private String employeeID;
 
+    @Column(name = "photopath")
+    @NotNull
+    private String photoPath;
+
     @Column(name = "fullname")
     @NotNull
     private String fullName;
@@ -62,6 +66,10 @@ public class Employee {
     @Column(name = "civilstatus")
     @NotNull
     private String civilStatus;
+
+    @Column(name = "highesteducationqualification")
+    @NotNull
+    private String highestEducationalQualification;
 
     @Column(name = "note")
     private String note;
