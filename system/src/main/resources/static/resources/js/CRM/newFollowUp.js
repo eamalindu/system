@@ -98,6 +98,7 @@ const newFollowUpSubmit = () => {
                     if (documentTitle == "Dashboard") {
                         refreshInquiryPoolTable();
                         //refreshInquiryScheduleTable();
+                        refreshDashboardWidgets()
                     } else if (documentTitle == "Inquiries") {
                         refreshInquiriesTable();
                     } else if (documentTitle == "Reports-All") {
