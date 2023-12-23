@@ -36,7 +36,7 @@ const refreshInquiryPoolTable = () => {
     displayPropertyListForScheduledPool = [{property: 'inquiry_id', dataType: 'text'}, {
         property: 'course_id', dataType: 'text'
     }, {property: 'source_id', dataType: 'text'}, {property: 'firstname', dataType: 'text'},];
-    fillDataIntoTable(tblScheduledPool, scheduledInquiries, displayPropertyListForScheduledPool, rowView);
+    fillDataIntoTable(tblScheduledPool, scheduledInquiries, displayPropertyListForScheduledPool, rowView,'offCanvasInquirySheet');
 
 //testing code end
 
