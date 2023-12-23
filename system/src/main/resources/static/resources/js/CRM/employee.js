@@ -51,7 +51,43 @@ window.addEventListener('load',()=>{
 
 const refreshEmployeeTable = ()=>{
     employees = ajaxGetRequest("/employee/findall");
-    displayPropertyListForEmployee = [];
+    displayPropertyListForEmployee = [
+        {property:'employeeID',dataType:'text'},
+        {property:'fullName',dataType:'text'},
+        {property:'nic',dataType:'text'},
+        {property:'email',dataType:'text'},
+        {property:'mobileNumber',dataType:'text'},
+        {property:getDesignationName,dataType:'function'},
+        {property:getEmployeeStatus,dataType:'function'},
+        {property:getUserAccountStatus,dataType:'function'},
+    ];
+
+    fillDataIntoTable(tblEmployee,employees,displayPropertyListForEmployee,rowView,'offcanvasEmployeeSheet')
+
+}
+
+const getDesignationName = (ob)=>{
+
+    return ob.designationID.designation;
+}
+const getEmployeeStatus = (ob)=>{
+    if(ob.employeeStatusID.status=="Working"){
+        return '<i class="fa-solid fa-user-check text-success bg-custom-white p-2 rounded-circle" title="Employee Working"></i>';
+    }
+    if(ob.employeeStatusID.status=="Suspended"){
+        return '<i class="fa-solid fa-user-slash text-warning bg-custom-white p-2 rounded-circle" title="Employee Suspended"></i>';
+    }
+    if(ob.employeeStatusID.status=="Resigned"){
+        return '<i class="fa-solid fa-user-xmark fa-solid fa-user-xmark text-danger bg-custom-white p-2 rounded-circle" title="Employee Resigned"></i>';
+    }
+
+}
+
+const getUserAccountStatus = (ob)=>{
+    return '<i class="fa fa-xmark-circle text-danger fs-3"></i>';
+}
+
+const rowView=(ob,index) =>{
 
 }
 
