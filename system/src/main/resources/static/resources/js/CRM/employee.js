@@ -28,6 +28,7 @@ window.addEventListener('load',()=>{
     $('#employeeDesignation').chosen({width: '100%'});
     $('#employeeCivilStatus').chosen({width: '100%'});
     $('#employeeStatus').chosen({width: '100%'});
+    $('#employeeHighestEducation').chosen({width:'100%'});
 
     refreshEmployeeTable()
 
@@ -40,6 +41,9 @@ window.addEventListener('load',()=>{
     });
     $("#employeeStatus").chosen().change(function () {
         $("#employeeStatus_chosen .chosen-single").addClass('select-validated');
+    });
+    $("#employeeHighestEducation").chosen().change(function () {
+        $("#employeeHighestEducation_chosen .chosen-single").addClass('select-validated');
     });
 })
 

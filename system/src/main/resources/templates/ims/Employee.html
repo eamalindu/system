@@ -279,6 +279,21 @@
                     </div>
                     <div class="mb-2">
                         <div class="form-label">
+                            <label class="fw-bold small required" for="employeeHighestEducation">Highest Educational Qualification</label>
+                        </div>
+                        <select class="form-select rounded-0" id="employeeHighestEducation" required data-placeholder="Please Select a Highest Educational Qualification"  onchange="selectStaticValueValidator(this,'','newEmployee','highestEducationalQualification')">
+                            <option value=""></option>
+                            <option>Doctorate (PhD)</option>
+                            <option>Master's Degree (MA, MSc)</option>
+                            <option>Undergraduate Degree (BA, BSc)</option>
+                            <option>Higher National Diploma (HND)</option>
+                            <option>Diploma</option>
+                            <option>G.C.E A/L</option>
+                            <option>G.C.E O/L</option>
+                        </select>
+                    </div>
+                    <div class="mb-2">
+                        <div class="form-label">
                             <label class="fw-bold small required" for="employeeCivilStatus">Civil Status</label>
                         </div>
                         <select class="form-select rounded-0 newEmployeeInputs" id="employeeCivilStatus" required data-placeholder="Please Select a Civil Status"  onchange="selectStaticValueValidator(this,'','newEmployee','civilStatus')">
