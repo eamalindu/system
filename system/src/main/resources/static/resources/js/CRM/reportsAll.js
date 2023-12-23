@@ -111,7 +111,7 @@ const refreshReportAllTable = () =>{
         {property: getInquiryStatus,dataType: 'function'},
     ];
 
-    fillDataIntoTable(tblReportsAll,allInquiries,displayPropertyListForReoprtAll,rowView);
+    fillDataIntoTable(tblReportsAll,allInquiries,displayPropertyListForReoprtAll,rowView,'offCanvasInquirySheet');
 
 }
 

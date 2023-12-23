@@ -55,7 +55,7 @@ const refreshInquiriesTable = () => {
 
     ];
 
-    fillDataIntoTable(tblInquiry,inquiriesWithFollowUps,displayPropertyList,rowView);
+    fillDataIntoTable(tblInquiry,inquiriesWithFollowUps,displayPropertyList,rowView,'offCanvasInquirySheet');
 
 }
 
