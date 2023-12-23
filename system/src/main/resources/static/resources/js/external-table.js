@@ -6,7 +6,7 @@
 //1 parameter -> table id
 //2 parameter -> data array list
 //3 parameter -> display Property List (Column headers)
-const fillDataIntoTable = (tabledID, dataList, displayPropertyList,viewFunction) => {
+const fillDataIntoTable = (tabledID, dataList, displayPropertyList,viewFunction,offCanvasID) => {
     //access the table via querySelector
     //const table = document.querySelector('#tblEmp');
 
@@ -64,7 +64,7 @@ const fillDataIntoTable = (tabledID, dataList, displayPropertyList,viewFunction)
         btnView.classList.add('btn','p-0', 'fw-bold', 'text-purple','btn-sm');
 
         //setting attribute to btnEdit so that it will trigger the offcanvas
-        btnView.setAttribute('data-bs-target','#offcanvasDeafult');
+        btnView.setAttribute('data-bs-target',`#${offCanvasID}`);
         btnView.setAttribute('data-bs-toggle','offcanvas');
 
        // btnDelete.classList.add('btn', 'custom-btn', 'bg-danger', 'ms-2');
