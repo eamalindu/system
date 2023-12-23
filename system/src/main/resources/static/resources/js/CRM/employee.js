@@ -99,6 +99,12 @@ const checkEmployeeFormErrors = ()=>{
     if(newEmployee.callingName==null){
         errors = errors +'Calling Name is Required<br>';
     }
+    if(newEmployee.photoPath==null){
+        errors = errors +'Profile Photo is Required<br>';
+    }
+    if(newEmployee.highestEducationalQualification==null){
+        errors = errors +'Highest Educational Qualification is Required<br>';
+    }
 
     return errors;
 }
