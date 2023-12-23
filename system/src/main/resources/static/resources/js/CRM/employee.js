@@ -12,6 +12,8 @@ window.addEventListener('load',()=>{
     fillSelectOptions(employeeDesignation, 'Please Select a Designation', designations, 'designation')
 
 
+    //hide the update btn
+    btnEmployeeSheetUpdate.style.display = 'none';
 
     //initializing 3rd party libraries
     $('#employeeDOB').daterangepicker({
