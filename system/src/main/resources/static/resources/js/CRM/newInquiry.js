@@ -179,6 +179,7 @@ const resetInquiryForm = () => {
         input.style = '';
         //remove bootstrap validation classes
         input.classList.remove('is-valid');
+        input.classList.remove('is-invalid');
     });
 
     //reset the newInquiry object
