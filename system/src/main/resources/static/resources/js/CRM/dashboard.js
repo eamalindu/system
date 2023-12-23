@@ -27,7 +27,7 @@ const refreshInquiryPoolTable = () => {
         property: getCourse, dataType: 'function'
     }, {property: getSource, dataType: 'function'}, {property: getFullName, dataType: 'function'}];
 
-    fillDataIntoTable(tblInquiryPool, newInquiries, displayPropertyListForInquiryPool, rowView);
+    fillDataIntoTable(tblInquiryPool, newInquiries, displayPropertyListForInquiryPool, rowView,'offCanvasInquirySheet');
 
     //testing code start
 
