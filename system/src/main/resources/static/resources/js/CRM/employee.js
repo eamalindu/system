@@ -11,6 +11,8 @@ window.addEventListener('load',()=>{
     designations = ajaxGetRequest("/designation/findall")
     fillSelectOptions(employeeDesignation, 'Please Select a Designation', designations, 'designation')
 
+
+
     //initializing 3rd party libraries
     $('#employeeDOB').daterangepicker({
         "maxDate": new Date(),
@@ -48,6 +50,8 @@ window.addEventListener('load',()=>{
 })
 
 const refreshEmployeeTable = ()=>{
+    employees = ajaxGetRequest("/employee/findall");
+    displayPropertyListForEmployee = [];
 
 }
 
