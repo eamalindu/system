@@ -62,7 +62,7 @@ const refreshEmployeeTable = ()=>{
         {property:getUserAccountStatus,dataType:'function'},
     ];
 
-    fillDataIntoTable(tblEmployee,employees,displayPropertyListForEmployee,rowView,'offcanvasEmployeeSheet')
+    fillDataIntoTable(tblEmployee,employees,displayPropertyListForEmployee,rowView,'offCanvasEmployeeSheet')
 
 }
 

@@ -102,7 +102,7 @@
             <h4 class="text-center fw-bold"
                 style="font-family: Arial,serif;text-transform: uppercase;font-size: medium">Search Employee Info /
                 <small class="text-muted">No records</small></h4>
-            <table class="custom-table">
+            <table class="custom-table" id="tblEmployee">
                 <thead>
                 <tr>
                     <th>No</th>
@@ -126,8 +126,9 @@
                     <td>eamalindu@gmail.com</td>
                     <td>076-8008003</td>
                     <td>Manager</td>
-                    <td><i class="fa-solid fa-user-check text-success bg-custom-white p-2 rounded-circle"
-                           title="Employee Working"></i></td>
+                    <td>
+                        <i class="fa-solid fa-user-check text-success bg-custom-white p-2 rounded-circle" title="Employee Working"></i>
+                    </td>
                     <td><i class="fa fa-check-circle text-success fs-3"></i></td>
 
                     <td class="fw-bold text-purple">View</td>
@@ -140,8 +141,9 @@
                     <td>eamalindu@gmail.com</td>
                     <td>076-8008003</td>
                     <td>Manager</td>
-                    <td><i class="fa-solid fa-user-slash text-warning bg-custom-white p-2 rounded-circle"
-                           title="Employee Suspended"></i></td>
+                    <td>
+                        <i class="fa-solid fa-user-slash text-warning bg-custom-white p-2 rounded-circle" title="Employee Suspended"></i>
+                    </td>
                     <td><i class="fa fa-xmark-circle text-danger fs-3"></i></td>
                     <td class="fw-bold text-purple">View</td>
                 </tr>
@@ -154,9 +156,11 @@
                     <td>076-8008003</td>
                     <td>Manager</td>
                     <td>
-                        <i class="fa-solid fa-user-xmark fa-solid fa-user-xmark text-danger bg-custom-white p-2 rounded-circle"
-                           title="Employee Resigned"></i></td>
-                    <td><i class="fa fa-xmark-circle text-danger fs-3"></i></td>
+                        <i class="fa-solid fa-user-xmark fa-solid fa-user-xmark text-danger bg-custom-white p-2 rounded-circle" title="Employee Resigned"></i>
+                    </td>
+                    <td>
+                        <i class="fa fa-xmark-circle text-danger fs-3"></i>
+                    </td>
 
                     <td class="fw-bold text-purple"><button data-bs-toggle="offcanvas" data-bs-target="#offcanvasEmployeeSheet" aria-controls="staticBackdrop">View</button></td>
                 </tr>
@@ -354,7 +358,7 @@
 <!-- Off canvas for employee add end-->
 
 <!-- Off canvas for employee details start-->
-<div aria-labelledby="offcanvasRightLabel" class="offcanvas offcanvas-end w-50" data-bs-backdrop="static" id="offcanvasEmployeeSheet" tabindex="-1">
+<div aria-labelledby="offcanvasRightLabel" class="offcanvas offcanvas-end w-50" data-bs-backdrop="static" id="offCanvasEmployeeSheet" tabindex="-1">
     <div class="offcanvas-header bg-light">
         <button aria-label="Close" class="btn btn-sm btn-danger btn-close-red rounded-0" data-bs-dismiss="offcanvas" type="button"><i class="fas fa-times"></i></button>
         <div class="container d-flex gap-3 ms-1" style="width: 55%">
