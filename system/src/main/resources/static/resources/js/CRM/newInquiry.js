@@ -85,6 +85,9 @@ const newInquirySubmit = () => {
 
                     resetInquiryForm();
 
+                    //trigger offcanvas button
+                    offCanvasInquiryCloseButton.click();
+
                     //needs to refresh all the tables in the dashboard
 
                         refreshInquiryPoolTable();
@@ -185,6 +188,4 @@ const resetInquiryForm = () => {
     //reset the newInquiry object
     newInquiry = {};
 
-    //trigger offcanvas button
-    offCanvasInquiryCloseButton.click();
 }
