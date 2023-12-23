@@ -91,6 +91,9 @@ const getUserAccountStatus = (ob)=>{
 
 const rowView=(ob,index) =>{
 
+    //hide the update btn
+    btnEmployeeSheetUpdate.style.display = 'none';
+
 }
 
 const newEmployeeSubmit=()=>{
