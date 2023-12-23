@@ -1,18 +1,20 @@
 window.addEventListener('load', () => {
 
-    newInquiry = {};
+    resetInquiryForm();
 
-    //dynamic select start
-
-    //dynamic select for courses
-    courses = ajaxGetRequest("/course/findall");
-    fillSelectOptions(inquiryCourse, 'Please Select a Course', courses, 'name')
-
-    //dynamic select for sources
-    sources = ajaxGetRequest("/source/findall")
-    fillSelectOptions(inquirySource, 'Please Select a Source', sources, 'name')
-
-    //dynamic select end
+    // newInquiry = {};
+    //
+    // //dynamic select start
+    //
+    // //dynamic select for courses
+    // courses = ajaxGetRequest("/course/findall");
+    // fillSelectOptions(inquiryCourse, 'Please Select a Course', courses, 'name')
+    //
+    // //dynamic select for sources
+    // sources = ajaxGetRequest("/source/findall")
+    // fillSelectOptions(inquirySource, 'Please Select a Source', sources, 'name')
+    //
+    // //dynamic select end
 
     //external libraries initialization
     $(".chosen-inquiry").chosen({width: '100%'});
@@ -187,5 +189,14 @@ const resetInquiryForm = () => {
 
     //reset the newInquiry object
     newInquiry = {};
+
+    //refill selects
+    //dynamic select for courses
+    courses = ajaxGetRequest("/course/findall");
+    fillSelectOptions(inquiryCourse, 'Please Select a Course', courses, 'name')
+
+    //dynamic select for sources
+    sources = ajaxGetRequest("/source/findall")
+    fillSelectOptions(inquirySource, 'Please Select a Source', sources, 'name')
 
 }
