@@ -103,9 +103,9 @@ const rowView=(ob,index) =>{
         input.classList.remove('is-valid');
     });
 
-    employeeSheetNote.classList.remove('text-muted');
-    employeeSheetNote.classList.remove('text-warning');
-    employeeSheetNote.classList.remove('text-danger');
+    employeeSheetCallingNameText.classList.remove('text-muted');
+    employeeSheetCallingNameText.classList.remove('text-warning');
+    employeeSheetCallingNameText.classList.remove('text-danger');
 
     //hide the update btn
     btnEmployeeSheetUpdate.style.display = 'none';
