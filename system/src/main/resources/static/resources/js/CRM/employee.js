@@ -168,6 +168,10 @@ const rowView=(ob,index) =>{
     else{
         employeeSheetCallingNameText.classList.add('text-danger');
     }
+
+    //catch old Employee and new Employee
+    oldEmployee = JSON.parse(JSON.stringify(ob));
+    editedEmployee = JSON.parse(JSON.stringify(ob));
 }
 const employeeEdit = () => {
 
@@ -185,6 +189,9 @@ const employeeEdit = () => {
         input.removeAttribute('disabled');
         input.setAttribute('style', 'border:1px solid #0DCAF0!important;background-color:rgba(13,202,240,0.2);');
     });
+
+    console.log(oldEmployee)
+    console.log(editedEmployee)
 }
 
 const newEmployeeSubmit=()=>{
