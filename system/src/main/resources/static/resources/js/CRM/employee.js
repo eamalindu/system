@@ -146,6 +146,12 @@ const rowView=(ob,index) =>{
     if(ob.employeeStatusID.status=="Working") {
         employeeSheetCallingNameText.classList.add('text-success');
     }
+    else if (ob.employeeStatusID.status=="Suspended"){
+        employeeSheetCallingNameText.classList.add('text-warning');
+    }
+    else{
+        employeeSheetCallingNameText.classList.add('text-danger');
+    }
 }
 
 const newEmployeeSubmit=()=>{
