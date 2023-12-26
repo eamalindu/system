@@ -94,6 +94,45 @@ const rowView=(ob,index) =>{
     //hide the update btn
     btnEmployeeSheetUpdate.style.display = 'none';
 
+    employeeSheetFullName.value = ob.fullName;
+    employeeSheetCallingName.value = ob.callingName;
+    employeeSheetNIC.value =ob.nic;
+    employeeSheetDOB.value =ob.dob;
+
+    //setting gender
+    if(ob.gender=="Male"){
+        employeeSheetGenderMale.checked = true;
+    }
+    else{
+        employeeSheetGenderFemale.checked = true;
+    }
+
+    employeeSheetEmail.value=ob.email;
+    employeeSheetMobile.value = ob.mobileNumber;
+
+    //setting optional values
+    if (ob.landNumber !== null) {
+        employeeSheetLand.value = ob.landNumber;
+        employeeSheetLand.classList.remove('text-muted');
+
+    } else {
+        employeeSheetLand.value = '-- Not Provided --';
+        employeeSheetLand.classList.add('text-muted');
+    }
+    employeeSheetAddress.value = ob.address;
+    employeeSheetCivilStatus.value = ob.civilStatus;
+    employeeSheetDesignation.value = ob.designationID.designation;
+
+//setting optional values
+    if (ob.note !== null) {
+        employeeSheetNote.value = ob.note;
+        employeeSheetNote.classList.remove('text-muted');
+
+    } else {
+        employeeSheetNote.value = '-- Not Provided --';
+        employeeSheetNote.classList.add('text-muted');
+    }
+
 }
 
 const newEmployeeSubmit=()=>{
