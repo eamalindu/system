@@ -153,6 +153,11 @@ const rowView=(ob,index) =>{
         employeeSheetCallingNameText.classList.add('text-danger');
     }
 }
+const employeeEdit = () => {
+
+    //display the update button once the edit button is clicked
+    btnEmployeeSheetUpdate.style.display = 'block';
+}
 
 const newEmployeeSubmit=()=>{
     console.log(newEmployee);
