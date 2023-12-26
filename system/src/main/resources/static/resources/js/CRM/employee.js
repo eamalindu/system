@@ -133,6 +133,14 @@ const rowView=(ob,index) =>{
         employeeSheetNote.classList.add('text-muted');
     }
 
+    employeeSheetHighestEducation.value = ob.highestEducationalQualification;
+    employeeSheetEmployeeStatus.value = ob.employeeStatusID.status;
+
+    employeeSheetEmpIDText.innerText = ob.employeeID;
+
+    employeeSheetCallingNameText.innerText = ob.callingName;
+
+    employeeSheetJoinedDateText.value = ob.added_timestamp;
 }
 
 const newEmployeeSubmit=()=>{
