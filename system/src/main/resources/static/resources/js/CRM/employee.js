@@ -103,6 +103,10 @@ const rowView=(ob,index) =>{
         input.classList.remove('is-valid');
     });
 
+    employeeSheetNote.classList.remove('text-muted');
+    employeeSheetNote.classList.remove('text-warning');
+    employeeSheetNote.classList.remove('text-danger');
+
     //hide the update btn
     btnEmployeeSheetUpdate.style.display = 'none';
 
