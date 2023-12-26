@@ -140,7 +140,7 @@ const rowView=(ob,index) =>{
 
     employeeSheetCallingNameText.innerText = ob.callingName;
 
-    employeeSheetJoinedDateText.value = ob.added_timestamp;
+    employeeSheetJoinedDateText.innerText = ob.added_timestamp;
 }
 
 const newEmployeeSubmit=()=>{
