@@ -138,9 +138,14 @@ const rowView=(ob,index) =>{
 
     employeeSheetEmpIDText.innerText = ob.employeeID;
 
+    const [joinedDate, joinedTime] =ob.added_timestamp.split("T");
+    employeeSheetJoinedDateText.innerText = joinedDate;
+
     employeeSheetCallingNameText.innerText = ob.callingName;
 
-    employeeSheetJoinedDateText.innerText = ob.added_timestamp.replace('T', ' ').slice(0, -3);
+    if(ob.employeeStatusID.status=="Working") {
+        employeeSheetCallingNameText.classList.add('text-success');
+    }
 }
 
 const newEmployeeSubmit=()=>{
