@@ -157,6 +157,19 @@ const employeeEdit = () => {
 
     //display the update button once the edit button is clicked
     btnEmployeeSheetUpdate.style.display = 'block';
+
+    //remove the attribute readonly to make inputs accept the user input values
+    //give a border color to inputs indicate that the input's values are ready to be edited
+    inputs = document.querySelectorAll('.employeeSheetInputs');
+
+    //remove the disabled attribute from the select
+    //give a border color to indicate that select can be now edited
+
+    inputs.forEach(function (input) {
+        input.removeAttribute('disabled');
+        input.removeAttribute('readonly');
+        input.setAttribute('style', 'border:1px solid #0DCAF0!important;background-color:rgba(13,202,240,0.2);');
+    });
 }
 
 const newEmployeeSubmit=()=>{
