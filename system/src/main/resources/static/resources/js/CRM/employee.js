@@ -29,6 +29,20 @@ window.addEventListener('load',()=>{
             "format": "YYYY-MM-DD"
         }
     });
+    $('#employeeSheetDOB').daterangepicker({
+        "maxDate": new Date(),
+        "singleDatePicker": true,
+        "timePicker": false,
+        "timePicker24Hour": true,
+        "autoApply": true,
+        "linkedCalendars": false,
+        "showCustomRangeLabel": false,
+        "drops": "up",
+        "locale": {
+            "format": "YYYY-MM-DD"
+        }
+    });
+
     $('#employeeDesignation').chosen({width: '100%'});
     $('#employeeCivilStatus').chosen({width: '100%'});
     $('#employeeStatus').chosen({width: '100%'});
