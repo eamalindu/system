@@ -175,8 +175,6 @@ const inquiryEdit = () => {
     console.log(oldInquiry)
     console.log("edited inquiry 👇")
     console.log(editedInquiry)
-    console.log("new inquiry 👇")
-    console.log(newInquiry)
 
 }
 const inquiryUpdate = () => {
