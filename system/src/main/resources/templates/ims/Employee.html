@@ -441,7 +441,7 @@
             <tr>
                 <td class="fw-bold w-25">Address</td>
                 <td class="" colspan="3">
-                    <input class="small rounded-0 form-control-sm w-100 employeeSheetInputs" id="employeeSheetAddress" disabled value="No: 9/3, Kaththota, Nittambuwa" required >
+                    <input class="small rounded-0 form-control-sm w-100 employeeSheetInputs" id="employeeSheetAddress" disabled value="No: 9/3, Kaththota, Nittambuwa" required onkeyup="inputTextValidator(this,'^No:[\\s]*(\\d+\\/\\d*[A-Z]?)[,\\s]+(\\w+)[,\\s]+(\\w+)\\.$','editedEmployee','address')">
                     <div class="valid-feedback">Value Accepted</div>
                     <div class="invalid-feedback">Please provide a valid Address</div>
                 </td>
