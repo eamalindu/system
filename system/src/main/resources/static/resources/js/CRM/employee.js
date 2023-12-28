@@ -141,6 +141,7 @@ const rowView=(ob,index) =>{
 
     //select the appropriate option as selected
     fillSelectOptions(employeeSheetDesignation, 'Please Select a Designation', designations, 'designation',ob.designationID.designation)
+    fillSelectOptions(employeeSheetEmployeeStatus, 'Please Select a Status', Status, 'status',ob.employeeStatusID.status)
 
 //setting optional values
     if (ob.note !== null) {
@@ -153,7 +154,6 @@ const rowView=(ob,index) =>{
     }
 
     employeeSheetHighestEducation.value = ob.highestEducationalQualification;
-    employeeSheetEmployeeStatus.value = ob.employeeStatusID.status;
 
     employeeSheetEmpIDText.innerText = ob.employeeID;
 
