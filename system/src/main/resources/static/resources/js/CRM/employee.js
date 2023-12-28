@@ -136,7 +136,9 @@ const rowView=(ob,index) =>{
         employeeSheetLand.classList.add('text-muted');
     }
     employeeSheetAddress.value = ob.address;
-    employeeSheetCivilStatus.value = ob.civilStatus;
+
+    //select the appropriate option as selected
+    fillSelectOptions(employeeSheetCivilStatus,'Please Select a Status',Status,'status',ob.civilStatus);
     employeeSheetDesignation.value = ob.designationID.designation;
 
 //setting optional values
