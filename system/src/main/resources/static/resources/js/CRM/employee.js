@@ -48,6 +48,11 @@ window.addEventListener('load',()=>{
     $('#employeeStatus').chosen({width: '100%'});
     $('#employeeHighestEducation').chosen({width:'100%'});
 
+    //when apply is clicked data will validate and bind to the editedInquiry object
+    $('#employeeSheetDOB').on('apply.daterangepicker',function (){
+        inputTextValidator(this,'^20[0-9]{2}[-][0-9]{2}[-][0-9]{2}$','editedEmployee','dob')
+    });
+
     refreshEmployeeTable()
 
     //validation chosen select (for new employee)
