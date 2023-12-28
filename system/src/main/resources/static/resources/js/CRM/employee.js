@@ -243,6 +243,8 @@ const newEmployeeSubmit=()=>{
 const employeeUpdate = ()=>{
     console.log(oldEmployee)
     console.log(editedEmployee)
+
+    //check updated value
 }
 
 const checkEmployeeFormErrors = ()=>{
