@@ -139,7 +139,8 @@ const rowView=(ob,index) =>{
 
     employeeSheetCivilStatus.value = ob.civilStatus;
 
-    employeeSheetDesignation.value = ob.designationID.designation;
+    //select the appropriate option as selected
+    fillSelectOptions(employeeSheetDesignation, 'Please Select a Designation', designations, 'designation',ob.designationID.designation)
 
 //setting optional values
     if (ob.note !== null) {
