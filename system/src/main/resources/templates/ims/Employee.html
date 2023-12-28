@@ -469,7 +469,7 @@
             <tr>
                 <td class="fw-bold w-25">Note</td>
                 <td class="" colspan="3">
-                    <input class="small rounded-0 form-control-sm w-100 employeeSheetInputs" id="employeeSheetNote" disabled value="" placeholder="Optional">
+                    <input class="small rounded-0 form-control-sm w-100 employeeSheetInputs" id="employeeSheetNote" disabled value="" placeholder="Optional" onkeyup="inputTextValidator(this,'^[a-zA-Z0-9\\s/]{20,}$','editedEmployee','note')">
                     <div class="valid-feedback">Value Accepted</div>
                     <div class="invalid-feedback">Please provide a valid Note</div>
                 </td>
