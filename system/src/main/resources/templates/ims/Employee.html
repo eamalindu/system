@@ -478,7 +478,7 @@
             <tr>
                 <td class="fw-bold w-25" colspan="">Highest Education Qualification</td>
                 <td class="" colspan="">
-                    <select class="employeeSheetInputs form-select rounded-0 small form-select-sm" id="employeeSheetHighestEducation"  required>
+                    <select class="employeeSheetInputs form-select rounded-0 small form-select-sm" id="employeeSheetHighestEducation" required onchange="selectDynamicValueValidator(this,'','editedEmployee','employeeStatusID')">
                         <option>Doctorate (PhD)</option>
                         <option>Master's Degree (MA, MSc)</option>
                         <option>Undergraduate Degree (BA, BSc)</option>
