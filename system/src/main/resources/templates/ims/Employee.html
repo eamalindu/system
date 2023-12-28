@@ -433,7 +433,7 @@
                 </td>
                 <td class="fw-bold w-25">Land Number</td>
                 <td>
-                    <input class="small rounded-0 form-control-sm employeeSheetInputs" id="employeeSheetLand" disabled value="0768008003">
+                    <input class="small rounded-0 form-control-sm employeeSheetInputs" id="employeeSheetLand" disabled value="0768008003" onkeyup="inputTextValidator(this,'^[0][12345689][0-9]{8}$','editedEmployee','landNumber')">
                     <div class="valid-feedback">Value Accepted</div>
                     <div class="invalid-feedback">Please provide a valid Land number</div>
                 </td>
