@@ -450,11 +450,13 @@
             <tr>
                 <td class="fw-bold w-25">Civil Status</td>
                 <td class="">
-                    <select class="employeeSheetInputs form-select small form-select-sm" id="employeeSheetCivilStatus" disabled>
+                    <select class="employeeSheetInputs form-select small form-select-sm" id="employeeSheetCivilStatus" disabled required>
                         <option value="Single">Single</option>
                         <option value="Married">Married</option>
                         <option value="Divorced">Divorced</option>
                     </select>
+                    <div class="valid-feedback">Value Accepted</div>
+                    <div class="invalid-feedback">Please provide a valid Civil Status</div>
                 </td>
                 <td class="fw-bold w-25">Designation</td>
                 <td class="">
