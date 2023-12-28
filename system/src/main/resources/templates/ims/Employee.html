@@ -379,7 +379,11 @@
             <tbody class="small align-middle">
             <tr>
                 <td class="fw-bold w-25">Full Name</td>
-                <td class="w-25"><input class="small rounded-0 form-control-sm border-0 employeeSheetInputs" id="employeeSheetFullName" disabled value="Kasun Malhara"></td>
+                <td class="w-25">
+                    <input class="small rounded-0 form-control-sm border-0 employeeSheetInputs" id="employeeSheetFullName" disabled value="Kasun Malhara" required  onkeyup="inputTextValidator(this,'^[A-Z][a-z]{2,19}[ ][A-Z][a-z]{2,29}$','editedEmployee','fullName')">
+                    <div class="valid-feedback">Value Accepted</div>
+                    <div class="invalid-feedback">Please provide a valid full name</div>
+                </td>
                 <td class="fw-bold w-25">Calling Name</td>
                 <td><input class="small rounded-0 form-control-sm border-0 employeeSheetInputs" id="employeeSheetCallingName" disabled value="Kasun"></td>
             </tr>
