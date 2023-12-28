@@ -212,8 +212,6 @@ const employeeEdit = () => {
         input.setAttribute('style', 'border:1px solid #0DCAF0!important;background-color:rgba(13,202,240,0.2);');
     });
 
-    console.log(oldEmployee)
-    console.log(editedEmployee)
 }
 
 const newEmployeeSubmit=()=>{
@@ -242,6 +240,10 @@ const newEmployeeSubmit=()=>{
     }
 }
 
+const employeeUpdate = ()=>{
+    console.log(oldEmployee)
+    console.log(editedEmployee)
+}
 
 const checkEmployeeFormErrors = ()=>{
     let errors = '';
