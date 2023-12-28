@@ -450,7 +450,7 @@
             <tr>
                 <td class="fw-bold w-25">Civil Status</td>
                 <td class="">
-                    <select class="employeeSheetInputs form-select small form-select-sm" id="employeeSheetCivilStatus" disabled required>
+                    <select class="employeeSheetInputs form-select small form-select-sm" id="employeeSheetCivilStatus" disabled required onchange="selectStaticValueValidator(this,'','editedEmployee','civilStatus')">
                         <option value="Single">Single</option>
                         <option value="Married">Married</option>
                         <option value="Divorced">Divorced</option>
