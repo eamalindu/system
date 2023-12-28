@@ -389,7 +389,10 @@
             </tr>
             <tr>
                 <td class="fw-bold w-25">NIC Number</td>
-                <td class="w-25"><input class="small rounded-0 form-control-sm border-0 employeeSheetInputs" id="employeeSheetNIC" disabled value="983151108V">
+                <td class="w-25">
+                    <input class="small rounded-0 form-control-sm border-0 employeeSheetInputs" id="employeeSheetNIC" disabled value="983151108V" required onkeyup="inputTextValidator(this,'^(?:[6-9][0-9]{8}([V]|[X]|[v]|[x]){1})|(?:[19|20][0-9]{10})$','editedEmployee','nic')">
+                    <div class="valid-feedback">Value Accepted</div>
+                    <div class="invalid-feedback">Please provide a valid NIC</div>
                 </td>
                 <td class="fw-bold w-25">Date of Birth</td>
                 <td><input class="small rounded-0 form-control-sm border-0 employeeSheetInputs" id="employeeSheetDOB" disabled value="1998-11-10"></td>
