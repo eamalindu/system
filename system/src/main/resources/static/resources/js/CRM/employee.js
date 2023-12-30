@@ -275,6 +275,23 @@ const employeeUpdate = ()=>{
                             postServerResponse = resOb;
                         }
                     });
+                    //if data passed successfully
+                    //show a success alert
+                    if(postServerResponse === "OK"){
+
+                        showCustomModal("Inquiry Successfully Updated!","success")
+                        //close the offCanvas and refresh the table
+                        offCanvasEmployeeSheetCloseButton.click();
+                        refreshEmployeeTable();
+
+                    }
+
+                        //if data passed unsuccessfully
+                    //show an error alert
+                    else
+                    {
+                        showCustomModal("Operation Failed! <br> Inquiry Record Not Updated! "+postServerResponse,"error")
+                    }
                 }
                 else{
                     showCustomModal("Operation Cancelled!", "info");
