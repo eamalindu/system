@@ -1,5 +1,8 @@
 window.addEventListener('load',()=>{
 
+    refreshEmployeeTable()
+    resetInquiryForm()
+
     //hide the update btn
     btnEmployeeSheetUpdate.style.display = 'none';
 
@@ -40,9 +43,6 @@ window.addEventListener('load',()=>{
     $('#employeeSheetDOB').on('apply.daterangepicker',function (){
         inputTextValidator(this,'^20[0-9]{2}[-][0-9]{2}[-][0-9]{2}$','editedEmployee','dob')
     });
-
-    refreshEmployeeTable()
-    resetInquiryForm()
 
     //validation chosen select (for new employee)
     $("#employeeCivilStatus").chosen().change(function () {
