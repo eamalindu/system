@@ -438,6 +438,8 @@ const resetEmployeeForm = ()=>{
 
     //remove value
     document.getElementById('frmNewEmployee').reset();
+    //removing image
+    imgProfile.src="";
     //remove validation
     inputs = document.querySelectorAll('.newEmployeeInputs');
     inputs.forEach(function (input) {
