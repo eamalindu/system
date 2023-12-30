@@ -40,7 +40,6 @@ public class EmployeeController {
             //set auto generated values
             employee.setAdded_timestamp(LocalDateTime.now());
             employee.setEmployeeID("EMP003");
-            employee.setPhotoPath("test");
 
             employeeDAO.save(employee);
             return "OK";
