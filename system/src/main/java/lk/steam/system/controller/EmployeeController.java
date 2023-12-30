@@ -33,5 +33,15 @@ public class EmployeeController {
         }
 
     }
+    @PostMapping
+    public String saveNewEmployee(@RequestBody Employee employee){
+        try{
+            return "OK";
+        }
+        catch (Exception ex){
+            return "Save Failed "+ex.getMessage();
+        }
+
+    }
 
 }
