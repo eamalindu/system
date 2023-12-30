@@ -248,7 +248,17 @@ const employeeUpdate = ()=>{
     //check required values
     const errors = checkEmployeeFormErrors(editedEmployee);
     if (errors === '') {
-        let updates = checkForEmployeeUpdate()
+
+        //check for updates
+        let updates = checkForEmployeeUpdate();
+
+        if(updates===''){
+            showCustomModal("No changes Detected!", "info");
+        }
+        else{
+            showCustomConfirm("You are About to Update this Employee<br><br>Following Changes Detected!<br/><br/><small>" + updates+"</small><br>Are You Sure?", function (result){});
+
+        }
     }
     else{
         showCustomModal(errors, 'warning');
