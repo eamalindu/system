@@ -217,7 +217,7 @@ const employeeEdit = () => {
 const newEmployeeSubmit=()=>{
     console.log(newEmployee);
 
-    const errors = checkEmployeeFormErrors()
+    const errors = checkEmployeeFormErrors(newEmployee)
 
     if(errors===''){
         //this means there are no any errors
