@@ -290,7 +290,7 @@ const employeeUpdate = ()=>{
                     //show an error alert
                     else
                     {
-                        showCustomModal("Operation Failed! <br> Inquiry Record Not Updated! "+postServerResponse,"error")
+                        showCustomModal("Operation Failed! <br> Employee Record Not Updated! "+postServerResponse,"error")
                     }
                 }
                 else{
