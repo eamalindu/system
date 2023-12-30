@@ -243,7 +243,7 @@ const newEmployeeSubmit=()=>{
 
                     //needs to refresh all the tables in the employee
                     refreshEmployeeTable();
-                    resetInquiryForm();
+                    resetEmployeeForm();
 
 
                 } else {
