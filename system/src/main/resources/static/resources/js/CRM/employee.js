@@ -422,16 +422,6 @@ const checkForEmployeeUpdate = ()=>{
 
 const resetInquiryForm = ()=>{
 
-    //remove value
-    document.getElementById('frmNewEmployee').reset();
-    //remove validation
-    inputs = document.querySelectorAll('.newEmployeeInputs');
-    inputs.forEach(function (input) {
-        input.style = '';
-        //remove bootstrap validation classes
-        input.classList.remove('is-valid');
-        input.classList.remove('is-invalid');
-    });
     $("#employeeCivilStatus_chosen .chosen-single").removeClass('select-validated');
     $("#employeeDesignation_chosen .chosen-single").removeClass('select-validated');
     $("#employeeStatus_chosen .chosen-single").removeClass('select-validated');
@@ -442,6 +432,16 @@ const resetInquiryForm = ()=>{
         $('select').val('').trigger('chosen:updated');
     }, 0);
 
+    //remove value
+    document.getElementById('frmNewEmployee').reset();
+    //remove validation
+    inputs = document.querySelectorAll('.newEmployeeInputs');
+    inputs.forEach(function (input) {
+        input.style = '';
+        //remove bootstrap validation classes
+        input.classList.remove('is-valid');
+        input.classList.remove('is-invalid');
+    });
     //new employee object
     newEmployee = {};
 
