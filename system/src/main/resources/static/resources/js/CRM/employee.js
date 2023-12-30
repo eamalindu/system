@@ -344,6 +344,12 @@ const checkForEmployeeUpdate = ()=>{
     if (editedEmployee.address !== oldEmployee.address) {
         updates = updates + "Address was changed to <span class='text-purple'>" + editedEmployee.address + "</span><br>";
     }
+    if (editedEmployee.highestEducationalQualification !== oldEmployee.highestEducationalQualification) {
+        updates = updates + "Qualification was changed to <span class='text-purple'>" + editedEmployee.highestEducationalQualification + "</span><br>";
+    }
+    if (editedEmployee.civilStatus !== oldEmployee.civilStatus) {
+        updates = updates + "Civil Status was changed to <span class='text-purple'>" + editedEmployee.civilStatus + "</span><br>";
+    }
 
     return updates;
 
