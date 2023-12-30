@@ -426,6 +426,10 @@ const resetInquiryForm = ()=>{
     $("#employeeDesignation_chosen .chosen-single").removeClass('select-validated');
     $("#employeeStatus_chosen .chosen-single").removeClass('select-validated');
     $("#employeeHighestEducation_chosen .chosen-single").removeClass('select-validated');
+    employeeCivilStatus.classList.remove('is-valid');
+    employeeDesignation.classList.remove('is-valid');
+    employeeStatus.classList.remove('is-valid');
+    employeeHighestEducation.classList.remove('is-valid');
 
     //set default option chosen
     setTimeout(function () {
