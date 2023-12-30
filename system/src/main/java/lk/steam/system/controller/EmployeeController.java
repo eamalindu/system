@@ -36,6 +36,7 @@ public class EmployeeController {
     @PostMapping
     public String saveNewEmployee(@RequestBody Employee employee){
         try{
+            employeeDAO.save(employee);
             return "OK";
         }
         catch (Exception ex){
