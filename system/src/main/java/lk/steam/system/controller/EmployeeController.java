@@ -6,6 +6,7 @@ import lk.steam.system.entity.Inquiry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
@@ -36,6 +37,11 @@ public class EmployeeController {
     @PostMapping
     public String saveNewEmployee(@RequestBody Employee employee){
         try{
+            //set auto generated values
+            employee.setAdded_timestamp(LocalDateTime.now());
+            employee.setEmployeeID("EMP003");
+            employee.setPhotoPath("test");
+
             employeeDAO.save(employee);
             return "OK";
         }
