@@ -1,17 +1,5 @@
 window.addEventListener('load',()=>{
 
-    //new employee object
-    newEmployee = {};
-
-    //dynamic select for courses
-    Status = ajaxGetRequest("/employeestatus/findall");
-    fillSelectOptions(employeeStatus, 'Please Select a Status', Status, 'status')
-
-    //dynamic select for sources
-    designations = ajaxGetRequest("/designation/findall")
-    fillSelectOptions(employeeDesignation, 'Please Select a Designation', designations, 'designation')
-
-
     //hide the update btn
     btnEmployeeSheetUpdate.style.display = 'none';
 
@@ -54,6 +42,7 @@ window.addEventListener('load',()=>{
     });
 
     refreshEmployeeTable()
+    resetInquiryForm()
 
     //validation chosen select (for new employee)
     $("#employeeCivilStatus").chosen().change(function () {
@@ -254,6 +243,7 @@ const newEmployeeSubmit=()=>{
 
                     //needs to refresh all the tables in the employee
                     refreshEmployeeTable();
+                    resetInquiryForm();
 
 
                 } else {
@@ -428,4 +418,38 @@ const checkForEmployeeUpdate = ()=>{
 
     return updates;
 
+}
+
+const resetInquiryForm = ()=>{
+
+    //remove value
+    document.getElementById('frmNewEmployee').reset();
+    //remove validation
+    inputs = document.querySelectorAll('.newEmployeeInputs');
+    inputs.forEach(function (input) {
+        input.style = '';
+        //remove bootstrap validation classes
+        input.classList.remove('is-valid');
+        input.classList.remove('is-invalid');
+    });
+    $("#employeeCivilStatus_chosen .chosen-single").removeClass('select-validated');
+    $("#employeeDesignation_chosen .chosen-single").removeClass('select-validated');
+    $("#employeeStatus_chosen .chosen-single").removeClass('select-validated');
+    $("#employeeHighestEducation_chosen .chosen-single").removeClass('select-validated');
+
+    //set default option chosen
+    setTimeout(function () {
+        $('select').val('').trigger('chosen:updated');
+    }, 0);
+
+    //new employee object
+    newEmployee = {};
+
+    //dynamic select for courses
+    Status = ajaxGetRequest("/employeestatus/findall");
+    fillSelectOptions(employeeStatus, 'Please Select a Status', Status, 'status')
+
+    //dynamic select for sources
+    designations = ajaxGetRequest("/designation/findall")
+    fillSelectOptions(employeeDesignation, 'Please Select a Designation', designations, 'designation')
 }
