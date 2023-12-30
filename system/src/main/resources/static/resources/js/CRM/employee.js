@@ -247,46 +247,46 @@ const employeeUpdate = ()=>{
     //check updated value
 }
 
-const checkEmployeeFormErrors = ()=>{
+const checkEmployeeFormErrors = (employeeObject)=>{
     let errors = '';
 
-    if(newEmployee.fullName==null){
+    if(employeeObject.fullName==null){
         errors = errors +'Full Name is Required<br>';
     }
-    if(newEmployee.nic==null){
+    if(employeeObject.nic==null){
         errors = errors +'NIC is Required<br>';
     }
-    if(newEmployee.dob==null){
+    if(employeeObject.dob==null){
         errors = errors +'Date of Birth is Required<br>';
     }
-    if(newEmployee.email==null){
+    if(employeeObject.email==null){
         errors = errors +'Email is Required<br>';
     }
-    if(newEmployee.mobileNumber==null){
+    if(employeeObject.mobileNumber==null){
         errors = errors +'Mobile Number is Required<br>';
     }
-    if(newEmployee.address==null){
+    if(employeeObject.address==null){
         errors = errors +'Address is Required<br>';
     }
-    if(newEmployee.civilStatus==null){
+    if(employeeObject.civilStatus==null){
         errors = errors +'Civil Status is Required<br>';
     }
-    if(newEmployee.designationID==null){
+    if(employeeObject.designationID==null){
         errors = errors +'Designation is Required<br>';
     }
-    if(newEmployee.employeeStatusID==null){
+    if(employeeObject.employeeStatusID==null){
         errors = errors +'Employee Status is Required<br>';
     }
-    if(newEmployee.gender==null){
+    if(employeeObject.gender==null){
         errors = errors +'Gender is Required<br>';
     }
-    if(newEmployee.callingName==null){
+    if(employeeObject.callingName==null){
         errors = errors +'Calling Name is Required<br>';
     }
-    if(newEmployee.photoPath==null){
+    if(employeeObject.photoPath==null){
         errors = errors +'Profile Photo is Required<br>';
     }
-    if(newEmployee.highestEducationalQualification==null){
+    if(employeeObject.highestEducationalQualification==null){
         errors = errors +'Highest Educational Qualification is Required<br>';
     }
 
