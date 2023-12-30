@@ -228,6 +228,39 @@ const newEmployeeSubmit=()=>{
                 //passing the data to backend
                 //if the data is successfully passed to the database it will set the value of the postServerResponse to "OK"
                 let postServerResponse;
+                $.ajax("/employee", {
+                    type: "POST",
+                    async: false, // set the async option false to wait for the response
+                    contentType: "application/json",
+                    data: JSON.stringify(newEmployee),
+                    success: function (data) {
+                        console.log("success " + data);
+                        postServerResponse = data;
+
+                    }, error: function (resOb) {
+                        console.log("Error " + resOb);
+                        postServerResponse = resOb;
+
+                    }
+                });
+                if (postServerResponse === 'OK') {
+
+                    //this means data successfully passed to the backend
+                    //show an alert to user
+                    showCustomModal("Employee Successfully Added!", "success");
+
+                    //trigger offcanvas button
+                    offCanvasInquiryCloseButton.click();
+
+                    //needs to refresh all the tables in the employee
+                    refreshEmployeeTable();
+
+
+                } else {
+                    //this means there was a problem with the query
+                    //shows an error alert to the user
+                    showCustomModal("Operation Failed!" + postServerResponse, "error");
+                }
 
             } else {
                 showCustomModal("Operation Cancelled!", "info");
