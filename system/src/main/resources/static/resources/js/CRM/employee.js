@@ -279,7 +279,7 @@ const employeeUpdate = ()=>{
                     //show a success alert
                     if(postServerResponse === "OK"){
 
-                        showCustomModal("Inquiry Successfully Updated!","success")
+                        showCustomModal("Employee Successfully Updated!","success")
                         //close the offCanvas and refresh the table
                         offCanvasEmployeeSheetCloseButton.click();
                         refreshEmployeeTable();
