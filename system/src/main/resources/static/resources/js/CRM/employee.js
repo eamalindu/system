@@ -326,6 +326,9 @@ const checkForEmployeeUpdate = ()=>{
     if (editedEmployee.fullName !== oldEmployee.fullName) {
         updates = updates + "Full Name was changed to <span class='text-purple'>" + editedEmployee.fullName + "</span><br>";
     }
+    if (editedEmployee.nic !== oldEmployee.nic) {
+        updates = updates + "NIC was changed to <span class='text-purple'>" + editedEmployee.nic + "</span><br>";
+    }
 
     return updates;
 
