@@ -250,7 +250,7 @@ const newEmployeeSubmit=()=>{
                     showCustomModal("Employee Successfully Added!", "success");
 
                     //trigger offcanvas button
-                    offCanvasInquiryCloseButton.click();
+                    offCanvasEmployeeCloseButton.click();
 
                     //needs to refresh all the tables in the employee
                     refreshEmployeeTable();
