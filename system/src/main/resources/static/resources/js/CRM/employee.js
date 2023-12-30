@@ -383,11 +383,11 @@ const checkForEmployeeUpdate = ()=>{
     if (editedEmployee.civilStatus !== oldEmployee.civilStatus) {
         updates = updates + "Civil Status was changed to <span class='text-purple'>" + editedEmployee.civilStatus + "</span><br>";
     }
-    if (editedEmployee.designationID !== oldEmployee.designationID) {
-        updates = updates + "Designation was changed to <span class='text-purple'>" + editedEmployee.designationID + "</span><br>";
+    if (editedEmployee.designationID.designation !== oldEmployee.designationID.designation) {
+        updates = updates + "Designation was changed to <span class='text-purple'>" + editedEmployee.designationID.designation + "</span><br>";
     }
-    if (editedEmployee.employeeStatusID !== oldEmployee.employeeStatusID) {
-        updates = updates + "Employee Status was changed to <span class='text-purple'>" + editedEmployee.employeeStatusID + "</span><br>";
+    if (editedEmployee.employeeStatusID.status !== oldEmployee.employeeStatusID.status) {
+        updates = updates + "Employee Status was changed to <span class='text-purple'>" + editedEmployee.employeeStatusID.status + "</span><br>";
     }
     if (editedEmployee.note !== oldEmployee.note) {
         updates = updates + "Note was changed to <span class='text-purple'>" + editedEmployee.note + "</span><br>";
