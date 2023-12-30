@@ -440,6 +440,7 @@ const resetEmployeeForm = ()=>{
     document.getElementById('frmNewEmployee').reset();
     //removing image
     imgProfile.src="";
+    imgProfile.classList.remove('bg-success');
     //remove validation
     inputs = document.querySelectorAll('.newEmployeeInputs');
     inputs.forEach(function (input) {
