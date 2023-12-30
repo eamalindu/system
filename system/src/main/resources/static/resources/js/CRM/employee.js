@@ -320,6 +320,7 @@ const checkEmployeeFormErrors = (employeeObject)=>{
     return errors;
 }
 
+//function to compare the old and edited employee values and return the updated/changed values
 const checkForEmployeeUpdate = ()=>{
     let updates = '';
 
