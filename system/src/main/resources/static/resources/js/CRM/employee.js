@@ -260,6 +260,21 @@ const employeeUpdate = ()=>{
 
                 if(result){
                     //database ajax code
+                    let postServerResponse;
+                    $.ajax("/employee", {
+                        type: "PUT",
+                        async: false,
+                        contentType: "application/json",
+                        data: JSON.stringify(editedEmployee),
+                        success: function (data) {
+                            console.log("success " + data);
+                            postServerResponse = data;
+                        },
+                        error: function (resOb) {
+                            console.log("Error " + resOb);
+                            postServerResponse = resOb;
+                        }
+                    });
                 }
                 else{
                     showCustomModal("Operation Cancelled!", "info");
