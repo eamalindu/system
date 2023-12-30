@@ -259,7 +259,7 @@ const employeeUpdate = ()=>{
             showCustomConfirm("You are About to Update this Employee<br><br>Following Changes Detected!<br/><br/><small>" + updates+"</small><br>Are You Sure?", function (result){
 
                 if(result){
-
+                    //database ajax code
                 }
                 else{
                     showCustomModal("Operation Cancelled!", "info");
