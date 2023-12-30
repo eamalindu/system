@@ -1,7 +1,7 @@
 window.addEventListener('load',()=>{
 
     refreshEmployeeTable()
-    resetInquiryForm()
+    resetEmployeeForm()
 
     //hide the update btn
     btnEmployeeSheetUpdate.style.display = 'none';
@@ -420,7 +420,7 @@ const checkForEmployeeUpdate = ()=>{
 
 }
 
-const resetInquiryForm = ()=>{
+const resetEmployeeForm = ()=>{
 
     $("#employeeCivilStatus_chosen .chosen-single").removeClass('select-validated');
     $("#employeeDesignation_chosen .chosen-single").removeClass('select-validated');

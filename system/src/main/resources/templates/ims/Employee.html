@@ -186,7 +186,7 @@
     <div class="offcanvas-header bg-light">
         <div>
             <button aria-label="Close" class="btn btn-sm btn-danger btn-close-red rounded-0" id="offCanvasEmployeeCloseButton" data-bs-dismiss="offcanvas" type="button"><i class="fas fa-times"></i></button>
-            <button class="btn btn-sm bg-secondary text-white rounded-0" type="button" onclick="resetInquiryForm()"><i class="fas fa-refresh"></i></button>
+            <button class="btn btn-sm bg-secondary text-white rounded-0" type="button" onclick="resetEmployeeForm()"><i class="fas fa-refresh"></i></button>
         </div>
         <h3 class="float-end" style="text-transform: uppercase;font-size: medium;font-weight: bold;font-family: Arial, serif;">New Employee</h3>
     </div>
@@ -285,7 +285,7 @@
                         <div class="form-label">
                             <label class="fw-bold small required" for="employeeHighestEducation">Highest Educational Qualification</label>
                         </div>
-                        <select class="form-select rounded-0 newEmployeeInputs" id="employeeHighestEducation" required data-placeholder="Please Select a Highest Educational Qualification"  onchange="selectStaticValueValidator(this,'','newEmployee','highestEducationalQualification')">
+                        <select class="form-select rounded-0" id="employeeHighestEducation" required data-placeholder="Please Select a Highest Educational Qualification"  onchange="selectStaticValueValidator(this,'','newEmployee','highestEducationalQualification')">
                             <option value=""></option>
                             <option>Doctorate (PhD)</option>
                             <option>Master's Degree (MA, MSc)</option>
@@ -302,7 +302,7 @@
                         <div class="form-label">
                             <label class="fw-bold small required" for="employeeCivilStatus">Civil Status</label>
                         </div>
-                        <select class="form-select rounded-0 newEmployeeInputs" id="employeeCivilStatus" required data-placeholder="Please Select a Civil Status"  onchange="selectStaticValueValidator(this,'','newEmployee','civilStatus')">
+                        <select class="form-select rounded-0" id="employeeCivilStatus" required data-placeholder="Please Select a Civil Status"  onchange="selectStaticValueValidator(this,'','newEmployee','civilStatus')">
                             <option value=""></option>
                             <option value="Single">Single</option>
                             <option value="Married">Married</option>
@@ -315,7 +315,7 @@
                         <div class="form-label">
                             <label class="fw-bold small required" for="employeeDesignation">Designation</label>
                         </div>
-                        <select class="form-select rounded-0 newEmployeeInputs" id="employeeDesignation" required onchange="selectDynamicValueValidator(this,'','newEmployee','designationID')">
+                        <select class="form-select rounded-0" id="employeeDesignation" required onchange="selectDynamicValueValidator(this,'','newEmployee','designationID')">
                             <option>Dynamic Value 1</option>
                             <option>Dynamic Value 2</option>
                             <option>Dynamic Value 3</option>
@@ -328,7 +328,7 @@
                         <div class="form-label">
                             <label class="fw-bold small required" for="employeeStatus">Employee Status</label>
                         </div>
-                        <select class="form-select rounded-0 newEmployeeInputs" id="employeeStatus" required onchange="selectDynamicValueValidator(this,'','newEmployee','employeeStatusID')">
+                        <select class="form-select rounded-0" id="employeeStatus" required onchange="selectDynamicValueValidator(this,'','newEmployee','employeeStatusID')">
                             <option>Dynamic Value 1</option>
                             <option>Dynamic Value 2</option>
                             <option>Dynamic Value 3</option>
