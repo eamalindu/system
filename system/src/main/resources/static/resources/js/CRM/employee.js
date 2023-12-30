@@ -244,7 +244,13 @@ const employeeUpdate = ()=>{
     console.log(oldEmployee)
     console.log(editedEmployee)
 
-    //check updated value
+    //check required values
+    const errors = checkEmployeeFormErrors(editedEmployee);
+    if (errors === '') {}
+    else{
+        showCustomModal(errors, 'warning');
+    }
+
 }
 
 const checkEmployeeFormErrors = (employeeObject)=>{
