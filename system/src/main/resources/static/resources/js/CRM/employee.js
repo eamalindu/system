@@ -329,6 +329,21 @@ const checkForEmployeeUpdate = ()=>{
     if (editedEmployee.nic !== oldEmployee.nic) {
         updates = updates + "NIC was changed to <span class='text-purple'>" + editedEmployee.nic + "</span><br>";
     }
+    if (editedEmployee.dob !== oldEmployee.dob) {
+        updates = updates + "DOB was changed to <span class='text-purple'>" + editedEmployee.dob + "</span><br>";
+    }
+    if (editedEmployee.email !== oldEmployee.email) {
+        updates = updates + "Email was changed to <span class='text-purple'>" + editedEmployee.email + "</span><br>";
+    }
+    if (editedEmployee.mobileNumber !== oldEmployee.mobileNumber) {
+        updates = updates + "Mobile Number was changed to <span class='text-purple'>" + editedEmployee.mobileNumber + "</span><br>";
+    }
+    if (editedEmployee.landNumber !== oldEmployee.landNumber) {
+        updates = updates + "Land Number was changed to <span class='text-purple'>" + editedEmployee.landNumber + "</span><br>";
+    }
+    if (editedEmployee.address !== oldEmployee.address) {
+        updates = updates + "Address was changed to <span class='text-purple'>" + editedEmployee.address + "</span><br>";
+    }
 
     return updates;
 
