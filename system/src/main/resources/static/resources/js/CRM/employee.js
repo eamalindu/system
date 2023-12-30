@@ -247,7 +247,9 @@ const employeeUpdate = ()=>{
 
     //check required values
     const errors = checkEmployeeFormErrors(editedEmployee);
-    if (errors === '') {}
+    if (errors === '') {
+        let updates = checkForEmployeeUpdate()
+    }
     else{
         showCustomModal(errors, 'warning');
     }
@@ -298,4 +300,15 @@ const checkEmployeeFormErrors = (employeeObject)=>{
     }
 
     return errors;
+}
+
+const checkForEmployeeUpdate = ()=>{
+    let updates = '';
+
+    if (editedEmployee.fullName !== oldEmployee.fullName) {
+        updates = updates + "Full Name was changed to <span class='text-purple'>" + editedEmployee.fullName + "</span><br>";
+    }
+
+    return updates;
+
 }
